@@ -22,11 +22,32 @@
                     아이디와 비밀번호를 입력한 후 로그인 해 주세요.
                 </p>
             </div>
-            <form action="html/admin/main.html">
-                
+            <form action="html/admin/main.html" name="login_form" class="clearfix" id="loginForm">
+                <div class="form_left">
+                    <div class="form_group">
+                        <label for="loginId">ㆍID</label>
+                        <input type="text" name="login_id" id="loginId">
+                        <input type="checkbox" name="id_save" id="idSave">
+                        <label for="idSave" class="label_id_save">id 저장</label>
+                    </div>
+                    <div class="form_group">
+                        <label for="loginPw">ㆍPassword</label>
+                        <input type="password" name="login_pw" id="loginPw">
+                    </div>
+                </div>
+                <div class="form_right">
+                    <input type="submit" value="로그인" id="loginSubmit">
+                </div>
             </form>
         </div>
     </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script src="js/login.js"></script>
 
 </body>
 </html>
