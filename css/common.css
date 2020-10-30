@@ -2,7 +2,8 @@
 
 
 body {
-    position: relative;
+    height: 100%;
+    /* position: relative; */
     padding-bottom: 50px;
 }
 
@@ -102,3 +103,60 @@ body {
     left: 0;
     bottom: 0;
 }
+
+
+
+
+/* ************** footer ***************** */
+.sidebar {
+    width: calc(20% - 20px);
+    padding: 10px 0;
+    margin: 0 20px;
+    float: left;
+}
+.sidebar .logout_box {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+.sidebar .logout_box > div button {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #aaa;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 2px;
+    margin: 5px;
+}
+.sidebar .snb {
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.sidebar .snb .snb_title {
+    color: #0033DD;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+.sidebar .snb ul {
+    padding: 20px 0;
+}
+.sidebar .snb ul li {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
