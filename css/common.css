@@ -107,8 +107,8 @@ body {
 
 
 
-/* ************** footer ***************** */
-.sidebar {
+/* ************** sidebar ***************** */
+/* .sidebar {
     width: calc(20% - 20px);
     padding: 10px 0;
     margin: 0 20px;
@@ -150,7 +150,7 @@ body {
 .sidebar .snb ul li {
     font-size: 1.8rem;
     margin-bottom: 5px;
-}
+} */
 
 
 

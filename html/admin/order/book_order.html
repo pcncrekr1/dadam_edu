@@ -7,17 +7,17 @@
     <title>다담교육 주문관리 사이트</title>
 
     <!-- My CSS -->
-	<link rel="stylesheet" href="../../../css/reset.css">
-    <link rel="stylesheet" href="../../../css/common.css">
-    <link rel="stylesheet" href="../../../css/main.css">
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/main.css">
 
 </head>
 <body class="clearfix">
 
     <header id="header"></header>
 
-    <div class="sidebar">
-        <div class="logout_box">
+    <div id="sidebar">
+        <!-- <div class="logout_box">
             <div><strong>영업부</strong>님 환영합니다.</div>
             <div><button>logout</button></div>
         </div>
@@ -32,7 +32,7 @@
                 <li><a href="#">- 장바구니</a></li>
                 <li><a href="#">- 주문관리</a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
 
     <main id="main_order">
@@ -98,8 +98,8 @@
                     <tr>
                         <td>과학이랑 놀래(step1) 9호 개인세트</td>
                         <td>3,500</td>
-                        <td rowspan="2"><input type="number" name="order_number" class="order_number" min="1"></td>
-                        <td rowspan="2"><input type="number" name="box_number" class="box_number" min="1"></td>
+                        <td rowspan="2"><div class="sold_out_text">품절</div></td>
+                        <td rowspan="2"><div class="sold_out_text">품절</div></td>
                     </tr>
                     <tr>
                         <td>과학이랑 놀래(step1) 9호 교사용지도서세트</td>
@@ -110,8 +110,8 @@
                     <tr>
                         <td>과학이랑 놀래(step1) 9호 개인세트</td>
                         <td>3,500</td>
-                        <td rowspan="2"><input type="number" name="order_number" class="order_number" min="1"></td>
-                        <td rowspan="2"><input type="number" name="box_number" class="box_number" min="1"></td>
+                        <td rowspan="2"><div class="discontinued_text">단종</div></td>
+                        <td rowspan="2"><div class="discontinued_text">단종</div></td>
                     </tr>
                     <tr>
                         <td>과학이랑 놀래(step1) 9호 교사용지도서세트</td>
@@ -135,8 +135,9 @@
     <!-- My JS -->
     <script>
         $(function(){
-            $("#header").load("../../../html/common/header.html");
-            $("#footer").load("../../../html/common/footer.html");  
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html");  
+            $("#sidebar").load("/dadam_edu/html/common/left_menu.html");  
         });
     </script>
 

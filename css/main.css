@@ -45,6 +45,10 @@
     width: 50px;
     background-color: #ddd;
 }
+#main_order form table .sold_out_text,
+#main_order form table .discontinued_text {
+    color: #f00;
+}
 #main_order form .shopping_basket_submit {
     width: 150px;
     height: 30px;
