@@ -1,10 +1,9 @@
+/* 작성자: 윤혜진 */
 @charset "utf-8";
 
 
-body {
+html, body {
     height: 100%;
-    /* position: relative; */
-    padding-bottom: 50px;
 }
 
 /* ************** header ***************** */
@@ -35,7 +34,11 @@ body {
 #header .header_top .logout_box .pw_change_btn {
     background-color: #3c3;
     border-radius: 0;
+    cursor: pointer;
     padding: 3px;
+}
+#header .header_top .logout_box .header_logout_btn {
+    cursor: pointer;
 }
 /* gnb */
 #header .gnb {
@@ -108,7 +111,7 @@ body {
 
 
 /* ************** sidebar ***************** */
-/* .sidebar {
+.sidebar {
     width: calc(20% - 20px);
     padding: 10px 0;
     margin: 0 20px;
@@ -130,6 +133,7 @@ body {
     background-color: #aaa;
     color: #fff;
     font-size: 1.2rem;
+    cursor: pointer;
     padding: 2px;
     margin: 5px;
 }
@@ -150,7 +154,7 @@ body {
 .sidebar .snb ul li {
     font-size: 1.8rem;
     margin-bottom: 5px;
-} */
+}
 
 
 
