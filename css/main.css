@@ -88,7 +88,6 @@
 
 #main_as_req {
     width: calc(80% - 40px);
-    min-height: 750px;
     background-color: #ddd;
     float: left;
     text-align: center;
@@ -163,4 +162,136 @@
     height: 30px;
     cursor: pointer;
     background-color: #6cc;
+}
+
+
+
+/* ****************** return_request.html ******************** */
+#wrap_return_req {
+    width: 100%;
+    min-height: 1000px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+#main_return_req {
+    width: calc(80% - 40px);
+    background-color: #ddd;
+    float: left;
+    text-align: center;
+    padding: 20px;
+}
+
+#main_return_req h2 {
+    margin-bottom: 10px;
+}
+#main_return_req form {
+    width: 100%;
+}
+#main_return_req form .select_group select {
+    display: inline-block;
+    width: 60%;
+    height: 30px;
+    background-color: #ddd;
+    margin-bottom: 2px;
+}
+#main_return_req form .select_group .return_add {
+    text-align: center;
+}
+#main_return_req form .select_group .return_add_btn {
+    width: 100px;
+    height: 30px;
+    background-color: #6cc;
+    cursor: pointer;
+}
+#main_return_req form table {
+    width: 80%;
+    margin: 20px auto;
+}
+#main_return_req form table tr {
+    height: 30px;
+}
+#main_return_req form table, 
+#main_return_req form tr, 
+#main_return_req form th, 
+#main_return_req form td {
+    border: 0;
+}
+#main_return_req form table input[type=number] {
+    width: 50px;
+    background-color: #ddd;
+}
+#main_return_req form table textarea {
+    width: 200px;
+    height: 60px;
+    background-color: #ddd;
+}
+#main_return_req form .return_request_submit {
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #6cc;
+}
+
+
+
+
+/* ****************** return_request.html ******************** */
+#wrap_shopping_basket {
+    width: 100%;
+    min-height: 1000px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+#main_shopping_basket {
+    width: calc(80% - 40px);
+    background-color: #ddd;
+    float: left;
+    /* text-align: center; */
+    padding: 20px;
+}
+#main_shopping_basket .title_box {
+    width: 100%;
+}
+#main_shopping_basket .title_box h2 {
+    float: left;
+    margin-bottom: 10px;
+}
+#main_shopping_basket .title_box div {
+    float: right;
+}
+#main_shopping_basket .title_box button {
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #6cc;
+}
+#main_shopping_basket form {
+    width: 100%;
+}
+#main_shopping_basket form fieldset {
+    border: 1px solid #000;
+    padding: 10px;
+}
+#main_shopping_basket form .cart_in_date {
+    margin-bottom: 10px;
+}
+#main_shopping_basket form .memo_tip {
+    margin-bottom: 10px;
+}
+#main_shopping_basket form .form_group {
+    width: 100%;
+    margin-bottom: 10px;
+}
+#main_shopping_basket form .form_group .num_count {
+    width: 50px;   
+    background-color: #ddd;
+}
+#main_shopping_basket form .form_group .num_won {
+    width: 100px;
+    background-color: #ddd;
+}
+#main_shopping_basket form textarea {
+    background-color: #ddd;
 }

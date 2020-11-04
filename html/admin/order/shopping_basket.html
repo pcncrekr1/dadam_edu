@@ -1,0 +1,75 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.04 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/main.css">
+
+</head>
+<body class="clearfix">
+
+    <div id="wrap_shopping_basket">
+        <header id="header"></header>
+
+        <div id="sidebar"></div>
+
+        <main id="main_shopping_basket">
+            <div class="title_box clearfix">
+                <h2>장바구니 리스트</h2>
+                <div>
+                    <button id="basket_edit">수정</button>
+                    <button id="basket_delete">삭제</button>
+                    <button id="basket_order">주문</button>
+                </div>
+            </div>
+            <form action="">
+                <fieldset>
+                    <div class="form_group">
+                        <input type="checkbox" name="check_basket_branch" id="checkBasketBranch1">
+                        <label for="checkBasketBranch1">강북지사(행복한 교육)</label>
+                    </div>
+                    <div class="form_group">
+                        <input type="checkbox" name="check_basket_destination" id="checkBasketDestination1">
+                        <label for="checkBasketDestination1">고운아트어린이집</label>
+                    </div>
+                    <div class="cart_in_date">Cart in: 2020-08-07</div>
+                    <div class="form_group">
+                        <input type="checkbox" name="check_basket_book" id="checkBasketBook1">
+                        <label for="checkBasketBook1">선생님 저요(병아리반)</label>
+                    </div>
+                    <div class="form_group">
+                        <input type="number" name="num_count" class="num_count" min="1">개 <input type="number" name="num_won" class="num_won" min=1 readonly>원
+                    </div>
+                    <div class="memo_tip">* 메모는 구매시에만 저장됩니다.</div>
+                    <textarea name="textarea_basket_memo" cols="30" rows="5" placeholder="MEMO"></textarea>
+                </fieldset>
+            </form>
+        </main>
+
+        <footer id="footer"></footer>
+
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu1.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/main.js"></script>
+
+</body>
+</html>

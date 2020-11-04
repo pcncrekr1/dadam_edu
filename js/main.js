@@ -31,4 +31,56 @@ $(function(){
         }
     });
 
+
+
+
+    // ------------ shopping_basket.html --------------
+    $("#basket_edit").click(function () { 
+        alert("_건의 내역을 수정 하시겠습니까?");
+    });
+    $("#basket_delete").click(function () { 
+        alert("_건의 내역을 삭제 하시겠습니까?");
+    });
+    $("#basket_order").click(function () { 
+        alert("_건의 내역을 주문 하시겠습니까?");
+    });
+
+
+    var checkBasketBranch1 = $("#checkBasketBranch1");
+    var checkBasketDestination1 = $("#checkBasketDestination1");
+    var checkBasketBook1 = $("#checkBasketBook1");
+
+    // 지사명 체크시 배송지, 제품 체크박스도 전부 체크되게 하기
+    checkBasketBranch1.click(function(){
+        if(checkBasketBranch1.is(":checked") === true) {
+            checkBasketDestination1.prop("checked", true);
+            checkBasketBook1.prop("checked", true);
+        } else {
+            checkBasketDestination1.prop("checked", false);
+            checkBasketBook1.prop("checked", false);
+        }
+    });
+    
+    // 배송지, 제품 체크박스 중 하나라도 선택 해제시 지사명도 체크 해제하기
+    // 배송지, 제품 체크박스 둘다 선택할 시 지사명도 체크하기
+    checkBasketDestination1.click(function(){
+        if(checkBasketDestination1.is(":checked") === false || checkBasketBook1.is(":checked") === false) {
+            checkBasketBranch1.prop("checked", false);
+        } else if(checkBasketDestination1.is(":checked") === true && checkBasketBook1.is(":checked") === true) {
+            checkBasketBranch1.prop("checked", true);
+        }
+    });
+    checkBasketBook1.click(function(){
+        if(checkBasketDestination1.is(":checked") === false || checkBasketBook1.is(":checked") === false) {
+            checkBasketBranch1.prop("checked", false);
+        } else if(checkBasketDestination1.is(":checked") === true && checkBasketBook1.is(":checked") === true) {
+            checkBasketBranch1.prop("checked", true);
+        }
+    });
+
+    
+    
+
+
+
 });
