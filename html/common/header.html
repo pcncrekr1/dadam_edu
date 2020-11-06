@@ -7,8 +7,9 @@
             <div>주문관리시스템</div>
         </div>
         <div class="logout_box">
+            <div><span class="user_name">김다담</span>님 환영합니다.</div>
             <button class="pw_change_btn">비밀번호 변경</button>
-            <button class="header_logout_btn">LOGOUT</button>
+            <button class="header_logout_btn">로그아웃</button>
         </div>
     </div>
 
@@ -16,6 +17,9 @@
     <nav class="gnb">
         <ul>
             <li>
+                <a href="#">공지사항</a>
+            </li>
+            <!-- <li>
                 <a href="/dadam_edu/html/admin/order/book_order.html">주문하기</a>
                 <ul>
                     <li><a href="/dadam_edu/html/admin/order/book_order.html">교재 주문</a></li>
@@ -24,9 +28,17 @@
                     <li><a href="/dadam_edu/html/admin/order/shopping_basket.html">장바구니</a></li>
                     <li><a href="#">주문관리</a></li>
                 </ul>
+            </li> -->
+            <li>
+                <a href="#">상품관리</a>
+                <ul>
+                    <li><a href="#">상품조회ㆍ수정</a></li>
+                    <li><a href="#">상품등록</a></li>
+                    <li><a href="#">재고관리</a></li>
+                </ul>
             </li>
             <li>
-                <a href="#">내역조회</a>
+                <a href="#">주문관리</a>
                 <ul>
                     <li><a href="#">주문내역</a></li>
                     <li><a href="#">A/S 내역</a></li>
@@ -45,9 +57,6 @@
                 <a href="#">계산서</a>
             </li>
             <li>
-                <a href="#">공지사항</a>
-            </li>
-            <li>
                 <a href="#">지사 관리</a>
                 <ul>
                     <li><a href="#">지사 리스트</a></li>
@@ -57,6 +66,38 @@
         </ul>
     </nav>
 
+    <!-- 팝업창 만들기 -->
+    <div id="pwChangePopup">
+        <div class="popup-contents">
+            <h2>다담교육</h2>
+
+            <form action="">
+                <div class="form_group">
+                    <label for="pwChangeId">아이디</label>
+                    <input type="text" readonly id="pwChangeId" value="DADAM1234">
+                </div>
+                <div class="form_group">
+                    <label for="pwChangeName">이름</label>
+                    <input type="text" readonly id="pwChangeName" value="김다담">
+                </div>
+                <div class="form_group">
+                    <label for="pwChangeNew">새로운 비밀번호</label>
+                    <input type="password" id="pwChangeNew">
+                </div>
+                <div class="form_group">
+                    <label for="pwChangeNew2">새로운 비밀번호 확인</label>
+                    <input type="password" id="pwChangeNew2">
+                </div>
+                <div class="form_button_box">
+                    <input type="submit" value="저장" id="newPwSubmit">
+                    <button id="pwCancelBtn">취소</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+
+<!-- jQuery Insert -->
+<script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
 
 <script src="/dadam_edu/js/header.js"></script>

@@ -30,15 +30,21 @@ html, body {
 }
 #header .header_top .logout_box button {
     display: inline-block;
-}
-#header .header_top .logout_box .pw_change_btn {
-    background-color: #3c3;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #eee;
+    outline: none;
     border-radius: 0;
+    border: 1px solid #000;
     cursor: pointer;
-    padding: 3px;
 }
-#header .header_top .logout_box .header_logout_btn {
-    cursor: pointer;
+#header .header_top .logout_box > div {
+    display: inline-block;
+    margin-right: 5px;
+}
+#header .header_top .logout_box .user_name {
+    color: #f90;
 }
 /* gnb */
 #header .gnb {
@@ -91,6 +97,77 @@ html, body {
     width: 100%;
     height: 100%;
     color: #fff;
+}
+/* 팝업창 */
+#pwChangePopup {
+    display: none;
+    width: 100%; 
+    height: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 20;
+}
+#pwChangePopup .popup-contents{
+    width: 600px; 
+    height: 360px; 
+    background-color: #fff;
+    border: 1px solid #000;
+    position: absolute; 
+    left: 50%; 
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    padding: 40px;
+}
+#pwChangePopup .popup-contents h2 {
+    margin-bottom: 20px;
+}
+#pwChangePopup .popup-contents form {
+    width: 100%;
+    height: 100%;
+}
+#pwChangePopup .popup-contents form .form_group {
+    width: 100%;
+    margin-bottom: 10px;
+}
+#pwChangePopup .popup-contents form .form_group label {
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+}
+#pwChangePopup .popup-contents form .form_group input {
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+    vertical-align: text-bottom;
+}
+#pwChangePopup .popup-contents form .form_group #pwChangeId,
+#pwChangePopup .popup-contents form .form_group #pwChangeName {
+    border: 0;   
+}
+#pwChangePopup .popup-contents form .form_button_box {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+#pwChangePopup .popup-contents form .form_button_box input,
+#pwChangePopup .popup-contents form .form_button_box button {
+    width: 80px;
+    height: 100%;
+    vertical-align: middle;
+    border: 1px solid #000;
+    outline: none;
+    background-color: #f3cc92;
+}
+#pwChangePopup .popup-contents form .form_button_box button {
+    display: inline-block;
+    margin-left: 30px;
 }
 
 
