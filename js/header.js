@@ -19,6 +19,10 @@ $(function(){
     // 비밀번호 변경 버튼 클릭시 변경창 띄움
     pw_change_btn.click(function(){
         pwChangePopup.css('display', 'block');
+        
+        // 초기화
+        $("#pwChangeNew").val("");
+        $("#pwChangeNew2").val("");
     });
 
     // 저장 버튼 클릭시 비밀번호 일치 여부 검사
