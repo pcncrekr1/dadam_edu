@@ -21,7 +21,7 @@
 
         <main id="mainNoticeWrite">
             <h2>공지사항</h2>
-            <form action="notice_detail.html">
+            <form action="notice_detail.html" id="noticeWriteForm">
                 <div class="form_group">
                     <label for="noticeTitle">제목</label>
                     <input type="text" name="notice_title" id="noticeTitle">
@@ -37,7 +37,7 @@
                     <input type="file" id="ex_filename" class="upload_hidden">
                 </div>
                 <div class="btn_box">
-                    <input type="submit" value="등록">
+                    <input type="submit" value="등록" id="noticeWriteSubmit">
                     <a href="notice_list.html">취소</a>
                 </div>
             </form>
@@ -50,6 +50,9 @@
     <!-- jquery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+    <!-- SmartEditor2 JS -->
+    <script type="text/javascript" src="/dadam_edu/se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+
     <!-- My JS -->
     <script>
         $(function(){
@@ -59,6 +62,7 @@
         });
     </script>
     <script src="/dadam_edu/js/admin.js"></script>
+    <script src="/dadam_edu/js/se2.js"></script>
 
 </body>
 </html>
