@@ -1,0 +1,64 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.09 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrapNoticeWrite" class="clearfix">
+        <header id="header"></header>
+
+        <div id="sidebar"></div>
+
+        <main id="mainNoticeWrite">
+            <h2>공지사항</h2>
+            <form action="">
+                <div class="form_group">
+                    <label for="noticeTitle">제목</label>
+                    <input type="text" name="notice_title" id="noticeTitle">
+                </div>
+                <div class="form_group">
+                    <label for="noticeContent">본문내용</label>
+                    <textarea name="notice_content" id="noticeContent" cols="30" rows="10"></textarea>
+                </div>
+                <div class="notice_file_box">
+                    <label for="noticeUploadName" class="notice_upload_label">파일첨부</label>
+                    <input type="text" value="파일선택" class="upload_name" id="noticeUploadName" disabled="disabled">
+                    <label for="ex_filename" class="ex_filename_btn">파일선택</label>
+                    <input type="file" id="ex_filename" class="upload_hidden">
+                </div>
+                <div class="btn_box">
+                    <input type="submit" value="등록">
+                    <button type="button">취소</button>
+                </div>
+            </form>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu5.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

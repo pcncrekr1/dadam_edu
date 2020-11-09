@@ -1,5 +1,21 @@
 // 작성자: 윤혜진, 작성일: 2020.11.03
 $(function(){
+
+    // ------------ notice_write.html --------------
+    // 파일첨부
+    var fileTarget = $('.notice_file_box .upload_hidden'); 
+    fileTarget.on('change', function(){ // 값이 변경되면 
+        if(window.FileReader){ // modern browser 
+            var filename = $(this)[0].files[0].name; 
+        } else { // old IE 
+            var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+        } 
+        
+        // 추출한 파일명 삽입 
+        $(this).siblings('.upload_name').val(filename); 
+    });
+
+
     
 
     // ------------ a_s_request.html --------------

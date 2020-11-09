@@ -191,19 +191,18 @@ html, body {
 /* ************** sidebar ***************** */
 .sidebar {
     width: calc(20% - 20px);
-    padding: 10px 0;
-    margin: 0 20px;
+    margin: 20px;
     float: left;
 }
 .sidebar .snb {
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #000;
 }
 .sidebar .snb .snb_title {
-    color: #0033DD;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #000;
+    background-color: #a7e6ff;
     padding: 15px 0;
 }
 .sidebar .snb ul {
