@@ -1,0 +1,83 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.09 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrapNoticeList" class="clearfix">
+        <header id="header"></header>
+
+        <div id="sidebar"></div>
+
+        <main id="mainNoticeList">
+            <h2>공지사항</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>-</th>
+                        <th>NO.</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="notice_list_check1" id="noticeListCheck1"></td>
+                        <td>1</td>
+                        <td>다담교육 공지사항 1 입니다.</td>
+                        <td>다담이</td>
+                        <td>2020.08.11</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="notice_list_check1" id="noticeListCheck1"></td>
+                        <td>2</td>
+                        <td>다담교육 공지사항 2 입니다.</td>
+                        <td>다담이</td>
+                        <td>2020.07.29</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="notice_list_check1" id="noticeListCheck1"></td>
+                        <td>3</td>
+                        <td>다담교육 공지사항 3 입니다.</td>
+                        <td>다담이</td>
+                        <td>2020.06.20</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="btn_box">
+                <button type="button">글쓰기</button>
+                <button type="button">삭제</button>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu5.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

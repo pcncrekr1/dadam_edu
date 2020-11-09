@@ -5,6 +5,26 @@
     width: 100%;
 }
 
+
+/* ****************** notice_list.html ******************** */
+#wrapNoticeList {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+#mainNoticeList {
+    width: 100%;
+}
+
+#mainNoticeList .content {
+    width: calc(80% - 40px);
+    float: left;
+}
+
+
+
+
 /* ****************** book_order.html ******************** */
 #wrap_book_order {
     width: 100%;

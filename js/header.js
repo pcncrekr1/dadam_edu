@@ -29,13 +29,16 @@ $(function(){
     newPwSubmit.click(function(){
         if($("#pwChangeNew").val() === "") {
             alert("새로운 비밀번호를 입력해 주세요.");
+            event.preventDefault();
         } else if($("#pwChangeNew2").val() === "") {
             alert("새로운 비밀번호 확인을 입력해 주세요.");
+            event.preventDefault();
         } else if($("#pwChangeNew").val() === $("#pwChangeNew2").val() ) {
             alert("비밀번호가 성공적으로 변경되었습니다.");
             pwChangePopup.css('display', 'none');
         } else {
             alert("비밀번호가 일치하지 않습니다.");
+            event.preventDefault();
         }
     });
     // 취소 버튼 클릭시 창 닫기
