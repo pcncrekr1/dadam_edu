@@ -1,0 +1,63 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.09 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrapNoticeDetail" class="clearfix">
+        <header id="header"></header>
+
+        <div id="sidebar"></div>
+
+        <main id="mainNoticeDetail">
+            <h2>공지사항</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>다담교육 공지사항 1 입니다.</th>
+                        <th>관리자</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">다담교육 공지사항 1 내용</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="btn_box">
+                <a href="notice_write.html">수정</a>
+                <button type="button" id="noticeDetailDel">삭제</button>
+                <a href="notice_list.html">목록</a>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu5.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

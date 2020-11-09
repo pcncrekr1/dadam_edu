@@ -1,6 +1,22 @@
 // 작성자: 윤혜진, 작성일: 2020.11.03
 $(function(){
 
+    // ------------ notice_list.html --------------
+    // 공지사항 리스트 체크여부 확인 후 삭제
+    // 체크된 체크박스가 없으면 알럿창 띄움
+    $("#noticeListDel").click(function () { 
+        if($("input:checkbox[name=notice_list_check]:checked").length === 0) {
+            alert("삭제할 공지사항을 선택해 주세요.");
+        } else {
+            var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n정말 삭제하시겠습니까?");
+            if(yes === true) {
+                alert("삭제되었습니다.");
+            }
+        } 
+    });
+
+
+
     // ------------ notice_write.html --------------
     // 파일첨부
     var fileTarget = $('.notice_file_box .upload_hidden'); 
@@ -14,6 +30,21 @@ $(function(){
         // 추출한 파일명 삽입 
         $(this).siblings('.upload_name').val(filename); 
     });
+
+
+
+
+    // ------------ notice_detail.html --------------
+    $("#noticeDetailDel").click(function() {
+        var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n정말 삭제하시겠습니까?");
+        if(yes === true) {
+            alert("삭제되었습니다.");
+            window.location.href = "/dadam_edu/html/admin/notice/notice_list.html";
+        }
+    });
+
+
+
 
 
     
