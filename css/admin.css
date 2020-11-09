@@ -148,7 +148,7 @@
     text-align: center;
 }
 #mainNoticeWrite form .btn_box input, 
-#mainNoticeWrite form .btn_box button {
+#mainNoticeWrite form .btn_box a {
     display: inline-block;
     width: 100px;
     height: 40px;
@@ -157,6 +157,9 @@
     vertical-align: middle;
     cursor: pointer;
     background-color: #ffe1aa;
+}
+#mainNoticeWrite form .btn_box a {
+    line-height: 40px;
 }
 #mainNoticeWrite form .btn_box input {
     margin-right: 20px;
