@@ -45,5 +45,15 @@ $(function(){
     pwCancelBtn.click(function(){
         pwChangePopup.css('display', 'none');
     });
+
+
+
+    // 로그아웃 버튼 클릭시 알럿창 띄움
+    $(".header_logout_btn").click(function(){
+        var yes = confirm("로그아웃 하시겠습니까?");
+        if(yes === true) {
+            alert("로그아웃 되었습니다.");
+        }
+    });
     
 });
