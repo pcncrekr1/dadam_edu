@@ -26,31 +26,24 @@
 #mainNoticeList table {
     width: 100%;
     text-align: center;
+    border: 0;
     margin-bottom: 30px;
+}
+#mainNoticeList table tr {
+    border: 0;
+    border-bottom: 1px solid #c6c6c6;
 }
 #mainNoticeList table th,
 #mainNoticeList table td {
     height: 30px;
 }
 #mainNoticeList table th {
-    border-color: #000;
+    border: 0;
     background-color: #2D3D4D;
     color: #fff;
 }
-#mainNoticeList table th:first-child {
-    border-left: 1px solid rgba(0,0,0,0);
-}
-#mainNoticeList table th:last-child {
-    border-right: 1px solid rgba(0,0,0,0);
-}
 #mainNoticeList table td {
-    border-color: #C6C6C6;
-}
-#mainNoticeList table td:first-child {
-    border-left: 1px solid rgba(0,0,0,0);
-}
-#mainNoticeList table td:last-child {
-    border-right: 1px solid rgba(0,0,0,0);
+    border: 0;
 }
 #mainNoticeList .btn_box {
     text-align: right;
