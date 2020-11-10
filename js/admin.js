@@ -15,6 +15,28 @@ $(function(){
         } 
     });
 
+    
+    // 공지사항 체크박스 컨트롤
+    $(':checkbox[name=notice_list_check]').change(function() {
+        
+        if(this.id === "noticeListCheckAll") { // 공지사항 맨 위 체크박스라면
+            if( this.checked === true ) {
+                $("input[name=notice_list_check]:checkbox").prop("checked", true); // 전체 체크
+            } else if( this.checked === false ) {
+                $("input[name=notice_list_check]:checkbox").prop("checked", false); // 전체 체크해제
+            }
+        } else { // 개별 체크박스라면
+            if( this.checked === true ) { 
+                // 맨 위 체크박스를 제외한 모든 체크박스가 체크되었다면
+                if($("input:checkbox[name=notice_list_check]:checked").length === $("input:checkbox[name=notice_list_check]").length - 1) {
+                    $("#noticeListCheckAll").prop("checked", true); // 맨 위 체크박스 체크
+                }
+            } else if( this.checked === false ) { // 하나라도 체크 해제된 체크박스가 있다면
+                $("#noticeListCheckAll").prop("checked", false); // 맨 위 체크박스 해제
+            }
+        }
+    });
+
 
 
     // ------------ notice_write.html --------------

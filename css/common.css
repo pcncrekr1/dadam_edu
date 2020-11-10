@@ -50,7 +50,7 @@ html, body {
 #header .gnb {
     width: 100%;
     height: 50px;
-    background-color: #0af;
+    background-color: #033AA1;
     overflow: hidden;
     position: relative;
     z-index: 10;
@@ -67,36 +67,28 @@ html, body {
     text-align: center;
     position: relative;
 }
-#header .gnb > ul > li::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 30px;
-    background-color: #fff;
-    position: absolute;
-    top: 10px;
-    right: 0;
-}
-#header .gnb > ul > li:last-child::after {
-    display: none;
-}
 #header .gnb > ul > li > a {
     display: inline-block;
     width: 100%;
     height: 100%;
     line-height: 50px;
+    font-weight: bold;
     color: #fff;
-    background-color: #07a;
+    background-color: #01114F;
 }
 #header .gnb > ul ul li {
     width: 100%;
-    padding: 20px 0 0 0;
+    height: 50px;
 }
 #header .gnb > ul ul li a {
     display: inline-block;
     width: 100%;
     height: 100%;
     color: #fff;
+    line-height: 50px;
+}
+#header .gnb > ul ul li a:hover {
+    background-color: #465FB3;
 }
 /* 팝업창 */
 #pwChangePopup {
@@ -161,9 +153,14 @@ html, body {
     width: 80px;
     height: 100%;
     vertical-align: middle;
-    border: 1px solid #000;
+    border: 0;
     outline: none;
-    background-color: #f3cc92;
+    background-color: #0D0D0D;
+    color: #fff;
+}
+#pwChangePopup .popup-contents form .form_button_box input:hover,
+#pwChangePopup .popup-contents form .form_button_box button:hover {
+    background-color: #0052A4;
 }
 #pwChangePopup .popup-contents form .form_button_box button {
     display: inline-block;
@@ -190,26 +187,24 @@ html, body {
 
 /* ************** sidebar ***************** */
 .sidebar {
-    width: calc(20% - 20px);
-    margin: 20px;
+    width: calc(15% - 20px);
+    margin: 40px 0 0 10%;
     float: left;
 }
 .sidebar .snb {
     text-align: center;
-    border: 1px solid #000;
 }
 .sidebar .snb .snb_title {
-    font-size: 1.8rem;
     font-weight: bold;
-    border-bottom: 1px solid #000;
-    background-color: #a7e6ff;
+    color: #fff;
+    background-color: #01114F;
     padding: 15px 0;
 }
 .sidebar .snb ul {
+    background-color: #F2F2F2;
     padding: 20px 0;
 }
 .sidebar .snb ul li {
-    font-size: 1.8rem;
     margin-bottom: 5px;
 }
 
