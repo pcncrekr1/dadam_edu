@@ -1,1 +1,84 @@
 <!-- 작성자: 윤혜진, 작성일: 2020.11.11 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrapGoodsRegist" class="clearfix">
+        <header id="header"></header>
+
+        <div id="sidebar"></div>
+
+        <main id="mainGoodsRegist">
+            <h2>상품조회ㆍ수정</h2>
+
+            <div class="btn_box">
+                <a href="#" class="notice_write_btn">엑셀 다운로드</a>
+                <button type="button" id="noticeListDel">선택삭제</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" name="goods_regist_check" id="goodsRegistCheckAll"></th>
+                        <th>NO.</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="goods_regist_check" id="goodsRegistCheck1"></td>
+                        <td>1</td>
+                        <td><a href="#">수정</a></td>
+                        <td>다담이</td>
+                        <td>2020.08.11</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- pagenation -->
+            <div class="pagination">
+                <div class="clearfix">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="page_active">1</a>
+                    <!-- <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a> -->
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu_goods.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

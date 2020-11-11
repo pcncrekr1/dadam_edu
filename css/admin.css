@@ -5,6 +5,32 @@
     width: 100%;
 }
 
+/* 페이지네이션 */
+.pagination {
+    text-align: center;
+}
+.pagination > div {
+    display: inline-block;
+}
+.pagination a {
+    float: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+.pagination a.page_active {
+    background-color: #0D0D0D;
+    color: white;
+    border: 1px solid #0D0D0D;
+}
+.pagination a:hover.page_active {
+    background-color: #0052A4;
+    border: 1px solid #0052A4;
+}
+.pagination a:hover:not(.page_active) {
+    background-color: #ddd;
+}
+
 
 /* ****************** notice_list.html ******************** */
 #wrapNoticeList {
@@ -44,31 +70,6 @@
 }
 #mainNoticeList table td {
     border: 0;
-}
-/* 페이지네이션 */
-.notice_list_pagination {
-    text-align: center;
-}
-.notice_list_pagination > div {
-    display: inline-block;
-}
-.notice_list_pagination a {
-    float: left;
-    padding: 8px;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-}
-.notice_list_pagination a.notice_page_active {
-    background-color: #0D0D0D;
-    color: white;
-    border: 1px solid #0D0D0D;
-}
-.notice_list_pagination a:hover.notice_page_active {
-    background-color: #0052A4;
-    border: 1px solid #0052A4;
-}
-.notice_list_pagination a:hover:not(.notice_page_active) {
-    background-color: #ddd;
 }
 /* 하단 버튼 */
 #mainNoticeList .btn_box {
