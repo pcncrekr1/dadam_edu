@@ -214,7 +214,7 @@ html, body {
     float: left;
 }
 .sidebar {
-    width: calc(100% - 40px);
+    width: 100%;
 }
 .sidebar .snb {
     text-align: center;

@@ -14,51 +14,117 @@
 
 </head>
 <body>
-    <div id="wrapGoodsRegist" class="clearfix">
+    <div id="wrap">
         <header id="header"></header>
 
-        <div id="sidebar"></div>
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
 
-        <main id="mainGoodsRegist">
-            <h2>상품조회ㆍ수정</h2>
+            <div id="mainBox" class="goods_manage_list">
+                <h2>상품조회ㆍ수정</h2>
 
-            <div class="btn_box">
-                <a href="#" class="notice_write_btn">엑셀 다운로드</a>
-                <button type="button" id="noticeListDel">선택삭제</button>
-            </div>
+                <form action="" class="search_form clearfix">
+                    <div class="search_left_box">
+                        <div class="form_group">
+                            <select name="goods_code_name" id="goodsCodeName">
+                                <option value="상품코드">상품코드</option>
+                                <option value="상품명">상품명</option>
+                            </select>
+                            <input type="text" name="goods_search_text" id="goodsSearchText">
+                        </div>
+                        <div class="form_group">
+                            <span>상품상태</span>
+                            <input type="checkbox" name="check_state" value="check_possese" id="checkPossese">
+                            <label for="checkPossese">보유</label>
+                            <input type="checkbox" name="check_state" value="check_soldout" id="checkSoldOut">
+                            <label for="checkSoldOut">품절</label>
+                            <input type="checkbox" name="check_state" value="check_discontinue" id="checkDiscontinue">
+                            <label for="checkDiscontinue">단종</label>
+                        </div>
+                    </div>
+                    <div class="search_btn_box">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th><input type="checkbox" name="goods_regist_check" id="goodsRegistCheckAll"></th>
-                        <th>NO.</th>
-                        <th>제목</th>
-                        <th>글쓴이</th>
-                        <th>등록일</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" name="goods_regist_check" id="goodsRegistCheck1"></td>
-                        <td>1</td>
-                        <td><a href="#">수정</a></td>
-                        <td>다담이</td>
-                        <td>2020.08.11</td>
-                    </tr>
-                </tbody>
-            </table>
+                <div class="table_title_box clearfix">
+                    <div class="table_title">
+                        <span>상품 리스트</span>
+                        <span>총 000건</span>
+                    </div>
+                    <div class="btn_box">
+                        <button type="button" id="goodsManageExcel">엑셀 다운로드</button>
+                        <button type="button" id="goodsManageDel">선택삭제</button>
+                    </div>
+                </div>
 
-            <!-- pagenation -->
-            <div class="pagination">
-                <div class="clearfix">
-                    <a href="#">&laquo;</a>
-                    <a href="#" class="page_active">1</a>
-                    <!-- <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a> -->
-                    <a href="#">&raquo;</a>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="goods_manage_check" id="goodsManageCheckAll"></th>
+                            <th>NO.</th>
+                            <th>수정</th>
+                            <th>상품코드</th>
+                            <th>상품명</th>
+                            <th>규격1</th>
+                            <th>규격2</th>
+                            <th>단가</th>
+                            <th>재고수량</th>
+                            <th>상품상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="goods_manage_check" id="goodsManageCheck1"></td>
+                            <td>1</td>
+                            <td><a href="goods_info.html" class="goods_edit_link">수정</a></td>
+                            <td>342525</td>
+                            <td>다담A</td>
+                            <td>1단계</td>
+                            <td>2호</td>
+                            <td>9,000원</td>
+                            <td>500</td>
+                            <td>보유</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods_manage_check" id="goodsManageCheck2"></td>
+                            <td>1</td>
+                            <td><a href="goods_info.html" class="goods_edit_link">수정</a></td>
+                            <td>342626</td>
+                            <td>다담B</td>
+                            <td></td>
+                            <td></td>
+                            <td>4,500원</td>
+                            <td>990</td>
+                            <td>보유</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods_manage_check" id="goodsManageCheck3"></td>
+                            <td>1</td>
+                            <td><a href="goods_info.html" class="goods_edit_link">수정</a></td>
+                            <td>342828</td>
+                            <td>다담C</td>
+                            <td></td>
+                            <td></td>
+                            <td>4,000원</td>
+                            <td>1000</td>
+                            <td>보유</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- pagenation -->
+                <div class="pagination">
+                    <div class="clearfix">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="page_active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">&raquo;</a>
+                    </div>
                 </div>
             </div>
         </main>
