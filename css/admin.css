@@ -1,8 +1,19 @@
 /* 작성자: 윤혜진 */
 @charset "utf-8";
 
-#main {
+#wrap {
     width: 100%;
+    position: relative;
+    padding-bottom: 50px;
+}
+#main {
+    width: 80%;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+#mainBox {
+    width: 85%;
+    float: left;
 }
 
 /* 페이지네이션 */
@@ -14,7 +25,7 @@
 }
 .pagination a {
     float: left;
-    padding: 8px;
+    padding: 6px;
     border: 1px solid #ddd;
     margin: 0 4px;
 }
@@ -33,50 +44,38 @@
 
 
 /* ****************** notice_list.html ******************** */
-#wrapNoticeList {
-    width: 100%;
-    position: relative;
-    padding-bottom: 50px;
-}
-
-#mainNoticeList {
-    width: calc(70% - 40px);
-    float: left;
-    padding: 40px 0 0 40px;
-}
-
-#mainNoticeList h2 {
+.main_notice_list h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-#mainNoticeList table {
+.main_notice_list table {
     width: 100%;
     text-align: center;
     border: 0;
     margin-bottom: 30px;
 }
-#mainNoticeList table tr {
+.main_notice_list table tr {
     border: 0;
     border-bottom: 1px solid #c6c6c6;
 }
-#mainNoticeList table th,
-#mainNoticeList table td {
+.main_notice_list table th,
+.main_notice_list table td {
     height: 30px;
 }
-#mainNoticeList table th {
+.main_notice_list table th {
     border: 0;
     background-color: #2D3D4D;
     color: #fff;
 }
-#mainNoticeList table td {
+.main_notice_list table td {
     border: 0;
 }
 /* 하단 버튼 */
-#mainNoticeList .btn_box {
+.main_notice_list .btn_box {
     text-align: right;
 }
-#mainNoticeList .btn_box a,
-#mainNoticeList .btn_box button {
+.main_notice_list .btn_box a,
+.main_notice_list .btn_box button {
     width: 100px;
     height: 30px;
     outline: none;
@@ -85,11 +84,11 @@
     background-color: #0D0D0D;
     color: #fff;
 }
-#mainNoticeList .btn_box a:hover,
-#mainNoticeList .btn_box button:hover {
+.main_notice_list .btn_box a:hover,
+.main_notice_list .btn_box button:hover {
     background-color: #0052A4;
 }
-#mainNoticeList .btn_box a {
+.main_notice_list .btn_box a {
     display: inline-block;
     line-height: 30px;
     text-align: center;
@@ -101,43 +100,34 @@
 
 
 /* ****************** notice_write.html ******************** */
-#wrapNoticeWrite {
-    width: 100%;
-    position: relative;
-    padding-bottom: 50px;
-}
-
-#mainNoticeWrite {
-    width: calc(70% - 40px);
-    float: left;
-    padding: 40px 0 0 40px;
-}
-
-#mainNoticeWrite h2 {
+.main_notice_write h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-#mainNoticeWrite form {
+.main_notice_write form {
     width: 100%;
 }
-#mainNoticeWrite form .form_group {
+.main_notice_write form .form_group {
     width: 100%;
     margin-bottom: 20px;
 }
-#mainNoticeWrite form .form_group > label,
-#mainNoticeWrite form .form_group > input {
+.main_notice_write form .form_group > label,
+.main_notice_write form .form_group > input {
     display: block;
     width: 100%;
     height: 30px;
     outline: none;
 }
-#mainNoticeWrite form .form_group > textarea {
+.main_notice_write form .form_group > textarea {
     display: block;
     width: 100%;
     height: 300px;
     outline: none;
 }
 /* ----------- 파일첨부 커스텀 -------------- */
+.notice_file_box {
+    margin-bottom: 30px;
+}
 .notice_file_box input[type="file"] { 
     position: absolute; 
     width: 1px; 
@@ -183,15 +173,14 @@
     appearance: none; 
 
     padding: .5em .75em; /* label의 패딩값과 일치 */ 
-    margin-bottom: 20px;
 }
 /* --------------------------------------- */
-#mainNoticeWrite form .btn_box {
+.main_notice_write form .btn_box {
     width: 100%;
     text-align: center;
 }
-#mainNoticeWrite form .btn_box input, 
-#mainNoticeWrite form .btn_box a {
+.main_notice_write form .btn_box input, 
+.main_notice_write form .btn_box a {
     display: inline-block;
     width: 100px;
     height: 30px;
@@ -202,14 +191,14 @@
     background-color: #0D0D0D;
     color: #fff;
 }
-#mainNoticeWrite form .btn_box a {
+.main_notice_write form .btn_box a {
     line-height: 30px;
 }
-#mainNoticeWrite form .btn_box input {
-    margin-right: 20px;
+.main_notice_write form .btn_box input {
+    margin-right: 10px;
 }
-#mainNoticeWrite form .btn_box input:hover, 
-#mainNoticeWrite form .btn_box a:hover {
+.main_notice_write form .btn_box input:hover, 
+.main_notice_write form .btn_box a:hover {
     background-color: #0052A4;
 }
 
@@ -217,44 +206,32 @@
 
 
 /* ****************** notice_detail.html ******************** */
-#wrapNoticeDetail {
-    width: 100%;
-    position: relative;
-    padding-bottom: 50px;
-}
-
-#mainNoticeDetail {
-    width: calc(70% - 40px);
-    float: left;
-    padding: 40px 0 0 40px;
-}
-
-#mainNoticeDetail h2 {
+.main_notice_detail h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-#mainNoticeDetail table {
+.main_notice_detail table {
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
 }
-#mainNoticeDetail table th {
+.main_notice_detail table th {
     height: 30px;
     background-color: #2D3D4D;
     color: #fff;
 }
-#mainNoticeDetail table td {
+.main_notice_detail table td {
     height: 300px;
     text-align: left;
     border-color: #C6C6C6;
     vertical-align: top;
     padding: 20px;
 }
-#mainNoticeDetail .btn_box {
+.main_notice_detail .btn_box {
     text-align: right;
 }
-#mainNoticeDetail .btn_box a,
-#mainNoticeDetail .btn_box button {
+.main_notice_detail .btn_box a,
+.main_notice_detail .btn_box button {
     width: 100px;
     height: 30px;
     border: 0;
@@ -262,15 +239,18 @@
     cursor: pointer;
     background-color: #0D0D0D;
     color: #fff;
+    vertical-align: middle;
 }
-#mainNoticeDetail .btn_box a {
+.main_notice_detail .btn_box a {
     display: inline-block;
     line-height: 30px;
     text-align: center;
+}
+.main_notice_detail .btn_box button {
     margin: 0 10px;
 }
-#mainNoticeDetail .btn_box a:hover,
-#mainNoticeDetail .btn_box button:hover {
+.main_notice_detail .btn_box a:hover,
+.main_notice_detail .btn_box button:hover {
     background-color: #0052A4;
 }
 

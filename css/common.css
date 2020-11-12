@@ -208,10 +208,13 @@ html, body {
 
 
 /* ************** sidebar ***************** */
-.sidebar {
-    width: calc(15% - 20px);
-    margin: 40px 0 0 10%;
+#sidebar {
+    width: 15%;
+    height: 100%;
     float: left;
+}
+.sidebar {
+    width: calc(100% - 40px);
 }
 .sidebar .snb {
     text-align: center;

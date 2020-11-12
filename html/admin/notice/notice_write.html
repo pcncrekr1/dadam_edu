@@ -14,33 +14,35 @@
 
 </head>
 <body>
-    <div id="wrapNoticeWrite" class="clearfix">
+    <div id="wrap">
         <header id="header"></header>
 
-        <div id="sidebar"></div>
-
-        <main id="mainNoticeWrite">
-            <h2>공지사항</h2>
-            <form action="notice_detail.html" id="noticeWriteForm">
-                <div class="form_group">
-                    <label for="noticeTitle">제목</label>
-                    <input type="text" name="notice_title" id="noticeTitle">
-                </div>
-                <div class="form_group">
-                    <label for="noticeContent">본문내용</label>
-                    <textarea name="notice_content" id="noticeContent" cols="30" rows="10"></textarea>
-                </div>
-                <div class="notice_file_box">
-                    <label for="noticeUploadName" class="notice_upload_label">파일첨부</label>
-                    <input type="text" value="파일선택" class="upload_name" id="noticeUploadName" disabled="disabled">
-                    <label for="ex_filename" class="ex_filename_btn">파일선택</label>
-                    <input type="file" id="ex_filename" class="upload_hidden">
-                </div>
-                <div class="btn_box">
-                    <input type="submit" value="등록" id="noticeWriteSubmit">
-                    <a href="notice_list.html">취소</a>
-                </div>
-            </form>
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+            
+            <div id="mainBox" class="main_notice_write">
+                <h2>공지사항</h2>
+                <form action="notice_detail.html" id="noticeWriteForm">
+                    <div class="form_group">
+                        <label for="noticeTitle">제목</label>
+                        <input type="text" name="notice_title" id="noticeTitle">
+                    </div>
+                    <div class="form_group">
+                        <label for="noticeContent">본문내용</label>
+                        <textarea name="notice_content" id="noticeContent" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="notice_file_box">
+                        <label for="noticeUploadName" class="notice_upload_label">파일첨부</label>
+                        <input type="text" value="파일선택" class="upload_name" id="noticeUploadName" disabled="disabled">
+                        <label for="ex_filename" class="ex_filename_btn">파일선택</label>
+                        <input type="file" id="ex_filename" class="upload_hidden">
+                    </div>
+                    <div class="btn_box">
+                        <input type="submit" value="등록" id="noticeWriteSubmit">
+                        <a href="notice_list.html">취소</a>
+                    </div>
+                </form>
+            </div>
         </main>
 
         <footer id="footer"></footer>

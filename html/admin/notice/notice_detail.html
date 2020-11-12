@@ -14,31 +14,33 @@
 
 </head>
 <body>
-    <div id="wrapNoticeDetail" class="clearfix">
+    <div id="wrap">
         <header id="header"></header>
 
-        <div id="sidebar"></div>
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+            
+            <div id="mainBox" class="main_notice_detail">
+                <h2>공지사항</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>다담교육 공지사항 1 입니다.</th>
+                            <th>관리자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">다담교육 공지사항 1 내용</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        <main id="mainNoticeDetail">
-            <h2>공지사항</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>다담교육 공지사항 1 입니다.</th>
-                        <th>관리자</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="2">다담교육 공지사항 1 내용</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="btn_box">
-                <a href="notice_write.html">수정</a>
-                <button type="button" id="noticeDetailDel">삭제</button>
-                <a href="notice_list.html">목록</a>
+                <div class="btn_box">
+                    <a href="notice_write.html">수정</a>
+                    <button type="button" id="noticeDetailDel">삭제</button>
+                    <a href="notice_list.html">목록</a>
+                </div>
             </div>
         </main>
 
