@@ -20,30 +20,77 @@
         <main id="main" class="clearfix">
             <div id="sidebar"></div>
 
-            <div id="mainBox" class="goods_manage_list">
+            <div id="mainBox" class="goods_info">
                 <h2>상품정보</h2>
 
-                <form action="" class="search_form clearfix">
-                    <div class="search_left_box">
-                        <div class="form_group">
-                            <select name="goods_code_name" id="goodsCodeName">
-                                <option value="상품코드">상품코드</option>
-                                <option value="상품명">상품명</option>
-                            </select>
-                            <input type="text" name="goods_search_text" id="goodsSearchText">
-                        </div>
-                        <div class="form_group">
-                            <span>상품상태</span>
-                            <input type="checkbox" name="check_state" value="check_possese" id="checkPossese">
-                            <label for="checkPossese">보유</label>
-                            <input type="checkbox" name="check_state" value="check_soldout" id="checkSoldOut">
-                            <label for="checkSoldOut">품절</label>
-                            <input type="checkbox" name="check_state" value="check_discontinue" id="checkDiscontinue">
-                            <label for="checkDiscontinue">단종</label>
-                        </div>
-                    </div>
-                    <div class="search_btn_box">
-                        <input type="submit" value="검색">
+                <form action="goods_manage.html" class="goods_info_form">
+                    <table>
+                        <tr>
+                            <th>상품코드</th>
+                            <td><input type="text" name="info_code_text" value="123456" readonly></td>
+                        </tr>
+                        <tr>
+                            <th>상품명</th>
+                            <td><input type="text" name="info_name_text" value="다다다다다담2" class="info_name_text"></td>
+                        </tr>
+                        <tr>
+                            <th>규격1</th>
+                            <td>
+                                <div class="form_group">
+                                    <input type="radio" name="info_step_radio" value="goods_step" id="infoStepRadio">
+                                    <label for="infoStepRadio">단계</label>
+                                </div>
+                                <input type="text" name="info_step_text" value="1단계" id="infoStepText">
+                                <select name="info_step_select" id="infoStepSelect">
+                                    <option value="1단계">1단계</option>
+                                    <option value="2단계">2단계</option>
+                                    <option value="3단계">3단계</option>
+                                    <option value="4단계">4단계</option>
+                                    <option value="5단계">5단계</option>
+                                    <option value="6단계">6단계</option>
+                                    <option value="7단계">7단계</option>
+                                    <option value="8단계">8단계</option>
+                                    <option value="9단계">9단계</option>
+                                    <option value="10단계">10단계</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>규격2</th>
+                            <td>
+                                <div class="form_group">
+                                    <input type="radio" name="info_num_radio" value="goods_num" id="infoNumRadio">
+                                    <label for="infoNumRadio">호수</label>
+                                </div>
+                                <input type="text" name="info_num_text" value="2호" id="infoNumText">
+                                <select name="info_num_select" id="infoNumSelect">
+                                    <option value="1호">1호</option>
+                                    <option value="2호">2호</option>
+                                    <option value="3호">3호</option>
+                                    <option value="4호">4호</option>
+                                    <option value="5호">5호</option>
+                                    <option value="6호">6호</option>
+                                    <option value="7호">7호</option>
+                                    <option value="8호">8호</option>
+                                    <option value="9호">9호</option>
+                                    <option value="10호">10호</option>
+                                </select>
+                                <input type="text" name="info_num_text2" value="에잇플러스" class="info_num_text2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>단가</th>
+                            <td><input type="number" name="info_price_num" value="119000" min="0" class="info_price_num"> 원</td>
+                        </tr>
+                        <tr>
+                            <th>재고수량</th>
+                            <td><input type="number" name="info_stock_num" value="999" class="info_stock_num" readonly> 개</td>
+                        </tr>
+                    </table>
+
+                    <div class="info_btn_box">
+                        <input type="submit" value="저장">
+                        <a href="goods_manage.html">취소</a>
                     </div>
                 </form>
                 

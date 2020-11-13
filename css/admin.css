@@ -40,6 +40,9 @@ table th {
 table td {
     border: 0;
 }
+table td input:read-only {
+    border: 0;
+}
 
 /* 페이지네이션 */
 .pagination {
@@ -378,6 +381,15 @@ table td {
 .goods_manage_list .table_title_box .btn_box button:hover {
     background-color: #0052A4;
 }
+.goods_manage_list .table_title_box .btn_box #goodsManageExcel {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.goods_manage_list .table_title_box .btn_box #goodsManageExcel:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
 .goods_manage_list table .goods_edit_link {
     color: #0052A4;
     text-decoration: underline;
@@ -385,6 +397,146 @@ table td {
 
 
 
+
+/* ****************** goods_info.html ******************** */
+.goods_info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.goods_info_form table th,
+.goods_info_form table td {
+    height: 40px;
+}
+.goods_info_form table th {
+    width: 100px;
+}
+.goods_info_form table td {
+    text-align: left;
+    padding: 5px;
+}
+.goods_info_form table td input,
+.goods_info_form table td select {
+    height: 30px;
+    outline: none;
+}
+.goods_info_form table td #infoStepText,
+.goods_info_form table td #infoNumText,
+.goods_info_form table td select {
+    width: calc(50% / 3 - 50px);
+}
+.goods_info_form table td .info_name_text{
+    width: 50%;
+}
+.goods_info_form table td .info_num_text2 {
+    width: calc( (50% / 3) * 2 - 4px);
+}
+.goods_info_form table td select {
+    vertical-align: middle;
+}
+.goods_info_form table td .form_group {
+    display: inline-block;
+    width: 50px;
+}
+.goods_info_form table td .info_price_num,
+.goods_info_form table td .info_stock_num {
+    width: 25%;
+    text-align: right;
+}
+.goods_info_form .info_btn_box {
+    text-align: center;
+}
+.goods_info_form .info_btn_box input,
+.goods_info_form .info_btn_box a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.goods_info_form .info_btn_box input:hover,
+.goods_info_form .info_btn_box a:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
+
+
+
+
+/* ****************** goods_regist.html ******************** */
+.goods_regist h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.goods_regist_form table th,
+.goods_regist_form table td {
+    height: 40px;
+}
+.goods_regist_form table th {
+    width: 100px;
+}
+.goods_regist_form table td {
+    text-align: left;
+    padding: 5px;
+}
+.goods_regist_form table td input,
+.goods_regist_form table td select {
+    height: 30px;
+    outline: none;
+}
+.goods_regist_form table td #registStepText,
+.goods_regist_form table td #registNumText,
+.goods_regist_form table td select {
+    width: calc(50% / 3 - 50px);
+}
+.goods_regist_form table td .regist_code_text,
+.goods_regist_form table td .regist_stock_num {
+    width: 25%;
+}
+.goods_regist_form table td .regist_name_text,
+.goods_regist_form table td .regist_name_text {
+    width: 50%;
+}
+.goods_regist_form table td .regist_num_text2 {
+    width: calc( (50% / 3) * 2 - 4px);
+}
+.goods_regist_form table td select {
+    vertical-align: middle;
+}
+.goods_regist_form table td .form_group {
+    display: inline-block;
+    width: 50px;
+}
+.goods_regist_form table td .regist_price_num,
+.goods_regist_form table td .regist_stock_num {
+    width: 25%;
+    text-align: right;
+}
+.goods_regist_form .regist_btn_box {
+    text-align: center;
+}
+.goods_regist_form .regist_btn_box input,
+.goods_regist_form .regist_btn_box a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.goods_regist_form .regist_btn_box input:hover,
+.goods_regist_form .regist_btn_box a:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
 
 
 

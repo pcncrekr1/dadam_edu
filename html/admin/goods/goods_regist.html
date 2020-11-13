@@ -1,1 +1,130 @@
 <!-- 작성자: 윤혜진, 작성일: 2020.11.11 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="goods_regist">
+                <h2>상품등록</h2>
+
+                <!-- tab menu -->
+                <div class="goods_regist_tab_menu">
+                    <div>개별등록</div>
+                    <div>일괄등록</div>
+                </div>
+
+                <!-- tab content -->
+                <div class="goods_regist_tab tab_regist_each">
+                </div>
+                <div class="goods_regist_tab tab_regist_bundle">
+                </div>
+
+                <form action="goods_manage.html" class="goods_regist_form">
+                    <table>
+                        <tr>
+                            <th>상품코드</th>
+                            <td><input type="text" name="regist_code_text" class="regist_code_text"></td>
+                        </tr>
+                        <tr>
+                            <th>상품명</th>
+                            <td><input type="text" name="regist_name_text" class="regist_name_text"></td>
+                        </tr>
+                        <tr>
+                            <th>규격1</th>
+                            <td>
+                                <div class="form_group">
+                                    <input type="radio" name="regist_step_radio" value="goods_step" id="registStepRadio">
+                                    <label for="registStepRadio">단계</label>
+                                </div>
+                                <input type="text" name="regist_step_text" id="registStepText">
+                                <select name="regist_step_select" id="registStepSelect">
+                                    <option value="1단계">1단계</option>
+                                    <option value="2단계">2단계</option>
+                                    <option value="3단계">3단계</option>
+                                    <option value="4단계">4단계</option>
+                                    <option value="5단계">5단계</option>
+                                    <option value="6단계">6단계</option>
+                                    <option value="7단계">7단계</option>
+                                    <option value="8단계">8단계</option>
+                                    <option value="9단계">9단계</option>
+                                    <option value="10단계">10단계</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>규격2</th>
+                            <td>
+                                <div class="form_group">
+                                    <input type="radio" name="regist_num_radio" value="goods_num" id="registNumRadio">
+                                    <label for="registNumRadio">호수</label>
+                                </div>
+                                <input type="text" name="regist_num_text" id="registNumText">
+                                <select name="regist_num_select" id="registNumSelect">
+                                    <option value="1호">1호</option>
+                                    <option value="2호">2호</option>
+                                    <option value="3호">3호</option>
+                                    <option value="4호">4호</option>
+                                    <option value="5호">5호</option>
+                                    <option value="6호">6호</option>
+                                    <option value="7호">7호</option>
+                                    <option value="8호">8호</option>
+                                    <option value="9호">9호</option>
+                                    <option value="10호">10호</option>
+                                </select>
+                                <input type="text" name="regist_num_text2" class="regist_num_text2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>단가</th>
+                            <td><input type="number" name="regist_price_num" min="0" class="regist_price_num"> 원</td>
+                        </tr>
+                        <tr>
+                            <th>재고수량</th>
+                            <td><input type="number" name="regist_stock_num" class="regist_stock_num"> 개</td>
+                        </tr>
+                    </table>
+
+                    <div class="regist_btn_box">
+                        <input type="submit" value="저장">
+                        <a href="goods_manage.html">취소</a>
+                    </div>
+                </form>
+                
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu_goods.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

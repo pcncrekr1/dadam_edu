@@ -106,6 +106,179 @@ $(function(){
 
 
 
+    // ------------ goods_info.html --------------
+    // 라디오버튼이 선택되어 있는 상태라면 텍스트박스 대신 셀렉트박스를 보여줌
+    // 라디오버튼이 선택 해제되어 있는 상태라면 텍스트박스를 보여줌
+    // 라디오버튼이 선택되어 있는 상태에서 클릭하면 선택 해제
+    // 라디오버튼이 선택 해제되어 있는 상태에서 클릭시 선택 상태로 변경 
+
+    // 초기값 세팅
+    $("#infoStepText").css("display", "inline-block");
+    $("#infoStepSelect").css("display", "none");
+
+    $("#infoStepRadio").click(function() {
+        // Get the storedValue
+        var previousValue = $(this).data('storedValue');
+        // if previousValue = true then
+        //     Step 1: toggle radio button check mark.
+        //     Step 2: save data-StoredValue as false to indicate radio button is unchecked.
+        if (previousValue) {
+            $(this).prop('checked', !previousValue);
+            $(this).data('storedValue', !previousValue);
+
+            if(this.checked === true) {
+                $("#infoStepText").css("display", "none");
+                $("#infoStepSelect").css("display", "inline-block");
+            } else {
+                $("#infoStepText").css("display", "inline-block");
+                $("#infoStepSelect").css("display", "none");
+            }
+        }
+        // If previousValue is other than true
+        //    save data-StoredValue as true to for currently checked radio button.
+        else{
+            $(this).data('storedValue', true);
+
+            if(this.checked === true) {
+                $("#infoStepText").css("display", "none");
+                $("#infoStepSelect").css("display", "inline-block");
+            } else {
+                $("#infoStepText").css("display", "inline-block");
+                $("#infoStepSelect").css("display", "none");
+            }
+            
+        }
+    });
+    
+
+    // 초기값 세팅
+    $("#infoNumText").css("display", "inline-block");
+    $("#infoNumSelect").css("display", "none");
+
+    $("#infoNumRadio").click(function() {
+        // Get the storedValue
+        var previousValue = $(this).data('storedValue');
+        // if previousValue = true then
+        //     Step 1: toggle radio button check mark.
+        //     Step 2: save data-StoredValue as false to indicate radio button is unchecked.
+        if (previousValue) {
+            $(this).prop('checked', !previousValue);
+            $(this).data('storedValue', !previousValue);
+
+            if(this.checked === true) {
+                $("#infoNumText").css("display", "none");
+                $("#infoNumSelect").css("display", "inline-block");
+            } else {
+                $("#infoNumText").css("display", "inline-block");
+                $("#infoNumSelect").css("display", "none");
+            }
+        }
+        // If previousValue is other than true
+        //    save data-StoredValue as true to for currently checked radio button.
+        else{
+            $(this).data('storedValue', true);
+
+            if(this.checked === true) {
+                $("#infoNumText").css("display", "none");
+                $("#infoNumSelect").css("display", "inline-block");
+            } else {
+                $("#infoNumText").css("display", "inline-block");
+                $("#infoNumSelect").css("display", "none");
+            }
+            
+        }
+    });
+
+
+
+
+    // ------------ goods_regist.html --------------
+    // 라디오버튼이 선택되어 있는 상태라면 텍스트박스 대신 셀렉트박스를 보여줌
+    // 라디오버튼이 선택 해제되어 있는 상태라면 텍스트박스를 보여줌
+    // 라디오버튼이 선택되어 있는 상태에서 클릭하면 선택 해제
+    // 라디오버튼이 선택 해제되어 있는 상태에서 클릭시 선택 상태로 변경 
+
+    // 초기값 세팅
+    $("#registStepText").css("display", "inline-block");
+    $("#registStepSelect").css("display", "none");
+
+    $("#registStepRadio").click(function() {
+        // Get the storedValue
+        var previousValue = $(this).data('storedValue');
+        // if previousValue = true then
+        //     Step 1: toggle radio button check mark.
+        //     Step 2: save data-StoredValue as false to indicate radio button is unchecked.
+        if (previousValue) {
+            $(this).prop('checked', !previousValue);
+            $(this).data('storedValue', !previousValue);
+
+            if(this.checked === true) {
+                $("#registStepText").css("display", "none");
+                $("#registStepSelect").css("display", "inline-block");
+            } else {
+                $("#registStepText").css("display", "inline-block");
+                $("#registStepSelect").css("display", "none");
+            }
+        }
+        // If previousValue is other than true
+        //    save data-StoredValue as true to for currently checked radio button.
+        else{
+            $(this).data('storedValue', true);
+
+            if(this.checked === true) {
+                $("#registStepText").css("display", "none");
+                $("#registStepSelect").css("display", "inline-block");
+            } else {
+                $("#registStepText").css("display", "inline-block");
+                $("#registStepSelect").css("display", "none");
+            }
+            
+        }
+    });
+    
+
+    // 초기값 세팅
+    $("#registNumText").css("display", "inline-block");
+    $("#registNumSelect").css("display", "none");
+
+    $("#registNumRadio").click(function() {
+        // Get the storedValue
+        var previousValue = $(this).data('storedValue');
+        // if previousValue = true then
+        //     Step 1: toggle radio button check mark.
+        //     Step 2: save data-StoredValue as false to indicate radio button is unchecked.
+        if (previousValue) {
+            $(this).prop('checked', !previousValue);
+            $(this).data('storedValue', !previousValue);
+
+            if(this.checked === true) {
+                $("#registNumText").css("display", "none");
+                $("#registNumSelect").css("display", "inline-block");
+            } else {
+                $("#registNumText").css("display", "inline-block");
+                $("#registNumSelect").css("display", "none");
+            }
+        }
+        // If previousValue is other than true
+        //    save data-StoredValue as true to for currently checked radio button.
+        else{
+            $(this).data('storedValue', true);
+
+            if(this.checked === true) {
+                $("#registNumText").css("display", "none");
+                $("#registNumSelect").css("display", "inline-block");
+            } else {
+                $("#registNumText").css("display", "inline-block");
+                $("#registNumSelect").css("display", "none");
+            }
+            
+        }
+    });
+    
+
+
+
+
 
     
 
