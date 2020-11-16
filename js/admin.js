@@ -274,9 +274,51 @@ $(function(){
             
         }
     });
-    
+
+    // 탭메뉴 활성화 / 비활성화
+    var each_btn = $('.goods_regist_tab_menu div:first-child a');
+    var bundle_btn = $('.goods_regist_tab_menu div:last-child a');
+    var tab_regist_each = $('.tab_regist_each');
+    var tab_regist_bundle = $('.tab_regist_bundle');
+
+    // 초기값 설정
+    each_btn.addClass("goods_regist_tab_active");
+    tab_regist_each.css("display", "block");
+
+    each_btn.click(function(){
+        each_btn.addClass('goods_regist_tab_active');
+        bundle_btn.removeClass('goods_regist_tab_active');
+        tab_regist_each.css('display', 'block');
+        tab_regist_bundle.css('display', 'none');
+        
+        event.preventDefault();
+    });
+    bundle_btn.click(function(){
+        each_btn.removeClass('goods_regist_tab_active');
+        bundle_btn.addClass('goods_regist_tab_active');
+        tab_regist_each.css('display', 'none');
+        tab_regist_bundle.css('display', 'block');
+
+        event.preventDefault();
+    });
 
 
+    // 초기화 버튼 클릭시
+    $("#emptyTable").css("display", "none");
+    $("#registTable").css("display", "table");
+    $("#bundleReset").click(function(){
+        $("#emptyTable").css("display", "table");
+        $("#registTable").css("display", "none");
+    });
+
+
+    // 등록 버튼 클릭 시
+    $("#goodsRegistBtn").click(function() {
+        var url = "goods_excel.html";
+        var name = "popup test";
+        var option = "width = 500, height = 500, top = 100, left = 200, location = no";
+        window.open(url, name, option);
+    });
 
 
 

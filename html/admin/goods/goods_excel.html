@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .filebox label { 
+            display: inline-block; 
+            padding: .5em .75em; 
+            color: #999; 
+            font-size: inherit; 
+            line-height: normal; 
+            vertical-align: middle; 
+            background-color: #fdfdfd; 
+            cursor: pointer; 
+            border: 1px solid #ebebeb; 
+            border-bottom-color: #e2e2e2; 
+            border-radius: .25em; 
+        }
+
+        .filebox input[type="file"] { 
+            /* 파일 필드 숨기기 */ 
+            position: absolute; 
+            width: 1px; 
+            height: 1px; 
+            padding: 0; 
+            margin: -1px; 
+            overflow: hidden; 
+            clip:rect(0,0,0,0); 
+            border: 0; 
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
+        <table class="table" width="100%">
+            <tbody id="fileTableTbody">
+                <tr>
+                    <td id="dropZone">
+                        파일을 드래그 하세요
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+        
+    <div class="filebox">
+        <label for="ex_file">내 컴퓨터에서 파일선택</label>
+        <input type="file" accept=".xls,.xlsx" id="ex_file"/>
+    </div>
+    
+</body>
+</html>

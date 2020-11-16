@@ -335,22 +335,22 @@ table td input:read-only {
     background-color: #0052A4;
 }
 /* 표 위 총 개수, 버튼들 */
-.goods_manage_list .table_title_box {
+.table_title_box {
     width: 100%;
     height: 30px;
     margin-bottom: 10px;
 }
-.goods_manage_list .table_title_box .table_title {
+.table_title_box .table_title {
     float: left;
     height: 100%;
     line-height: 30px;
 }
-.goods_manage_list .table_title_box .table_title span:first-child {
+.table_title_box .table_title span:first-child {
     display: inline-block;
     position: relative;
     margin-right: 20px;
 }
-.goods_manage_list .table_title_box .table_title span:first-child::after {
+.table_title_box .table_title span:first-child::after {
     content: "";
     display: block;
     width: 1px;
@@ -360,15 +360,15 @@ table td input:read-only {
     top: 5px;
     right: -12px;
 }
-.goods_manage_list .table_title_box .table_title span:last-child {
+.table_title_box .table_title span:last-child {
     font-weight: bold;
 }
-.goods_manage_list .table_title_box .btn_box {
+.table_title_box .btn_box {
     float: right;
     height: 100%;
     line-height: 30px;
 }
-.goods_manage_list .table_title_box .btn_box button {
+.table_title_box .btn_box button {
     display: inline-block;
     width: 100px;
     height: 30px;
@@ -378,19 +378,20 @@ table td input:read-only {
     outline: none;
     margin-left: 10px;
 }
-.goods_manage_list .table_title_box .btn_box button:hover {
+.table_title_box .btn_box button:hover {
     background-color: #0052A4;
 }
-.goods_manage_list .table_title_box .btn_box #goodsManageExcel {
+.table_title_box .btn_box #goodsManageExcel {
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
 }
-.goods_manage_list .table_title_box .btn_box #goodsManageExcel:hover {
+.table_title_box .btn_box #goodsManageExcel:hover {
     background-color: #0052A4;
     color: #fff;
 }
-.goods_manage_list table .goods_edit_link {
+/* 테이블의 수정 텍스트(링크) */
+.goods_edit_link {
     color: #0052A4;
     text-decoration: underline;
 }
@@ -472,6 +473,48 @@ table td input:read-only {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+/* tab menu */
+.goods_regist .goods_regist_tab_menu {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+}
+.goods_regist .goods_regist_tab_menu div {
+    width: calc(50% - 2px);
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+}
+.goods_regist .goods_regist_tab_menu div a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #000;
+}
+/* 탭메뉴 활성화 클래스 */
+.goods_regist_tab_active {
+    border: 1px solid #000 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0) !important;
+    background-color: #2D3D4D !important;
+    color: #fff !important;
+}
+/* 탭 컨텐츠 */
+.goods_regist .goods_regist_tab {
+    display: none;
+}
+
+.table_title_box .btn_box #goodsRegistExcel {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.table_title_box .btn_box #goodsRegistExcel:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
+
 .goods_regist_form table th,
 .goods_regist_form table td {
     height: 40px;
@@ -516,11 +559,38 @@ table td input:read-only {
     width: 25%;
     text-align: right;
 }
-.goods_regist_form .regist_btn_box {
+
+.tab_regist_bundle .regist_table td {
+    width: 10%;
+}
+.tab_regist_bundle .regist_table td.td_name {
+    width: 40%;
+}
+.tab_regist_bundle .regist_table td input {
+    width: 90%;
+    height: 20px;
+    outline: none;
+}
+.tab_regist_bundle .regist_table td select {
+    outline: none;
+}
+.tab_regist_bundle .regist_table td .regist_name_text {
+    width: 100%;
+}
+
+/* 등록된 상품이 없을 때 보여줄 테이블 */
+.empty_table {
+    width: 100%;
+    height: 200px;
+}
+
+
+/* 하단 버튼들 */
+.regist_btn_box {
     text-align: center;
 }
-.goods_regist_form .regist_btn_box input,
-.goods_regist_form .regist_btn_box a {
+.regist_btn_box input,
+.regist_btn_box a {
     display: inline-block;
     width: 100px;
     height: 30px;
@@ -532,8 +602,8 @@ table td input:read-only {
     color: #fff;
     vertical-align: middle;
 }
-.goods_regist_form .regist_btn_box input:hover,
-.goods_regist_form .regist_btn_box a:hover {
+.regist_btn_box input:hover,
+.regist_btn_box a:hover {
     background-color: #0052A4;
     color: #fff;
 }
