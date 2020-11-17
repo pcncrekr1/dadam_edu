@@ -689,6 +689,15 @@ table td input:read-only {
 
 
 
+/* ****************** stock_notice_popup.html ******************** */
+.popup_wrap .warning {
+    color: #f00;
+}
+/* 하단 버튼 */
+#today_ok_btn {
+    width: auto;
+    padding: 0 10px;
+}
 
 
 

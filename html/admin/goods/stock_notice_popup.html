@@ -1,0 +1,76 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.17 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재고알림</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+
+    <div class="popup_wrap">
+        
+        <h2>아래 상품은 현재 재고가 <span class="warning">100개 미만</span>으로 남은 상품입니다.</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>상품코드</th>
+                    <th>상품명</th>
+                    <th>규격</th>
+                    <th>재고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>013446</td>
+                    <td>19_퍼즐탑블록</td>
+                    <td>1단계</td>
+                    <td>52개</td>
+                </tr>
+                <tr>
+                    <td>014505</td>
+                    <td>2020누리야수리</td>
+                    <td>1단계 6호</td>
+                    <td>80개</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="detail_ok_box">
+            <button type="button" id="today_ok_btn">오늘 하루 보지 않기</button>
+            <button type="button" id="detail_ok_btn">확인</button>
+        </div>
+
+    </div>
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            function setCookie(name, value, expiredays) {
+                var date = new Date();
+                date.setDate(date.getDate() + expiredays); // 오늘 날짜에 1일을 더함
+                document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
+            }
+
+            $("#detail_ok_btn").click(function() {
+                window.close();
+            });
+
+            $("#today_ok_btn").click(function() {
+                setCookie("popupYN", "N", 1);
+                self.close();
+            });
+        });
+    </script>
+
+</body>
+</html>

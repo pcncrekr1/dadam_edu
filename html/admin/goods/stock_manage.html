@@ -146,6 +146,40 @@
         });
     </script>
     <script src="/dadam_edu/js/admin.js"></script>
+    
+    <script>
+        $(function(){
+
+            // 오늘 하루 보지 않기
+
+            function getCookie(name) { 
+
+                var cookie = document.cookie;
+                console.log(document.cookie);
+
+                if (cookie != "") { 
+                    var cookie_array = cookie.split("; "); 
+                    
+                    for ( var index in cookie_array) { 
+                        var cookie_name = cookie_array[index].split("="); // popupYN=N 에서 popupYN 과 N 으로 분리
+                        if (cookie_name[0] == name) { // 쿠키 이름이 popupYN 과 같다면
+                            return cookie_name[1]; // 쿠키 값 N 을 반환
+                        } 
+                    }
+                }
+                return ; 
+            } 
+                
+            function openPopup(url) { 
+                var cookieCheck = getCookie("popupYN"); // 쿠키 이름이 popupYN 인 쿠키의 값을 얻어옴
+                if (cookieCheck != "N") { // 얻어온 쿠키 값이 N이 아니라면
+                    window.open(url, '', 'width=600, height=700, left=300, top=100'); // url 팝업창을 띄움
+                }
+            }
+
+            openPopup("stock_notice_popup.html"); // 로드되자마자 팝업창을 띄움
+        });
+    </script>
 
 </body>
 </html>
