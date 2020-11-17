@@ -4,23 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>일괄등록</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
 
     <style>
-        .filebox label { 
-            display: inline-block; 
-            padding: .5em .75em; 
-            color: #999; 
-            font-size: inherit; 
-            line-height: normal; 
-            vertical-align: middle; 
-            background-color: #fdfdfd; 
-            cursor: pointer; 
-            border: 1px solid #ebebeb; 
-            border-bottom-color: #e2e2e2; 
-            border-radius: .25em; 
+        .goods_excel_wrap {
+            width: 96%;
+            padding: 10px;
+            border: 1px solid #000;
+            margin: 2%;
         }
-
+        #uploadForm {
+            width: 100%;
+            height: 420px;
+            text-align: center;
+        }
+        #uploadForm .table {
+            width: 100%;
+            height: 100%;
+        }
+        .filebox {
+            width: 100%;
+            text-align: center;
+        }
+        .filebox label { 
+            display: inline-block;
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #0af;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
         .filebox input[type="file"] { 
             /* 파일 필드 숨기기 */ 
             position: absolute; 
@@ -32,31 +50,37 @@
             clip:rect(0,0,0,0); 
             border: 0; 
         }
+        .table, 
+        .table tr,
+        #dropZone {
+            border: 0;
+        }
     </style>
 
 </head>
 <body>
 
+    <div class="goods_excel_wrap">
+        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
+            <table class="table">
+                <tbody id="fileTableTbody">
+                    <tr>
+                        <td id="dropZone">
+                            파일을 여기에 놓으세요.<br>
+                            (Xlsx. Xls.)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+            
+        <div class="filebox">
+            <label for="excel_file">내 컴퓨터에서 파일선택</label>
+            <input type="file" accept=".xls,.xlsx" id="excel_file"/>
+        </div>
+    </div>
+
     <!-- jquery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
-        <table class="table" width="100%">
-            <tbody id="fileTableTbody">
-                <tr>
-                    <td id="dropZone">
-                        파일을 여기에 놓으세요.<br>
-                        (Xlsx. Xls.)
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
-        
-    <div class="filebox">
-        <label for="ex_file">내 컴퓨터에서 파일선택</label>
-        <input type="file" accept=".xls,.xlsx" id="ex_file"/>
-    </div>
-    
 </body>
 </html>
