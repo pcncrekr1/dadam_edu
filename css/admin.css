@@ -268,51 +268,52 @@ table td input:read-only {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-.goods_manage_list .search_form {
+/* 테이블 위 검색창 */
+.search_form {
     width: 100%;
     border: 1px solid #000;
     padding: 20px;
     margin-bottom: 20px;
 }
-.goods_manage_list .search_form .search_left_box {
+.search_form .search_left_box {
     float: left;
     width: calc(100% - 100px);
     padding-right: 20px;
 }
-.goods_manage_list .search_form .search_left_box .form_group {
+.search_form .search_left_box .form_group {
     width: 100%;
     height: 30px;
 }
-.goods_manage_list .search_form .search_left_box .form_group:first-child {
+.search_form .search_left_box .form_group:first-child {
     margin-bottom: 10px;
 }
-.goods_manage_list .search_form .search_left_box .form_group select {
+.search_form .search_left_box .form_group select {
     width: 15%;
     height: 100%;
     outline: none;
 }
-.goods_manage_list .search_form .search_left_box .form_group #goodsSearchText {
+.search_form .search_left_box .form_group #searchText {
     width: calc(100% - 16%);
     height: 100%;
     outline: none;
     vertical-align: top;
 }
-.goods_manage_list .search_form .search_left_box .form_group span {
+.search_form .search_left_box .form_group span {
     display: inline-block;
     width: 15%;
     height: 100%;
     line-height: 30px;
 }
-.goods_manage_list .search_form .search_left_box .form_group label {
+.search_form .search_left_box .form_group label {
     margin-right: 20px;
 }
 /* 검색 버튼 */
-.goods_manage_list .search_form .search_btn_box {
+.search_form .search_btn_box {
     float: right;
     position: relative;
     padding-top: 20px;
 }
-.goods_manage_list .search_form .search_btn_box::after {
+.search_form .search_btn_box::after {
     content: "";
     display: block;
     width: 1px;
@@ -322,7 +323,7 @@ table td input:read-only {
     top: 0;
     left: -12px;
 }
-.goods_manage_list .search_form .search_btn_box input {
+.search_form .search_btn_box input {
     width: 100px;
     height: 30px;
     background-color: #0D0D0D;
@@ -331,7 +332,7 @@ table td input:read-only {
     outline: none;
     cursor: pointer;
 }
-.goods_manage_list .search_form .search_btn_box input:hover {
+.search_form .search_btn_box input:hover {
     background-color: #0052A4;
 }
 /* 표 위 총 개수, 버튼들 */
@@ -374,6 +375,7 @@ table td input:read-only {
     height: 30px;
     background-color: #0D0D0D;
     color: #fff;
+    cursor: pointer;
     border: 0;
     outline: none;
     margin-left: 10px;
@@ -607,6 +609,35 @@ table td input:read-only {
     background-color: #0052A4;
     color: #fff;
 }
+
+
+
+
+/* ****************** stock_manage.html ******************** */
+.stock_manage_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.stock_manage_list table .stock_manage_num {
+    width: 10%;
+}
+.stock_manage_list table .stock_manage_num input {
+    width: 90%;
+    outline: none;
+}
+.stock_manage_list table .soldout_td {
+    color: #f00;
+}
+/* 테이블의 상품코드, 상품명 텍스트(링크) */
+.stock_code_link,
+.stock_name_link {
+    color: #0052A4;
+    text-decoration: underline;
+}
+
+
+
+
 
 
 

@@ -303,7 +303,7 @@ $(function(){
     });
 
 
-    // 초기화 버튼 클릭시
+    // 일괄등록 초기화 버튼 클릭시
     $("#emptyTable").css("display", "none");
     $("#registTable").css("display", "table");
     $("#bundleReset").click(function(){
@@ -312,13 +312,34 @@ $(function(){
     });
 
 
-    // 등록 버튼 클릭 시
+    // 일괄등록 등록 버튼 클릭 시
     $("#goodsRegistBtn").click(function() {
-        var url = "goods_excel.html";
+        var url = "goods_excel_popup.html";
         var name = "popup test";
         var option = "width = 500, height = 500, top = 100, left = 200, location = no";
         window.open(url, name, option);
     });
+
+
+
+    // ------------ stock_manage.html --------------
+    // 테이블의 상품코드, 상품명 텍스트(링크) 클릭 시
+    $(".stock_code_link").click(function() {
+        var url = "goods_detail_popup.html";
+        var name = "상품 상세내역";
+        var option = "width = 700, height = 800, top = 100, left = 400, location = no";
+        window.open(url, name, option);
+    });
+    $(".stock_name_link").click(function() {
+        var url = "goods_detail_popup.html";
+        var name = "상품 상세내역";
+        var option = "width = 700, height = 800, top = 100, left = 400, location = no";
+        window.open(url, name, option);
+    });
+
+
+
+
 
 
 
