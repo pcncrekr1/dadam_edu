@@ -323,7 +323,7 @@ $(function(){
 
 
     // ------------ stock_manage.html --------------
-    // 테이블의 상품코드, 상품명 텍스트(링크) 클릭 시
+    // 테이블의 상품코드, 상품명 텍스트(링크) 클릭 시 상세내역창 띄움
     $(".stock_code_link").click(function() {
         var url = "goods_detail_popup.html";
         var name = "상품 상세내역";
@@ -335,6 +335,42 @@ $(function(){
         var name = "상품 상세내역";
         var option = "width = 700, height = 800, top = 100, left = 400, location = no";
         window.open(url, name, option);
+    });
+
+
+    // 상품 리스트 체크여부 확인 후 삭제
+    // 체크된 체크박스가 없으면 알럿창 띄움
+    $("#stockManageDel").click(function () { 
+        if($("input:checkbox[name=stock_manage_check]:checked").length === 0) {
+            alert("삭제할 상품을 선택해 주세요.");
+        } else {
+            var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n정말 삭제하시겠습니까?");
+            if(yes === true) {
+                alert("삭제되었습니다.");
+            }
+        } 
+    });
+
+    
+    // 상품 리스트 체크박스 컨트롤
+    $(':checkbox[name=stock_manage_check]').change(function() {
+        
+        if(this.id === "stockManageCheckAll") { // 상품 리스트 맨 위 체크박스라면
+            if( this.checked === true ) {
+                $("input[name=stock_manage_check]:checkbox").prop("checked", true); // 전체 체크
+            } else if( this.checked === false ) {
+                $("input[name=stock_manage_check]:checkbox").prop("checked", false); // 전체 체크해제
+            }
+        } else { // 개별 체크박스라면
+            if( this.checked === true ) { 
+                // 맨 위 체크박스를 제외한 모든 체크박스가 체크되었다면
+                if($("input:checkbox[name=stock_manage_check]:checked").length === $("input:checkbox[name=stock_manage_check]").length - 1) {
+                    $("#stockManageCheckAll").prop("checked", true); // 맨 위 체크박스 체크
+                }
+            } else if( this.checked === false ) { // 하나라도 체크 해제된 체크박스가 있다면
+                $("#stockManageCheckAll").prop("checked", false); // 맨 위 체크박스 해제
+            }
+        }
     });
 
 
