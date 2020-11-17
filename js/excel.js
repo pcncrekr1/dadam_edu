@@ -54,42 +54,44 @@ $(function(){
     // 파일 선택시
     function selectFile(files){
         // 다중파일 등록
-        if(files != null){
-            for(var i = 0; i < files.length; i++){
+        if(files != null){ // 파일이 있는지 체크
+            // for(var i = 0; i < files.length; i++){
                 // 파일 이름
-                var fileName = files[i].name;
+                // var fileName = files[i].name;
+                var fileName = files[0].name;
                 var fileNameArr = fileName.split("\.");
                 // 확장자
                 var ext = fileNameArr[fileNameArr.length - 1];
                 // 파일 사이즈(단위 :MB)
-                var fileSize = files[i].size / 1024 / 1024;
+                var fileSize = files[0].size / 1024 / 1024;
                 
-                if($.inArray(ext, ['exe', 'bat', 'sh', 'java', 'jsp', 'html', 'js', 'css', 'xml']) >= 0){
+                if($.inArray(ext, ['xlsx', 'xls']) >= 0){
                     // 확장자 체크
                     alert("등록 불가 확장자");
                     break;
-                }else if(fileSize > uploadSize){
+                } else if (fileSize > uploadSize){
                     // 파일 사이즈 체크
                     alert("용량 초과\n업로드 가능 용량 : " + uploadSize + " MB");
                     break;
-                }else{
+                } else {
                     // 전체 파일 사이즈
-                    totalFileSize += fileSize;
+                    // totalFileSize += fileSize;
                     
                     // 파일 배열에 넣기
-                    fileList[fileIndex] = files[i];
+                    // fileList[fileIndex] = files[0];
                     
                     // 파일 사이즈 배열에 넣기
-                    fileSizeList[fileIndex] = fileSize;
+                    // fileSizeList[fileIndex] = fileSize;
  
                     // 업로드 파일 목록 생성
-                    addFileList(fileIndex, fileName, fileSize);
+                    // addFileList(fileIndex, fileName, fileSize);
+                    uploadFile(files[0]);
  
                     // 파일 번호 증가
-                    fileIndex++;
+                    // fileIndex++;
                 }
-            }
-        }else{
+            // }
+        } else {
             alert("ERROR");
         }
     }
@@ -105,6 +107,7 @@ $(function(){
  
         $('#fileTableTbody').append(html);
     }
+
  
     // 업로드 파일 삭제
     function deleteFile(fIndex){
@@ -167,6 +170,13 @@ $(function(){
                     }
                 }
             });
+        }
+    }
+
+    // 파일 등록
+    function uploadFile(file){
+        if(confirm("등록 하시겠습니까?")){
+            
         }
     }
 });
