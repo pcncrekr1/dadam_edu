@@ -702,6 +702,51 @@ table td input:read-only {
 
 
 
+/* ****************** goods_manage.html ******************** */
+.customer_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 상단 검색창 */
+.search_form .search_left_box .form_group #cityBigSelect {
+    width: calc(85% / 2 - 8px);
+}
+.search_form .search_left_box .form_group #citySmallSelect {
+    width: calc(85% / 2 - 4px);
+}
+.search_form .search_left_box .form_group #customerSearchText {
+    width: calc(85% - 8px);
+    height: 30px;
+    vertical-align: top;
+    outline: none;
+}
+/* 표 위 총 개수, 버튼들 */
+.table_title_box .btn_box #customerListExcel {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.table_title_box .btn_box #customerListExcel:hover {
+    background-color: #0052A4;
+    color: #fff;
+} 
+/* 테이블 내 상세주소 td */
+.detail_address {
+    width: 25%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* 테이블의 수정 텍스트(링크) */
+.customer_edit_link,
+.customer_del_link {
+    color: #0052A4;
+    text-decoration: underline;
+}
+
+
+
+
 
 
 

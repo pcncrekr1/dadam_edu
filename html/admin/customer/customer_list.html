@@ -1,0 +1,140 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.18 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="customer_list">
+                <h2>거래원 리스트</h2>
+
+                <form action="" class="search_form clearfix">
+                    <div class="search_left_box">
+                        <div class="form_group">
+                            <span>지역선택</span>
+                            <select name="city_big_select" id="cityBigSelect">
+                            </select>
+                            <select name="city_small_select" id="citySmallSelect">
+                            </select>
+                        </div>
+                        <div class="form_group">
+                            <select name="customer_category_select" id="customerCategorySelect">
+                                <option value="지사명">지사명</option>
+                                <option value="원 구분">원 구분</option>
+                                <option value="거래원 명">거래원 명</option>
+                            </select>
+                            <input type="text" name="customer_search_text" id="customerSearchText">
+                        </div>
+                    </div>
+                    <div class="search_btn_box">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
+
+                <div class="table_title_box">
+                    <div class="btn_box">
+                        <button type="button" id="customerListExcel">엑셀 다운로드</button>
+                        <button type="button" id="customerListRegist">신규등록</button>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NO.</th>
+                            <th>지사명</th>
+                            <th>원 구분</th>
+                            <th>거래원 명</th>
+                            <th>지역</th>
+                            <th>주소</th>
+                            <th>등록일</th>
+                            <th colspan="2">관리</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td>EOV</td>
+                            <td>유치원</td>
+                            <td>다정유치원</td>
+                            <td>경기도 성남시 분당구</td>
+                            <td class="detail_address">경기도 성남시 분당구</td>
+                            <td>2020-06-12</td>
+                            <td><a href="#" class="customer_edit_link">수정</a></td>
+                            <td><a href="#" class="customer_del_link">삭제</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>EOV</td>
+                            <td>유치원</td>
+                            <td>다정유치원</td>
+                            <td>경기도 성남시 분당구</td>
+                            <td class="detail_address">경기도 성남시 분당구</td>
+                            <td>2020-06-12</td>
+                            <td><a href="#" class="customer_edit_link">수정</a></td>
+                            <td><a href="#" class="customer_del_link">삭제</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>EOV</td>
+                            <td>유치원</td>
+                            <td>다정유치원</td>
+                            <td>경기도 성남시 분당구</td>
+                            <td class="detail_address">경기도 성남시 분당구</td>
+                            <td>2020-06-12</td>
+                            <td><a href="#" class="customer_edit_link">수정</a></td>
+                            <td><a href="#" class="customer_del_link">삭제</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- pagenation -->
+                <div class="pagination">
+                    <div class="clearfix">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="page_active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu_customer.html");
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>
