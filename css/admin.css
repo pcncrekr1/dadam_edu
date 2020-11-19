@@ -979,6 +979,10 @@ table td input:read-only {
     background-color: #0052A4;
     color: #fff;
 } 
+/* 구분선 없애기 */
+.customer_sales_list .table_title_box .table_title span:first-child::after {
+    display: none;
+}
 
 
 

@@ -500,7 +500,50 @@ $(function(){
 
     // ------------ customer_sales_list.html --------------
 
+    // 우선 오늘 날짜로 셋팅하기
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var full_today = now.getFullYear() + "-" + (month) + "-" + (day) ;
+    $("#customerSalesDate1").val(full_today);
+    $("#customerSalesDate2").val(full_today);
 
+    function addzero(num){                        // 한자리가 되는 숫자에 "0"을 넣어주는 함수
+        return num < 10 ? "0" + num : num;
+    }
+    
+    function dateInput(n, m){
+        $("#customerSalesDate1").val("");        // 우선 이미 들어가있는 값 초기화
+        $("#customerSalesDate2").val("");
+
+        var date = new Date();
+        var start = new Date(Date.parse(date) - n * 1000 * 60 * 60 * 24);
+        var today = new Date(Date.parse(date) - m * 1000 * 60 * 60 * 24);
+        
+        // if(n < 10){
+        //     start.setMonth(start.getMonth() - n);
+        // }
+        var yyyy = start.getFullYear();
+        var mm = start.getMonth() + 1;            // getMonth()의 반환 값이 0~11까지라서 +1을 해주어야 함
+        var dd = start.getDate() + 1;             // 30일 맞추기
+        
+        var t_yyyy = today.getFullYear();
+        var t_mm = today.getMonth() + 1;
+        var t_dd = today.getDate();
+        
+        $("#customerSalesDate1").val(yyyy + '-' + addzero(mm) + '-' + addzero(dd));
+        $("#customerSalesDate2").val(t_yyyy + '-' + addzero(t_mm) + '-' + addzero(t_dd));
+    }
+    
+    $("#month1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInput(30, 0);      
+    });
+    $("#month3Btn").click(function(){  // 3개월 전
+        dateInput(90, 0);      
+    });
+    $("#month6Btn").click(function(){  // 6개월 전
+        dateInput(180, 0);      
+    });
 
 
 
