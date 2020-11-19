@@ -19,7 +19,7 @@ $(function(){
             e.stopPropagation();
             e.preventDefault();
             // 드롭다운 영역 css
-            dropZone.css('background-color','#E3F2FC');
+            dropZone.css('background-color','#ACFCFF');
         });
         dropZone.on('dragleave',function(e){
             e.stopPropagation();
@@ -31,9 +31,10 @@ $(function(){
             e.stopPropagation();
             e.preventDefault();
             // 드롭다운 영역 css
-            dropZone.css('background-color','#E3F2FC');
+            dropZone.css('background-color','#ACFCFF');
         });
         dropZone.on('drop',function(e){
+            e.stopPropagation();
             e.preventDefault();
             // 드롭다운 영역 css
             dropZone.css('background-color','#FFFFFF');
@@ -65,7 +66,7 @@ $(function(){
                 // 파일 사이즈(단위 :MB)
                 var fileSize = files[0].size / 1024 / 1024;
                 
-                if($.inArray(ext, ['xlsx', 'xls']) >= 0){
+                if($.inArray(ext, ['xlsx', 'xls']) >= 0){   // 확장자가 배열에 없으면 -1을 반환
                     // 확장자 체크
                     alert("등록 불가 확장자");
                     break;
@@ -125,53 +126,53 @@ $(function(){
     }
  
     // 파일 등록
-    function uploadFile(){
-        // 등록할 파일 리스트
-        var uploadFileList = Object.keys(fileList);
+    // function uploadFile(){
+    //     // 등록할 파일 리스트
+    //     var uploadFileList = Object.keys(fileList);
  
-        // 파일이 있는지 체크
-        if(uploadFileList.length == 0){
-            // 파일등록 경고창
-            alert("파일이 없습니다.");
-            return;
-        }
+    //     // 파일이 있는지 체크
+    //     if(uploadFileList.length == 0){
+    //         // 파일등록 경고창
+    //         alert("파일이 없습니다.");
+    //         return;
+    //     }
         
-        // 용량을 500MB를 넘을 경우 업로드 불가
-        if(totalFileSize > maxUploadSize){
-            // 파일 사이즈 초과 경고창
-            alert("총 용량 초과\n총 업로드 가능 용량 : " + maxUploadSize + " MB");
-            return;
-        }
+    //     // 용량을 500MB를 넘을 경우 업로드 불가
+    //     if(totalFileSize > maxUploadSize){
+    //         // 파일 사이즈 초과 경고창
+    //         alert("총 용량 초과\n총 업로드 가능 용량 : " + maxUploadSize + " MB");
+    //         return;
+    //     }
             
-        if(confirm("등록 하시겠습니까?")){
-            // 등록할 파일 리스트를 formData로 데이터 입력
-            var form = $('#uploadForm');
-            var formData = new FormData(form);
-            for(var i = 0; i < uploadFileList.length; i++){
-                formData.append('files', fileList[uploadFileList[i]]);
-            }
+    //     if(confirm("등록 하시겠습니까?")){
+    //         // 등록할 파일 리스트를 formData로 데이터 입력
+    //         var form = $('#uploadForm');
+    //         var formData = new FormData(form);
+    //         for(var i = 0; i < uploadFileList.length; i++){
+    //             formData.append('files', fileList[uploadFileList[i]]);
+    //         }
             
-            $.ajax({
-                url:"업로드 경로",
-                data:formData,
-                type:'POST',
-                enctype:'multipart/form-data',
-                processData:false,
-                contentType:false,
-                dataType:'json',
-                cache:false,
-                success:function(result){
-                    if(result.data.length > 0){
-                        alert("성공");
-                        location.reload();
-                    }else{
-                        alert("실패");
-                        location.reload();
-                    }
-                }
-            });
-        }
-    }
+    //         $.ajax({
+    //             url:"업로드 경로",
+    //             data:formData,
+    //             type:'POST',
+    //             enctype:'multipart/form-data',
+    //             processData:false,
+    //             contentType:false,
+    //             dataType:'json',
+    //             cache:false,
+    //             success:function(result){
+    //                 if(result.data.length > 0){
+    //                     alert("성공");
+    //                     location.reload();
+    //                 }else{
+    //                     alert("실패");
+    //                     location.reload();
+    //                 }
+    //             }
+    //         });
+    //     }
+    // }
 
     // 파일 등록
     function uploadFile(file){
