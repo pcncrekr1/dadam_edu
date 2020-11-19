@@ -649,6 +649,9 @@ table td input:read-only {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+.popup_wrap .basic_info_table {
+    border-top: 1px solid #c6c6c6;
+}
 .popup_wrap .basic_info_table th { 
     width: 20%;
 }
@@ -660,7 +663,8 @@ table td input:read-only {
 .popup_wrap .basic_info_table .basic_info_half { 
     width: 30%;
 }
-.popup_wrap .stock_sum_table { 
+.popup_wrap .stock_sum_table {
+    border-top: 1px solid #c6c6c6; 
     margin-bottom: 10px;
 }
 .popup_wrap .stock_sum_table th {
@@ -696,12 +700,33 @@ table td input:read-only {
 .popup_wrap .warning {
     color: #f00;
 }
-/* 하단 버튼 */
-#today_ok_btn {
-    width: auto;
-    padding: 0 10px;
+/* 오늘하루 보지않기 체크박스, 닫기 버튼 */
+.popup_wrap .detail_close_box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
 }
-
+.popup_wrap .detail_close_box button {
+    display: inline-block;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    outline: none;
+    margin-left: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.popup_wrap .detail_close_box button::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #000;
+    position: absolute;
+    top: 3px;
+    left: -10px;
+}
 
 
 
@@ -712,10 +737,10 @@ table td input:read-only {
 }
 /* 상단 검색창 */
 .search_form .search_left_box .form_group #cityBigSelect {
-    width: calc(85% / 2 - 8px);
+    width: 20%;
 }
 .search_form .search_left_box .form_group #citySmallSelect {
-    width: calc(85% / 2 - 4px);
+    width: 20%;
 }
 .search_form .search_left_box .form_group #customerSearchText {
     width: calc(85% - 8px);
@@ -806,7 +831,7 @@ table td input:read-only {
 }
 .customer_regist_form table td .customer_phone_num,
 .customer_regist_form table td .customer_mobile_num {
-    width: 15%;
+    width: 8%;
 }
 .customer_regist_form table td select {
     vertical-align: middle;
@@ -883,7 +908,7 @@ table td input:read-only {
 }
 .customer_edit_form table td .customer_phone_num,
 .customer_edit_form table td .customer_mobile_num {
-    width: 15%;
+    width: 8%;
 }
 .customer_edit_form table td select {
     vertical-align: middle;
@@ -941,7 +966,7 @@ table td input:read-only {
 /* 상단 검색창 */
 .search_form .search_left_box .form_group #customerSalesDate1,
 .search_form .search_left_box .form_group #customerSalesDate2 {
-    width: calc(85% / 3 - 8px);
+    width: 20%;
     height: 30px;
     outline: none;
 }
@@ -953,7 +978,7 @@ table td input:read-only {
 }
 .search_form .search_left_box .form_group .month_btn_box {
     display: inline-block;
-    width: calc(85% / 3 - 8px);
+    width: 30%;
 }
 .search_form .search_left_box .form_group .month_btn_box button {
     display: inline-block;

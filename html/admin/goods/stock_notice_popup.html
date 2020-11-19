@@ -15,7 +15,6 @@
 <body>
 
     <div class="popup_wrap">
-        
         <h2>아래 상품은 현재 재고가 <span class="warning">100개 미만</span>으로 남은 상품입니다.</h2>
         <table>
             <thead>
@@ -42,11 +41,11 @@
             </tbody>
         </table>
 
-        <div class="detail_ok_box">
-            <button type="button" id="today_ok_btn">오늘 하루 보지 않기</button>
-            <button type="button" id="detail_ok_btn">확인</button>
+        <div class="detail_close_box">
+            <input type="checkbox" name="today_ok_check" id="todayOkCheck">
+            <label for="todayOkCheck">오늘 하루 보이지 않기</label>
+            <button type="button" id="detailCloseBtn">닫기</button>
         </div>
-
     </div>
 
     <!-- jquery JS -->
@@ -61,13 +60,11 @@
                 document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
             }
 
-            $("#detail_ok_btn").click(function() {
+            $("#detailCloseBtn").click(function() {                 // 닫기 버튼 클릭 시
+                if($("#todayOkCheck").is(":checked") == true) {     // 오늘하루 보이지 않기 체크되어 있으면
+                    setCookie("popupYN", "N", 1);                   // 쿠키 셋팅
+                }
                 window.close();
-            });
-
-            $("#today_ok_btn").click(function() {
-                setCookie("popupYN", "N", 1);
-                self.close();
             });
         });
     </script>
