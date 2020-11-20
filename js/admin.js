@@ -316,7 +316,7 @@ $(function(){
     $("#goodsRegistBtn").click(function() {
         var url = "goods_excel_popup.html";
         var name = "popup test";
-        var option = "width = 500, height = 500, top = 100, left = 200, location = no";
+        var option = "width = 500, height = 500, top = 100, left = 800, location = no";
         window.open(url, name, option);
     });
 
@@ -327,13 +327,13 @@ $(function(){
     $(".stock_code_link").click(function() {
         var url = "goods_detail_popup.html";
         var name = "상품 상세내역";
-        var option = "width = 700, height = 800, top = 100, left = 400, location = no";
+        var option = "width = 700, height = 800, top = 100, left = 800, location = no";
         window.open(url, name, option);
     });
     $(".stock_name_link").click(function() {
         var url = "goods_detail_popup.html";
         var name = "상품 상세내역";
-        var option = "width = 700, height = 800, top = 100, left = 400, location = no";
+        var option = "width = 700, height = 800, top = 100, left = 800, location = no";
         window.open(url, name, option);
     });
 
