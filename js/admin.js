@@ -505,7 +505,6 @@ $(function(){
 
 
     // ------------ customer_sales_list.html --------------
-
     // 우선 오늘 날짜로 셋팅하기
     var now = new Date();
     var day = ("0" + now.getDate()).slice(-2);
@@ -550,6 +549,61 @@ $(function(){
     $("#month6Btn").click(function(){  // 6개월 전
         dateInput(180, 0);      
     });
+
+
+
+
+    // ------------ bill.html --------------
+    $(".bill_list > table > tbody > tr").click(function(){                     
+        if($(this).next().children().hasClass("inside_table_td_on") == true){   // td가 펼쳐져 있으면
+            $(this).next().children().removeClass("inside_table_td_on");        // td를 접음
+            $(this).next().css("border-bottom", "0");                           // 테두리를 없앰
+        } else {                                                                // td가 접혀져 있으면
+            $(this).next().children().addClass("inside_table_td_on");           // td를 펼침
+            $(this).next().css("border-bottom", "1px solid #c6c6c6");           // 테두리를 생성
+        }
+    });
+
+
+    // 우선 오늘 날짜로 셋팅하기
+    $("#billDate1").val(full_today);
+    $("#billDate2").val(full_today);
+    
+    function dateInputBill(n, m){
+        $("#billDate1").val("");        // 우선 이미 들어가있는 값 초기화
+        $("#billDate2").val("");
+
+        var date = new Date();
+        var start = new Date(Date.parse(date) - n * 1000 * 60 * 60 * 24);
+        var today = new Date(Date.parse(date) - m * 1000 * 60 * 60 * 24);
+        
+        // if(n < 10){
+        //     start.setMonth(start.getMonth() - n);
+        // }
+        var yyyy = start.getFullYear();
+        var mm = start.getMonth() + 1;            // getMonth()의 반환 값이 0~11까지라서 +1을 해주어야 함
+        var dd = start.getDate() + 1;             // 30일 맞추기
+        
+        var t_yyyy = today.getFullYear();
+        var t_mm = today.getMonth() + 1;
+        var t_dd = today.getDate();
+        
+        $("#billDate1").val(yyyy + '-' + addzero(mm) + '-' + addzero(dd));
+        $("#billDate2").val(t_yyyy + '-' + addzero(t_mm) + '-' + addzero(t_dd));
+    }
+    
+    $("#billMonth1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInputBill(30, 0);      
+    });
+    $("#billMonth3Btn").click(function(){  // 3개월 전
+        dateInputBill(90, 0);      
+    });
+    $("#billMonth6Btn").click(function(){  // 6개월 전
+        dateInputBill(180, 0);      
+    });
+
+
+
 
 
 

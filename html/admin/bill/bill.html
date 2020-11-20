@@ -1,0 +1,309 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.20 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="bill_list">
+                <h2>계산서</h2>
+
+                <form action="" class="search_form clearfix">
+                    <div class="search_left_box">
+                        <div class="form_group">
+                            <span>기간선택</span>
+                            <input type="date" name="bill_date" id="billDate1"> - <input type="date" name="bill_date" id="billDate2">
+                            <span class="month_btn_box">
+                                <button type="button" id="billMonth1Btn">1개월</button>
+                                <button type="button" id="billMonth3Btn">3개월</button>
+                                <button type="button" id="billMonth6Btn">6개월</button>
+                            </span>
+                        </div>
+                        <div class="form_group">
+                            <span>거래원 명</span>
+                            <input type="text" name="bill_search_text" class="bill_search_text">
+                        </div>
+                    </div>
+                    <div class="search_btn_box">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
+
+                <div class="table_title_box clearfix">
+                    <div class="table_title">
+                        <span>매출 상세내역</span>
+                    </div>
+                    <div class="btn_box">
+                        <button type="button" id="billExcel">엑셀 다운로드</button>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NO.</th>
+                            <th>지사명</th>
+                            <th>연도</th>
+                            <th>월</th>
+                            <th>성명</th>
+                            <th>사업자등록번호</th>
+                            <th>이메일</th>
+                            <th>사업장 주소</th>
+                            <th>매출 총액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td>EOV</td>
+                            <td>2020</td>
+                            <td>9</td>
+                            <td>신영희</td>
+                            <td>113-905-7474</td>
+                            <td>alberto1@naver.com</td>
+                            <td class="detail_address">경기도 성남시 분당구 내정로54</td>
+                            <td>277,311</td>
+                        </tr>
+                        <tr class="inside_table_tr">
+                            <td colspan="9" class="inside_table_td">
+                                <div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>NO.</th>
+                                                <th>지사명</th>
+                                                <th>원 구분</th>
+                                                <th>거래원 명</th>
+                                                <th>수량</th>
+                                                <th>구매금액</th>
+                                                <th>BOX</th>
+                                                <th>배송비</th>
+                                                <th>주문일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>EOV</td>
+                            <td>2020</td>
+                            <td>9</td>
+                            <td>신영희</td>
+                            <td>113-905-7474</td>
+                            <td>alberto1@naver.com</td>
+                            <td class="detail_address">경기도 성남시 분당구 내정로54</td>
+                            <td>277,311</td>
+                        </tr>
+                        <tr class="inside_table_tr">
+                            <td colspan="9" class="inside_table_td">
+                                <div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>NO.</th>
+                                                <th>지사명</th>
+                                                <th>원 구분</th>
+                                                <th>거래원 명</th>
+                                                <th>수량</th>
+                                                <th>구매금액</th>
+                                                <th>BOX</th>
+                                                <th>배송비</th>
+                                                <th>주문일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>EOV</td>
+                            <td>2020</td>
+                            <td>9</td>
+                            <td>신영희</td>
+                            <td>113-905-7474</td>
+                            <td>alberto1@naver.com</td>
+                            <td class="detail_address">경기도 성남시 분당구 내정로54</td>
+                            <td>277,311</td>
+                        </tr>
+                        <tr class="inside_table_tr">
+                            <td colspan="9" class="inside_table_td">
+                                <div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>NO.</th>
+                                                <th>지사명</th>
+                                                <th>원 구분</th>
+                                                <th>거래원 명</th>
+                                                <th>수량</th>
+                                                <th>구매금액</th>
+                                                <th>BOX</th>
+                                                <th>배송비</th>
+                                                <th>주문일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>EOV</td>
+                                                <td>어린이집</td>
+                                                <td>리안어린이집</td>
+                                                <td>1</td>
+                                                <td>10,000원</td>
+                                                <td>1</td>
+                                                <td>2,750원</td>
+                                                <td>2020-11-12</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- pagenation -->
+                <div class="pagination">
+                    <div class="clearfix">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="page_active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu_bill.html");
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>
