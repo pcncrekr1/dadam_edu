@@ -125,14 +125,16 @@
                     dropZone.css('background-color','#FFFFFF');
                     
                     var files = e.originalEvent.dataTransfer.files;
+                    console.log(files);
                     if(files != null){
-                        if(files.length < 1){
-                            alert("폴더 업로드 불가");
+                        if(files.length < 1 || files[0].type === ""){
+                            // alert("폴더 업로드 불가");
+                            alert("업로드 불가");
                             return;
                         }
                         selectFile(files)
                     } else {
-                        alert("ERROR");
+                        alert("업로드 불가");
                     }
                 });
             }
@@ -150,8 +152,8 @@
                         var ext = fileNameArr[fileNameArr.length - 1];
                         // 파일 사이즈(단위 :MB)
                         var fileSize = files[0].size / 1024 / 1024;
-                        
-                        if($.inArray(ext, ['xlsx', 'xls']) >= 0){   // 확장자가 배열에 없으면 -1을 반환
+                        console.log(ext);
+                        if($.inArray(ext, ['xlsx', 'xls']) < 0){   // 확장자가 배열에 없으면 -1을 반환
                             // 확장자 체크
                             alert("등록 불가 확장자");
                             // break;
@@ -178,7 +180,7 @@
                         }
                     // }
                 } else {
-                    alert("ERROR");
+                    alert("업로드 불가");
                 }
             }
 
@@ -262,7 +264,7 @@
             // 파일 등록
             function uploadFile(file){
                 if(confirm("등록 하시겠습니까?")){
-                    
+                    console.log(file);
                 }
             }
         });
