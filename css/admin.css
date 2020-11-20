@@ -126,7 +126,7 @@ table td input:read-only {
 }
 .main_notice_write form .form_group > textarea {
     display: block;
-    width: 100%;
+    width: 99.5%;
     height: 300px;
     outline: none;
 }
@@ -221,17 +221,24 @@ table td input:read-only {
     text-align: center;
     margin-bottom: 30px;
 }
+.main_notice_detail table .notice_title_tr {
+    border-top: 1px solid #c6c6c6;
+}
 .main_notice_detail table th {
-    height: 30px;
+    height: 40px;
     background-color: #2D3D4D;
     color: #fff;
 }
 .main_notice_detail table td {
-    height: 300px;
+    height: 40px;
     text-align: left;
     border-color: #C6C6C6;
+    padding: 10px;
+}
+.main_notice_detail table .notice_content {
+    height: 200px;
+    overflow: auto;
     vertical-align: top;
-    padding: 20px;
 }
 .main_notice_detail .btn_box {
     text-align: right;
@@ -742,11 +749,19 @@ table td input:read-only {
 .search_form .search_left_box .form_group #citySmallSelect {
     width: 20%;
 }
-.search_form .search_left_box .form_group #customerSearchText {
+.search_form .search_left_box .form_group .select_name_box {
+    display: inline-block;
     width: calc(85% - 8px);
-    height: 30px;
     vertical-align: top;
+}
+.search_form .search_left_box .form_group #customerSearchText {
+    width: calc(100% - 250px);
+    height: 30px;
     outline: none;
+}
+.search_form .search_left_box .form_group .select_name_box .checkbox_box {
+    display: inline-block;
+    padding-left: 5px;
 }
 
 .customer_list table {

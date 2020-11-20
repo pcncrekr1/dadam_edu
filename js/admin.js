@@ -444,6 +444,18 @@ $(function(){
     });
 
 
+    // 거래원 명 선택시 체크박스 보이고 지사명 선택시 체크박스 숨기기
+    $("#customerCategorySelect").change(function() {
+        if($("#customerCategorySelect").val() === "거래원 명") {
+            $(".checkbox_box").css("display", "inline-block");
+            $("#customerSearchText").css("width", "calc(100% - 250px)");
+        } else {
+            $(".checkbox_box").css("display", "none");
+            $("#customerSearchText").css("width", "100%");
+        }
+    });
+
+
     // 삭제 텍스트 링크 클릭 시
     $(".customer_del_link").click(function() { 
         var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n해당 거래원을 삭제하시겠습니까?");
@@ -498,7 +510,7 @@ $(function(){
 				// 커서를 상세주소 필드로 이동한다.
 				// document.getElementById('addr2').focus();
 			}
-		}).open();
+		}).open({left: 800, top: 100});
     });
 
 

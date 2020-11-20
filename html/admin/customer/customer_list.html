@@ -34,11 +34,20 @@
                         </div>
                         <div class="form_group">
                             <select name="customer_category_select" id="customerCategorySelect">
-                                <option value="지사명">지사명</option>
-                                <option value="원 구분">원 구분</option>
                                 <option value="거래원 명">거래원 명</option>
+                                <option value="지사명">지사명</option>
                             </select>
-                            <input type="text" name="customer_search_text" id="customerSearchText">
+                            <div class="select_name_box">
+                                <div class="checkbox_box">
+                                    <input type="checkbox" name="select_name_check" value="kindergarten_check" id="kindergartenCheck">
+                                    <label for="kindergartenCheck">유치원</label>
+                                    <input type="checkbox" name="select_name_check" value="daycare_check" id="daycareCheck">
+                                    <label for="daycareCheck">어린이집</label>
+                                    <input type="checkbox" name="select_name_check" value="others_check" id="othersCheck">
+                                    <label for="othersCheck">기타</label>
+                                </div>
+                                <input type="text" name="customer_search_text" id="customerSearchText">
+                            </div>
                         </div>
                     </div>
                     <div class="search_btn_box">
