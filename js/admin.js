@@ -303,15 +303,6 @@ $(function(){
     });
 
 
-    // 일괄등록 초기화 버튼 클릭시
-    $("#emptyTable").css("display", "none");
-    $("#registTable").css("display", "table");
-    $("#bundleReset").click(function(){
-        $("#emptyTable").css("display", "table");
-        $("#registTable").css("display", "none");
-    });
-
-
     // 일괄등록 등록 버튼 클릭 시
     $("#goodsRegistBtn").click(function() {
         var url = "goods_excel_popup.html";
@@ -319,6 +310,16 @@ $(function(){
         var option = "width = 500, height = 500, top = 100, left = 800, location = no";
         window.open(url, name, option);
     });
+
+
+    // 일괄등록 초기화 버튼 클릭시
+    $("#bundleReset").click(function(){
+        $("#registTable").find("tbody").find("tr").remove();    // tbody안의 모든 tr을 찾아 지운다.
+        $("#registTable").find("tbody").append("<tr><td colspan='7'>등록한 상품이 없습니다.</td></tr>");
+        $("#registTable").css("height", "200px");
+    });
+
+
 
 
 
