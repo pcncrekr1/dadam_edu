@@ -200,25 +200,24 @@ $(function(){
             return false;
         } else {
             var rowNum = $("#goodsGroupListBody").children().length + 1;
-            var codeNum = "";
+            var codeNum = '';
             if(rowNum < 10) {
-                codeNum += "0";
+                codeNum += '0';
             }
-            var row = "";
-            row += "<tr>";
-            row += "<td><input type='checkbox' name='goods_group_check'></td>";
-            row += "<td>" + rowNum + "</td>";
-            row += "<td><a href='#' class='goods_edit_link' id='goodsGroupEdit" + rowNum + "'>수정</a></td>";
-            row += "<td>" + codeNum + rowNum + "</td>";
-            row += "<td><input type='text' name='goods_group_text' id='goodsGroupText" + rowNum + "' value='" + $("#goodsGroupName").val() + "' readonly></td>";
-            row += "</tr>";
+            var row = '';
+            row += '<tr>';
+            row += '<td><input type="checkbox" name="goods_group_check"></td>';
+            row += '<td>' + rowNum + '</td>';
+            row += '<td><a href="#" class="goods_edit_link" id="goodsGroupEdit' + rowNum + '">수정</a></td>';
+            row += '<td>' + codeNum + rowNum + '</td>';
+            row += '<td><input type="text" name="goods_group_text" id="goodsGroupText' + rowNum + '" value="' + $("#goodsGroupName").val() + '" readonly></td>';
+            row += '</tr>';
             $("#goodsGroupListBody").prepend(row);
         }
     });
 
     // 상품군 리스트 체크박스 컨트롤
-    $('input:checkbox[name=goods_group_check]').change(function() {
-        
+    $(document).on("change", "input:checkbox[name=goods_group_check]", function(){
         if(this.id === "goodsGroupCheckAll") { // 상품군 리스트 맨 위 체크박스라면
             if( this.checked === true ) {
                 $("input[name=goods_group_check]:checkbox").prop("checked", true); // 전체 체크
@@ -257,7 +256,7 @@ $(function(){
     });
 
     // 상품군 리스트 안의 "수정" 클릭시 텍스트박스 활성화
-    $(".goods_edit_link").click(function(){
+    $(document).on("click", ".goods_edit_link", function(){
         var idNum = $(this).attr('id').replace(/goodsGroupEdit/, '');
         $("#goodsGroupText" + idNum).removeAttr("readonly");
 
