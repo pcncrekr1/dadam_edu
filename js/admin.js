@@ -199,6 +199,8 @@ $(function(){
             alert("상품군 명을 입력하세요.");
             return false;
         } else {
+            $("#goodsGroupCheckAll").prop("checked", false); // 맨 위 체크박스 해제
+            
             var rowNum = $("#goodsGroupListBody").children().length + 1;
             var codeNum = '';
             if(rowNum < 10) {
