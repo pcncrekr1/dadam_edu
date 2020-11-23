@@ -239,11 +239,16 @@ $(function(){
     // 상품군 리스트 체크여부 확인 후 삭제
     // 체크된 체크박스가 없으면 알럿창 띄움
     $("#goodsGroupDel").click(function() { 
-        if($("input:checkbox[name=goods_group_check]:checked").length === 0) {
+        var checked = $("input:checkbox[name=goods_group_check]:checked");
+        if(checked.length === 0) {
             alert("삭제할 상품군을 선택해 주세요.");
         } else {
-            var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n정말 삭제하시겠습니까?");
+            var yes = confirm("해당 상품군을 삭제하시겠습니까?");
             if(yes === true) {
+                // for(var i = 1; i <= checked.length; i++){
+                //     $("#goodsGroupListBody").children()[i].remove();
+                // }
+
                 alert("삭제되었습니다.");
             }
         } 
