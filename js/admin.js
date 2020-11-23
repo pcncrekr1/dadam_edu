@@ -207,7 +207,7 @@ $(function(){
             var row = '';
             row += '<tr>';
             row += '<td><input type="checkbox" name="goods_group_check"></td>';
-            row += '<td>' + rowNum + '</td>';
+            row += '<td class="row_num">' + rowNum + '</td>';
             row += '<td><a href="#" class="goods_edit_link" id="goodsGroupEdit' + rowNum + '">수정</a></td>';
             row += '<td>' + codeNum + rowNum + '</td>';
             row += '<td><input type="text" name="goods_group_text" id="goodsGroupText' + rowNum + '" value="' + $("#goodsGroupName").val() + '" readonly></td>';
@@ -239,15 +239,26 @@ $(function(){
     // 상품군 리스트 체크여부 확인 후 삭제
     // 체크된 체크박스가 없으면 알럿창 띄움
     $("#goodsGroupDel").click(function() { 
-        var checked = $("input:checkbox[name=goods_group_check]:checked");
+        var checked = $("#goodsGroupListBody input:checkbox[name=goods_group_check]:checked");
         if(checked.length === 0) {
             alert("삭제할 상품군을 선택해 주세요.");
         } else {
             var yes = confirm("해당 상품군을 삭제하시겠습니까?");
             if(yes === true) {
-                // for(var i = 1; i <= checked.length; i++){
-                //     $("#goodsGroupListBody").children()[i].remove();
-                // }
+                for(var i = checked.length - 1; i> -1; i--) {
+                    checked.eq(i).closest("tr").remove();
+                }
+
+                // 테이블 행의 번호를 재정렬한다.
+                var num = $(".row_num").length;
+                for(var i = 0; i < $(".row_num").length; i++){
+                    $(".row_num")[i].innerText = num;
+                    num--;
+                }
+
+                if($(".row_num").length === 0) {
+                    $("#goodsGroupCheckAll").prop("checked", false); // 맨 위 체크박스 해제
+                }
 
                 alert("삭제되었습니다.");
             }

@@ -434,7 +434,7 @@ table td input:read-only {
     outline: none;
 }
 .goods_info_form table td #infoGroupSelect {
-    width: 170px;
+    width: 20%;
 }
 .goods_info_form table td #infoStepText,
 .goods_info_form table td #infoNumText,
@@ -595,8 +595,9 @@ table td input:read-only {
     height: 30px;
     outline: none;
 }
-.goods_regist_form table td #registGroupSelect {
-    width: 173px;
+.goods_regist_form table td #registGroupSelect,
+.goods_regist_form table td .regist_code_num {
+    width: 20%;
 }
 .goods_regist_form table td #registStepText,
 .goods_regist_form table td #registNumText,
