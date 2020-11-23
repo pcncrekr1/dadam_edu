@@ -35,6 +35,16 @@
                     <form action="goods_manage.html" class="goods_regist_form">
                         <table>
                             <tr>
+                                <th>상품군</th>
+                                <td>
+                                    <select name="regist_group_select" id="registGroupSelect">
+                                        <option value="누리야">누리야</option>
+                                        <option value="영업 판촉물">영업 판촉물</option>
+                                        <option value="해피트래블">해피트래블</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
                                 <th>상품코드</th>
                                 <td><input type="number" name="regist_code_num" class="regist_code_num"></td>
                             </tr>
@@ -117,6 +127,7 @@
                         <table class="regist_table" id="registTable">
                             <thead>
                                 <tr>
+                                    <th>상품군</th>
                                     <th>상품코드</th>
                                     <th>상품명</th>
                                     <th>규격1</th>
@@ -128,7 +139,7 @@
                             </thead>
                             <tbody id="regist_tbody">
                                 <tr>
-                                    <td colspan="7">
+                                    <td colspan="8">
                                         등록한 상품이 없습니다.
                                     </td>
                                 </tr>

@@ -192,6 +192,81 @@ $(function(){
 
 
 
+    // ------------ goods_group_manage.html --------------
+    // 상품군 명 추가
+    $("#group_add_btn").click(function(){
+        if($("#goodsGroupName").val() === ""){
+            alert("상품군 명을 입력하세요.");
+            return false;
+        } else {
+            var rowNum = $("#goodsGroupListBody").children().length + 1;
+            var codeNum = "";
+            if(rowNum < 10) {
+                codeNum += "0";
+            }
+            var row = "";
+            row += "<tr>";
+            row += "<td><input type='checkbox' name='goods_group_check'></td>";
+            row += "<td>" + rowNum + "</td>";
+            row += "<td><a href='#' class='goods_edit_link' id='goodsGroupEdit" + rowNum + "'>수정</a></td>";
+            row += "<td>" + codeNum + rowNum + "</td>";
+            row += "<td><input type='text' name='goods_group_text' id='goodsGroupText" + rowNum + "' value='" + $("#goodsGroupName").val() + "' readonly></td>";
+            row += "</tr>";
+            $("#goodsGroupListBody").prepend(row);
+        }
+    });
+
+    // 상품군 리스트 체크박스 컨트롤
+    $('input:checkbox[name=goods_group_check]').change(function() {
+        
+        if(this.id === "goodsGroupCheckAll") { // 상품군 리스트 맨 위 체크박스라면
+            if( this.checked === true ) {
+                $("input[name=goods_group_check]:checkbox").prop("checked", true); // 전체 체크
+            } else if( this.checked === false ) {
+                $("input[name=goods_group_check]:checkbox").prop("checked", false); // 전체 체크해제
+            }
+        } else { // 개별 체크박스라면
+            if( this.checked === true ) { 
+                // 맨 위 체크박스를 제외한 모든 체크박스가 체크되었다면
+                if($("input:checkbox[name=goods_group_check]:checked").length === $("input:checkbox[name=goods_group_check]").length - 1) {
+                    $("#goodsGroupCheckAll").prop("checked", true); // 맨 위 체크박스 체크
+                }
+            } else if( this.checked === false ) { // 하나라도 체크 해제된 체크박스가 있다면
+                $("#goodsGroupCheckAll").prop("checked", false); // 맨 위 체크박스 해제
+            }
+        }
+    });
+
+    // 상품군 리스트 체크여부 확인 후 삭제
+    // 체크된 체크박스가 없으면 알럿창 띄움
+    $("#goodsGroupDel").click(function() { 
+        if($("input:checkbox[name=goods_group_check]:checked").length === 0) {
+            alert("삭제할 상품군을 선택해 주세요.");
+        } else {
+            var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n정말 삭제하시겠습니까?");
+            if(yes === true) {
+                alert("삭제되었습니다.");
+            }
+        } 
+    });
+
+    // 상품군 리스트 저장시 체크박스는 전달하지 않음
+    $("#goodsGroupSave").click(function() { 
+        $("input:checkbox[name=goods_group_check]:checked").prop("checked", false); // 체크 해제를 해서 값이 전송되지 않게 함        
+        $("#goodsGroupForm").submit();
+    });
+
+    // 상품군 리스트 안의 "수정" 클릭시 텍스트박스 활성화
+    $(".goods_edit_link").click(function(){
+        var idNum = $(this).attr('id').replace(/goodsGroupEdit/, '');
+        $("#goodsGroupText" + idNum).removeAttr("readonly");
+
+        event.preventDefault();
+    });
+
+
+
+
     // ------------ goods_regist.html --------------
     // 라디오버튼이 선택되어 있는 상태라면 텍스트박스 대신 셀렉트박스를 보여줌
     // 라디오버튼이 선택 해제되어 있는 상태라면 텍스트박스를 보여줌
@@ -315,7 +390,7 @@ $(function(){
     // 일괄등록 초기화 버튼 클릭시
     $("#bundleReset").click(function(){
         $("#registTable").find("tbody").find("tr").remove();    // tbody안의 모든 tr을 찾아 지운다.
-        $("#registTable").find("tbody").append("<tr><td colspan='7'>등록한 상품이 없습니다.</td></tr>");
+        $("#registTable").find("tbody").append("<tr><td colspan='8'>등록한 상품이 없습니다.</td></tr>");
         $("#registTable").css("height", "200px");
     });
 

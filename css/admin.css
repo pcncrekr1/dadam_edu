@@ -22,6 +22,7 @@ table {
     width: 100%;
     text-align: center;
     border: 0;
+    border-top: 1px solid #c6c6c6;
     margin-bottom: 30px;
 }
 table tr {
@@ -432,6 +433,9 @@ table td input:read-only {
     height: 30px;
     outline: none;
 }
+.goods_info_form table td #infoGroupSelect {
+    width: 170px;
+}
 .goods_info_form table td #infoStepText,
 .goods_info_form table td #infoNumText,
 .goods_info_form table td select {
@@ -475,6 +479,54 @@ table td input:read-only {
 .goods_info_form .info_btn_box a:hover {
     background-color: #0052A4;
     color: #fff;
+}
+
+
+
+
+/* ****************** goods_group_manage.html ******************** */
+.goods_group_wrap h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.goods_group_name_table th,
+.goods_group_name_table td {
+    height: 40px;
+}
+.goods_group_name_table th {
+    width: 100px;
+}
+.goods_group_name_table td {
+    text-align: left;
+    padding: 5px;
+}
+.goods_group_name_table td input {
+    display: inline-block;
+    width: 40%;
+    height: 30px;
+    outline: none;
+}
+.group_add_box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.group_add_box button {
+    width: 100px;
+    height: 30px;
+    background-color: #0D0D0D;
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.group_add_box button:hover {
+    background-color: #0052A4;
+}
+/* 하단 테이블 */
+.goods_group_list input[type=text] {
+    width: 60%;
+    text-align: center;
+    outline: none;
 }
 
 
@@ -543,6 +595,9 @@ table td input:read-only {
     height: 30px;
     outline: none;
 }
+.goods_regist_form table td #registGroupSelect {
+    width: 173px;
+}
 .goods_regist_form table td #registStepText,
 .goods_regist_form table td #registNumText,
 .goods_regist_form table td select {
@@ -580,7 +635,7 @@ table td input:read-only {
     width: 10%;
 }
 .tab_regist_bundle .regist_table td.td_name {
-    width: 40%;
+    width: 30%;
 }
 .tab_regist_bundle .regist_table td input {
     width: 90%;

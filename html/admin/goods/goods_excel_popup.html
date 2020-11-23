@@ -126,6 +126,7 @@
                 for(var i = 0; i < excel_json.length; i++){
                     row = "";
                     row += "<tr>";
+                    row += "<td><input type='text' name='regist_group_text' value='" + excel_json[i].상품군 + "'></td>";
                     row += "<td><input type='number' name='regist_code_text' value='" + excel_json[i].상품코드 + "'></td>";
                     row += "<td class='td_name'><input type='text' name='regist_name_text' class='regist_name_text' value='" + excel_json[i].상품명 + "'></td>";    
                     row += "<td>";
@@ -196,22 +197,24 @@
                         var firstSheet = workbook.Sheets[workbook.SheetNames[0]]; // 첫번째 시트 
                         var headers = get_header_row(firstSheet);
                         
-                        if(headers.length !== 7) { // 테이블 헤더의 갯수를 체크
+                        if(headers.length !== 8) { // 테이블 헤더의 갯수를 체크
                             alert("엑셀 파일이 형식에 맞지 않습니다.");
                             return false;
                         } else {
                             // 테이블 헤더의 th의 순서를 체크
-                            if(headers[0] === "상품코드" &&
-                                headers[1] === "상품명" &&
-                                headers[2] === "규격1" &&
-                                headers[3] === "규격2" &&
-                                headers[4] === "단가" &&
-                                headers[5] === "재고수량" &&
-                                headers[6] === "상품상태") {
+                            if(headers[0] === "상품군" &&
+                                headers[1] === "상품코드" &&
+                                headers[2] === "상품명" &&
+                                headers[3] === "규격1" &&
+                                headers[4] === "규격2" &&
+                                headers[5] === "단가" &&
+                                headers[6] === "재고수량" &&
+                                headers[7] === "상품상태") {
                                 // 정상, 이번에는 데이터의 값을 체크
                                 for(var i = 0; i < EXCEL_JSON.length; i++){
                                     // 키가 올바른 값을 가지고 있는지 체크
-                                    if(EXCEL_JSON[i].상품코드 && 
+                                    if(EXCEL_JSON[i].상품군 && 
+                                        EXCEL_JSON[i].상품코드 && 
                                         EXCEL_JSON[i].상품명 && 
                                         // EXCEL_JSON[i].규격1 && 
                                         // EXCEL_JSON[i].규격2 && 
