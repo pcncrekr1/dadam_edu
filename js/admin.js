@@ -511,7 +511,11 @@ $(function(){
     $("#cityBigSelect").each(function() {
         var $selsido = $(this);
         $.each(eval(area0), function() {
-            $selsido.append("<option value='" + this + "'>" + this + "</option>");
+            if(this == "::시도::"){
+                $selsido.append("<option value=''>" + this + "</option>");
+            } else {
+                $selsido.append("<option value='" + this + "'>" + this + "</option>");
+            }
         });
         $selsido.next().append("<option value=''>::시군구::</option>");
     });
@@ -563,8 +567,7 @@ $(function(){
 
 
     // ------------ customer_register.html --------------
-    // 우편번호 찾기 버튼 클릭시
-    $("#customerPostcodeBtn").click(function() {
+    function postCode(postcodeNum, addressText) {
         new daum.Postcode({
 			oncomplete: function(data) {
 				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -597,13 +600,18 @@ $(function(){
 				}
 
 				// 우편번호와 주소 정보를 해당 필드에 넣는다.
-				document.getElementById('customerPostcodeNum').value = data.zonecode; //5자리 새우편번호 사용
-				document.getElementById('customerAddressText1').value = fullAddr;
+				document.getElementById(postcodeNum).value = data.zonecode; //5자리 새우편번호 사용
+				document.getElementById(addressText).value = fullAddr;
 
 				// 커서를 상세주소 필드로 이동한다.
 				// document.getElementById('addr2').focus();
 			}
 		}).open({left: 800, top: 100});
+    }
+
+    // 우편번호 찾기 버튼 클릭시
+    $("#customerPostcodeBtn").click(function() {
+        postCode("customerPostcodeNum", "customerAddressText1");
     });
 
 
@@ -622,9 +630,9 @@ $(function(){
         return num < 10 ? "0" + num : num;
     }
     
-    function dateInput(n, m){
-        $("#customerSalesDate1").val("");        // 우선 이미 들어가있는 값 초기화
-        $("#customerSalesDate2").val("");
+    function dateInput(n, m, date1, date2){
+        $(date1).val("");        // 우선 이미 들어가있는 값 초기화
+        $(date2).val("");
 
         var date = new Date();
         var start = new Date(Date.parse(date) - n * 1000 * 60 * 60 * 24);
@@ -641,18 +649,18 @@ $(function(){
         var t_mm = today.getMonth() + 1;
         var t_dd = today.getDate();
         
-        $("#customerSalesDate1").val(yyyy + '-' + addzero(mm) + '-' + addzero(dd));
-        $("#customerSalesDate2").val(t_yyyy + '-' + addzero(t_mm) + '-' + addzero(t_dd));
+        $(date1).val(yyyy + '-' + addzero(mm) + '-' + addzero(dd));
+        $(date2).val(t_yyyy + '-' + addzero(t_mm) + '-' + addzero(t_dd));
     }
     
     $("#month1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
-        dateInput(30, 0);      
+        dateInput(30, 0, "#customerSalesDate1", "#customerSalesDate2");      
     });
     $("#month3Btn").click(function(){  // 3개월 전
-        dateInput(90, 0);      
+        dateInput(90, 0, "#customerSalesDate1", "#customerSalesDate2");      
     });
     $("#month6Btn").click(function(){  // 6개월 전
-        dateInput(180, 0);      
+        dateInput(180, 0, "#customerSalesDate1", "#customerSalesDate2");      
     });
 
 
@@ -674,37 +682,14 @@ $(function(){
     $("#billDate1").val(full_today);
     $("#billDate2").val(full_today);
     
-    function dateInputBill(n, m){
-        $("#billDate1").val("");        // 우선 이미 들어가있는 값 초기화
-        $("#billDate2").val("");
-
-        var date = new Date();
-        var start = new Date(Date.parse(date) - n * 1000 * 60 * 60 * 24);
-        var today = new Date(Date.parse(date) - m * 1000 * 60 * 60 * 24);
-        
-        // if(n < 10){
-        //     start.setMonth(start.getMonth() - n);
-        // }
-        var yyyy = start.getFullYear();
-        var mm = start.getMonth() + 1;            // getMonth()의 반환 값이 0~11까지라서 +1을 해주어야 함
-        var dd = start.getDate() + 1;             // 30일 맞추기
-        
-        var t_yyyy = today.getFullYear();
-        var t_mm = today.getMonth() + 1;
-        var t_dd = today.getDate();
-        
-        $("#billDate1").val(yyyy + '-' + addzero(mm) + '-' + addzero(dd));
-        $("#billDate2").val(t_yyyy + '-' + addzero(t_mm) + '-' + addzero(t_dd));
-    }
-    
     $("#billMonth1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
-        dateInputBill(30, 0);      
+        dateInput(30, 0, "#billDate1", "#billDate2");      
     });
     $("#billMonth3Btn").click(function(){  // 3개월 전
-        dateInputBill(90, 0);      
+        dateInput(90, 0, "#billDate1", "#billDate2");      
     });
     $("#billMonth6Btn").click(function(){  // 6개월 전
-        dateInputBill(180, 0);      
+        dateInput(180, 0, "#billDate1", "#billDate2");      
     });
 
 
@@ -719,6 +704,62 @@ $(function(){
             return false;
         }
     });
+
+    //이메일 입력방식 선택
+    $('#branchEmailSelect').change(function(){ 
+        $("#branchEmailSelect option:selected").each(function () { 
+            if($(this).val()== '1'){ //직접입력일 경우 
+                $("#branchEmailText").val(''); //값 초기화 
+                $("#branchEmailText").attr("disabled", false); //활성화 
+            }else{ //직접입력이 아닐경우 
+                $("#branchEmailText").val($(this).text()); //선택값 입력 
+                $("#branchEmailText").attr("disabled", true); //비활성화 
+            } 
+        }); 
+    });
+
+    // 우편번호 찾기 버튼 클릭시
+    $("#branchPostcodeBtn").click(function() {
+        postCode("branchPostcodeNum", "branchAddressText1");
+    });
+
+    // 담당 지역 추가 버튼 클릭시
+    $("#addCityBtn").click(function() {
+        event.stopPropagation();
+
+        var bigCity = $("#cityBigSelect option:selected").val();
+        var smallCity = $("#branchCityText").val();
+
+        if(bigCity === ""){
+            alert("시도를 선택하세요.");
+            return false;
+        }   
+        if(smallCity === ""){
+            alert("시/군/구를 입력하세요.");
+            return false;
+        }
+        
+        var cityName = bigCity + " " + smallCity;
+        var appendNum = $("#addCityBox").children().length + 1;
+
+        var cityTextBox = '';
+        cityTextBox += '<div class="add_city_div" id="addCityDiv' + appendNum + '">';
+        cityTextBox += '<input type="text" name="add_city_text' + appendNum + '" id="addCityText' + appendNum + '" value="' + cityName + '" readonly>';
+        cityTextBox += '<a href="#" id="cityCloseBtn' + appendNum + '">';
+        cityTextBox += '<img src="/dadam_edu/images/del.png">';
+        cityTextBox += '</a>';
+        cityTextBox += '</div>';
+        console.log(cityTextBox);
+        $("#addCityBox").append(cityTextBox);
+        
+        // 담당 지역 이미지 x 버튼 클릭시 담당지역 삭제
+        $("#cityCloseBtn" + appendNum).click(function (e) { 
+            $(this).parent("#addCityDiv" + appendNum).remove();
+            
+            e.preventDefault();
+        });
+    });
+
 
 
 

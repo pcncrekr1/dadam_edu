@@ -27,7 +27,7 @@
                     <table>
                         <tr>
                             <th>사업자등록번호</th>
-                            <td><input type="number" name="branch_corporate_num" placeholder=" - 없이 숫자로 입력" id="branchCorporateNum"></td>
+                            <td><input type="number" name="branch_corporate_num" min="0" placeholder=" - 없이 숫자로 입력" id="branchCorporateNum"></td>
                         </tr>
                         <tr>
                             <th>대표자</th>
@@ -107,15 +107,61 @@
                             <th>담당 지역</th>
                             <td>
                                 <select name="city_big_select" id="cityBigSelect"></select>
-                                <input type="text" name="branch_city_text" class="branch_city_text">(시/군/구)
-                                <button class="add_city_btn">추가<span class="add_city_plus">+</span></button>
+                                <input type="text" name="branch_city_text" class="branch_city_text" id="branchCityText"> (시/군/구)
+                                <button type="button" class="add_city_btn" id="addCityBtn">추가<span>+</span></button>
+                                <div id="addCityBox"></div>
                             </td>
                         </tr>
                         <tr>
                             <th>주문 가능 상품</th>
                             <td>
-                                <div class="form-group">
-                                    <input type="checkbox" name="" id="">
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check1" id="goodsGroupCheck1" checked>
+                                        <label for="goodsGroupCheck1"> 상품군1</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check2" id="goodsGroupCheck2" checked>
+                                        <label for="goodsGroupCheck2"> 상품군2</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check3" id="goodsGroupCheck3" checked>
+                                        <label for="goodsGroupCheck3"> 상품군3</label>
+                                    </div>
+                                </div>
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check4" id="goodsGroupCheck4" checked>
+                                        <label for="goodsGroupCheck4"> 상품군4</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check5" id="goodsGroupCheck5" checked>
+                                        <label for="goodsGroupCheck5"> 상품군5</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check6" id="goodsGroupCheck6" checked>
+                                        <label for="goodsGroupCheck6"> 상품군6</label>
+                                    </div>
+                                </div>
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check7" id="goodsGroupCheck7" checked>
+                                        <label for="goodsGroupCheck7"> 상품군7</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check8" id="goodsGroupCheck8" checked>
+                                        <label for="goodsGroupCheck8"> 상품군8</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check9" id="goodsGroupCheck9" checked>
+                                        <label for="goodsGroupCheck9"> 상품군9</label>
+                                    </div>
+                                </div>
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check10" id="goodsGroupCheck10" checked>
+                                        <label for="goodsGroupCheck10"> 상품군10</label>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
