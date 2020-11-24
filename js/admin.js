@@ -724,6 +724,27 @@ $(function(){
     });
 
     // 담당 지역 추가 버튼 클릭시
+    function makeCityText(appendNum, cityName) {
+        event.stopPropagation();
+
+        var cityTextBox = '';
+        cityTextBox += '<div class="city_div" id="cityDiv' + appendNum + '">';
+        cityTextBox += '<span>' + cityName + '</span>';
+        cityTextBox += '<input type="hidden" name="city_name' + appendNum + '" value="' + cityName + '">';
+        cityTextBox += '<a href="#" id="cityCloseBtn' + appendNum + '">';
+        cityTextBox += '<img src="/dadam_edu/images/del.png">';
+        cityTextBox += '</a>';
+        cityTextBox += '</div>';
+        $("#addCityBox").append(cityTextBox);
+        
+        // 담당 지역 이미지 x 버튼 클릭시 담당지역 삭제
+        $("#cityCloseBtn" + appendNum).click(function (e) { 
+            $(this).parent("#cityDiv" + appendNum).remove();
+            
+            e.preventDefault();
+        });
+    }
+
     $("#addCityBtn").click(function() {
         event.stopPropagation();
 
@@ -742,24 +763,8 @@ $(function(){
         var cityName = bigCity + " " + smallCity;
         var appendNum = $("#addCityBox").children().length + 1;
 
-        var cityTextBox = '';
-        cityTextBox += '<div class="add_city_div" id="addCityDiv' + appendNum + '">';
-        cityTextBox += '<input type="text" name="add_city_text' + appendNum + '" id="addCityText' + appendNum + '" value="' + cityName + '" readonly>';
-        cityTextBox += '<a href="#" id="cityCloseBtn' + appendNum + '">';
-        cityTextBox += '<img src="/dadam_edu/images/del.png">';
-        cityTextBox += '</a>';
-        cityTextBox += '</div>';
-        console.log(cityTextBox);
-        $("#addCityBox").append(cityTextBox);
-        
-        // 담당 지역 이미지 x 버튼 클릭시 담당지역 삭제
-        $("#cityCloseBtn" + appendNum).click(function (e) { 
-            $(this).parent("#addCityDiv" + appendNum).remove();
-            
-            e.preventDefault();
-        });
+        makeCityText(appendNum, cityName);
     });
-
 
 
 
