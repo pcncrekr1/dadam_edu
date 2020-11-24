@@ -1,0 +1,133 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.24 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="branch_list">
+                <h2>지사 리스트</h2>
+
+                <form action="" class="search_form clearfix">
+                    <div class="search_left_box">
+                        <div class="form_group">
+                            <span>담당지역</span>
+                            <select name="city_big_select" id="cityBigSelect"></select>
+                        </div>
+                        <div class="form_group">
+                            <span>지사명</span>
+                            <input type="text" name="branch_search_text" id="branchSearchText">
+                        </div>
+                    </div>
+                    <div class="search_btn_box">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
+
+                <div class="table_title_box">
+                    <div class="btn_box">
+                        <button type="button" id="branchListExcel">엑셀 다운로드</button>
+                        <a href="branch_register.html">신규등록</a>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NO.</th>
+                            <th>사업자등록번호</th>
+                            <th>지사명</th>
+                            <th>대표자</th>
+                            <th>핸드폰 번호</th>
+                            <th>담당 지역</th>
+                            <th>등록일</th>
+                            <th colspan="2">관리</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="#" class="corporate_link">4258701378</a></td>
+                            <td>EOV</td>
+                            <td>임진우</td>
+                            <td>010-3454-4545</td>
+                            <td>서울특별시 서초구</td>
+                            <td>2020-06-12</td>
+                            <td><a href="branch_edit.html" class="branch_edit_link">수정</a></td>
+                            <td><a href="#" class="branch_del_link">삭제</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="#" class="corporate_link">4258701378</a></td>
+                            <td>EOV</td>
+                            <td>임진우</td>
+                            <td>010-3454-4545</td>
+                            <td>서울특별시 서초구</td>
+                            <td>2020-06-12</td>
+                            <td><a href="branch_edit.html" class="branch_edit_link">수정</a></td>
+                            <td><a href="#" class="branch_del_link">삭제</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#" class="corporate_link">4258701378</a></td>
+                            <td>EOV</td>
+                            <td>임진우</td>
+                            <td>010-3454-4545</td>
+                            <td>서울특별시 서초구</td>
+                            <td>2020-06-12</td>
+                            <td><a href="branch_edit.html" class="branch_edit_link">수정</a></td>
+                            <td><a href="#" class="branch_del_link">삭제</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- pagenation -->
+                <div class="pagination">
+                    <div class="clearfix">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="page_active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu_branch.html");
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

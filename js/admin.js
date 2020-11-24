@@ -710,8 +710,15 @@ $(function(){
 
 
 
-
-
+    // ------------ branch_register.html --------------    
+    // 사업자등록번호 기호 입력 차단
+    $("#branchCorporateNum").keydown(function(e){
+        if(!((e.keyCode > 95 && e.keyCode < 106)
+            || (e.keyCode > 47 && e.keyCode < 58) 
+            || e.keyCode == 8)) {
+            return false;
+        }
+    });
 
 
 

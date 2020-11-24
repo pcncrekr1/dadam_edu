@@ -1220,6 +1220,126 @@ table td input:read-only {
 
 
 
+/* ****************** branch_list.html ******************** */
+.branch_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.search_form .search_left_box .form_group #branchSearchText {
+    width: calc(85% - 8px);
+    height: 30px;
+    outline: none;
+}
+
+/* 표 위 총 개수, 버튼들 */
+.table_title_box .btn_box #branchListExcel {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.table_title_box .btn_box #branchListExcel:hover {
+    background-color: #0052A4;
+    color: #fff;
+} 
+/* 테이블의 사업자등록번호, 수정, 삭제 텍스트(링크) */
+.corporate_link,
+.branch_edit_link,
+.branch_del_link {
+    color: #0052A4;
+    text-decoration: underline;
+}
+
+
+
+/* ****************** b_register.html ******************** */
+.branch_regist h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.branch_regist_form table th,
+.branch_regist_form table td {
+    height: 40px;
+}
+.branch_regist_form table th {
+    width: 150px;
+}
+.branch_regist_form table td {
+    text-align: left;
+    padding: 5px;
+}
+.branch_regist_form table td input,
+.branch_regist_form table td select {
+    height: 30px;
+    outline: none;
+}
+.branch_regist_form table td input {
+    width: 20%;
+}
+.branch_regist_form table td select {
+    width: 20%;
+}
+.branch_regist_form table td input[type="radio"],
+.branch_regist_form table td input[type="radio"] + label {
+    width: auto;
+    height: auto;
+}
+.branch_regist_form table td input[type="radio"] + label {
+    margin-right: 20px;
+}
+.branch_regist_form table td .branch_phone_num,
+.branch_regist_form table td .branch_mobile_num {
+    width: 8%;
+}
+.branch_regist_form table td select {
+    vertical-align: middle;
+}
+.branch_regist_form table td #branchPostcodeBtn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.branch_regist_form table td .branch_address_text1,
+.branch_regist_form table td .branch_address_text2 {
+    width: 100%;
+}
+/* 하단 버튼 */
+.branch_regist_form .regist_btn_box {
+    text-align: center;
+}
+.branch_regist_form .regist_btn_box input,
+.branch_regist_form .regist_btn_box a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.branch_regist_form .regist_btn_box input:hover,
+.branch_regist_form .regist_btn_box a:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
+/* readonly 보이게 */
+.branch_regist_form table td input:read-only {
+    border: 1px solid #000;
+}
+
+
+
+
+
 
 
 
