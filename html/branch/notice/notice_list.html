@@ -1,0 +1,90 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.25 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/branch.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="notice_list">
+                <h2>공지사항</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NO.</th>
+                            <th>제목</th>
+                            <th>글쓴이</th>
+                            <th>등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="notice_detail.html">다담교육 공지사항 1 입니다.</a></td>
+                            <td>다담이</td>
+                            <td>2020.08.11</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="#">다담교육 공지사항 2 입니다.</a></td>
+                            <td>다담이</td>
+                            <td>2020.07.29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#">다담교육 공지사항 3 입니다.</a></td>
+                            <td>다담이</td>
+                            <td>2020.06.20</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- pagenation -->
+                <div class="pagination">
+                    <div class="clearfix">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="page_active">1</a>
+                        <!-- <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a> -->
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header_branch.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/branch/left_menu_notice.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

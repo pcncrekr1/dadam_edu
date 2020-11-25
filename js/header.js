@@ -53,6 +53,7 @@ $(function(){
         var yes = confirm("로그아웃 하시겠습니까?");
         if(yes === true) {
             alert("로그아웃 되었습니다.");
+            window.location.href = "/dadam_edu/html/common/login.html"
         }
     });
     

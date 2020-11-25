@@ -1,0 +1,78 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.25 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/branch.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+            
+            <div id="mainBox" class="notice_detail">
+                <h2>공지사항</h2>
+                <table>
+                    <thead>
+                        <tr class="notice_title_tr">
+                            <th>제목</th>
+                            <td colspan="3">다담 공지사항1 입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>글쓴이</th>
+                            <td>다담이</td>
+                            <th>등록일</th>
+                            <td>2020.08.01</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="notice_content">
+                                안녕하세요 다담교육입니다.<br>
+                                2021년 2월 14일부터 새롭게 개편된 주문관리 시스템으로 찾아뵙겠습니다.<br>
+                                <br>
+                                감사합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>첨부파일</th>
+                            <td colspan="3">다담교육 주문관리 시스템_매뉴얼.hwp</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_box">
+                    <a href="notice_list.html">목록</a>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header_branch.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/branch/left_menu_notice.html");   
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

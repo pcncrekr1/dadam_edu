@@ -1,0 +1,140 @@
+/* 작성자: 윤혜진, 작성일: 2020.11.25 */
+@charset "utf-8";
+
+#wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 50px;
+}
+#main {
+    width: 80%;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+#mainBox {
+    width: calc(85% - 40px);
+    float: left;
+    margin-left: 40px;
+}
+
+/* 테이블(리스트) */
+table {
+    width: 100%;
+    text-align: center;
+    border: 0;
+    border-top: 1px solid #c6c6c6;
+    margin-bottom: 30px;
+}
+table tr {
+    border: 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+table th,
+table td {
+    height: 30px;
+}
+table th {
+    border: 0;
+    background-color: #2D3D4D;
+    color: #fff;
+}
+table td {
+    border: 0;
+}
+table td input:read-only {
+    border: 0;
+}
+
+/* 페이지네이션 */
+.pagination {
+    text-align: center;
+}
+.pagination > div {
+    display: inline-block;
+}
+.pagination a {
+    float: left;
+    padding: 6px;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+.pagination a.page_active {
+    background-color: #0D0D0D;
+    color: white;
+    border: 1px solid #0D0D0D;
+}
+.pagination a:hover.page_active {
+    background-color: #0052A4;
+    border: 1px solid #0052A4;
+}
+.pagination a:hover:not(.page_active) {
+    background-color: #ddd;
+}
+
+
+
+
+/* ****************** notice_list.html ******************** */
+.notice_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* ****************** notice_detail.html ******************** */
+.notice_detail h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.notice_detail table {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.notice_detail table .notice_title_tr {
+    border-top: 1px solid #c6c6c6;
+}
+.notice_detail table th {
+    height: 40px;
+    background-color: #2D3D4D;
+    color: #fff;
+}
+.notice_detail table td {
+    height: 40px;
+    text-align: left;
+    border-color: #C6C6C6;
+    padding: 10px;
+}
+.notice_detail table .notice_content {
+    height: 200px;
+    overflow: auto;
+    vertical-align: top;
+}
+.notice_detail .btn_box {
+    text-align: right;
+}
+.notice_detail .btn_box a,
+.notice_detail .btn_box button {
+    width: 100px;
+    height: 30px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.notice_detail .btn_box a {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+}
+.notice_detail .btn_box button {
+    margin: 0 10px;
+}
+.notice_detail .btn_box a:hover,
+.notice_detail .btn_box button:hover {
+    background-color: #0052A4;
+}

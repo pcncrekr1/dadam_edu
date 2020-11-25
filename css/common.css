@@ -57,8 +57,11 @@ html, body {
     display: inline-block;
     margin-right: 5px;
 }
-#header .header_top .logout_box .user_name {
+#header .header_top .logout_box .admin_name {
     color: #f90;
+}
+#header .header_top .logout_box .user_name {
+    color: rgb(38, 0, 255);
 }
 /* gnb */
 #header .gnb {
@@ -78,8 +81,10 @@ html, body {
 #header .gnb > ul > li {
     display: inline-block;
     width: calc(100% / 6);
+    height: 50px;
     text-align: center;
     position: relative;
+    background-color: #01114F;
 }
 #header .gnb > ul > li > a {
     display: inline-block;
