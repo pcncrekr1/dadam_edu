@@ -695,6 +695,20 @@ $(function(){
 
 
 
+    // ------------ branch_list.html --------------    
+    // 삭제 텍스트 링크 클릭 시
+    $(".branch_del_link").click(function() { 
+        var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n해당 지사를 삭제하시겠습니까?");
+        if(yes === true) {
+            alert("삭제되었습니다.");
+            window.location.href = "/dadam_edu/html/admin/branch/branch_list.html";
+        }
+        event.preventDefault();
+    });
+
+
+
+
     // ------------ branch_register.html --------------    
     // 사업자등록번호 기호 입력 차단
     $("#branchCorporateNum").keydown(function(e){
@@ -735,7 +749,7 @@ $(function(){
         cityTextBox += '<img src="/dadam_edu/images/del.png">';
         cityTextBox += '</a>';
         cityTextBox += '</div>';
-        $("#addCityBox").append(cityTextBox);
+        $("#cityBox").append(cityTextBox);
         
         // 담당 지역 이미지 x 버튼 클릭시 담당지역 삭제
         $("#cityCloseBtn" + appendNum).click(function (e) { 
@@ -748,26 +762,109 @@ $(function(){
     $("#addCityBtn").click(function() {
         event.stopPropagation();
 
-        var bigCity = $("#cityBigSelect option:selected").val();
+        var bigCity = $("#cityBigSelectBranch option:selected").val();
         var smallCity = $("#branchCityText").val();
 
         if(bigCity === ""){
             alert("시도를 선택하세요.");
             return false;
         }   
-        if(smallCity === ""){
+        if(smallCity === "" && $("#cityBigSelectBranch").val() != "세종특별자치시"){
             alert("시/군/구를 입력하세요.");
             return false;
         }
         
-        var cityName = bigCity + " " + smallCity;
-        var appendNum = $("#addCityBox").children().length + 1;
+        var cityName = "";
+        if($("#cityBigSelectBranch").val() == "세종특별자치시") {
+            cityName = bigCity;    
+        } else {
+            cityName = bigCity + " " + smallCity;
+        }
+        var appendNum = $("#cityBox").children().length + 1;
+
+        makeCityText(appendNum, cityName);
+    });
+
+    // 시/도 선택 박스 초기화
+    $("#cityBigSelectBranch").each(function() {
+        var $selsido = $(this);
+        $.each(eval(area0), function() {
+            if(this == "::시도::"){
+                $selsido.append("<option value=''>" + this + "</option>");
+            } else {
+                $selsido.append("<option value='" + this + "'>" + this + "</option>");
+            }
+        });
+        $selsido.next().append("<option value=''>::시군구::</option>");
+    });
+
+    // 시/도 선택시 시/군/구 입력 텍스트박스 활성화/비활성화
+    $("#cityBigSelectBranch").change(function() {
+        if($(this).val() == "세종특별자치시") {
+            $(this).next().attr("disabled", true);
+        } else {
+            $(this).next().attr("disabled", false);
+        }
+    });
+
+
+
+
+    // ------------ branch_edit.html --------------
+    // 담당 지역 이미지 x 버튼 클릭시 담당지역 삭제
+    $("#cityCloseBtn1").click(function (e) { 
+        $(this).parent("#cityDiv1").remove();
+        
+        e.preventDefault();
+    });
+    $("#cityCloseBtn2").click(function (e) { 
+        $(this).parent("#cityDiv2").remove();
+        
+        e.preventDefault();
+    });
+
+    $("#editCityBtn").click(function() {
+        event.stopPropagation();
+
+        var bigCity = $("#cityBigSelectBranch option:selected").val();
+        var smallCity = $("#branchCityText").val();
+
+        if(bigCity === ""){
+            alert("시도를 선택하세요.");
+            return false;
+        }   
+        if(smallCity === "" && $("#cityBigSelectBranch").val() != "세종특별자치시"){
+            alert("시/군/구를 입력하세요.");
+            return false;
+        }
+        
+        var cityName = "";
+        if($("#cityBigSelectBranch").val() == "세종특별자치시") {
+            cityName = bigCity;    
+        } else {
+            cityName = bigCity + " " + smallCity;
+        }
+        var appendNum = $("#cityBox").children().length + 1;
 
         makeCityText(appendNum, cityName);
     });
 
 
 
+    // ------------ branch_sales_list.html --------------
+    // 우선 오늘 날짜로 셋팅하기
+    $("#branchSalesDate1").val(full_today);
+    $("#branchSalesDate2").val(full_today);
+    
+    $("#branchSalesMonth1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInput(30, 0, "#branchSalesDate1", "#branchSalesDate2");      
+    });
+    $("#branchSalesMonth3Btn").click(function(){  // 3개월 전
+        dateInput(90, 0, "#branchSalesDate1", "#branchSalesDate2");      
+    });
+    $("#branchSalesMonth6Btn").click(function(){  // 6개월 전
+        dateInput(180, 0, "#branchSalesDate1", "#branchSalesDate2");      
+    });
 
 
 

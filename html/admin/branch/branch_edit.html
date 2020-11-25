@@ -1,0 +1,215 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.25 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/admin.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="branch_edit">
+                <h2>지사 정보 수정</h2>
+
+                <form action="branch_list.html" class="branch_edit_form" id="branchEditForm">
+                    <table>
+                        <tr>
+                            <th>사업자등록번호</th>
+                            <td><input type="number" name="branch_corporate_num" min="0" value="4258701378" id="branchCorporateNum" readonly></td>
+                        </tr>
+                        <tr>
+                            <th>대표자</th>
+                            <td><input type="text" name="branch_representative_text" value="임진우"></td>
+                        </tr>
+                        <tr>
+                            <th>지사명</th>
+                            <td><input type="text" name="branch_name_text" value="EOV"></td>
+                        </tr>
+                        <tr>
+                            <th>등록형태</th>
+                            <td>
+                                <div class="radio_form_group">
+                                    <input type="radio" name="branch_edit_radio" value="corporation_radio" id="corporationRadio" checked>
+                                    <label for="corporationRadio"> 법인</label>
+                                    <input type="radio" name="branch_edit_radio" value="tax_free_radio" id="taxFreeRadio">
+                                    <label for="taxFreeRadio"> 면세</label>
+                                    <input type="radio" name="branch_edit_radio" value="vat_radio" id="vatRadio">
+                                    <label for="vatRadio"> 부가세</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>전화번호</th>
+                            <td>
+                                <input type="number" name="branch_phone_num1" min="0" value="031" class="branch_phone_num"> - 
+                                <input type="number" name="branch_phone_num2" min="0" value="223" class="branch_phone_num"> - 
+                                <input type="number" name="branch_phone_num3" min="0" value="1234" class="branch_phone_num">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>핸드폰 번호</th>
+                            <td>
+                                <input type="number" name="branch_mobile_num1" min="0" value="010" class="branch_mobile_num"> - 
+                                <input type="number" name="branch_mobile_num2" min="0" value="1234" class="branch_mobile_num"> - 
+                                <input type="number" name="branch_mobile_num3" min="0" value="1212" class="branch_mobile_num">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td>
+                                <input type="text" name="branch_email_text1" value="asdf1234"> @ <input type="text" name="branch_email_text2" value="naver.com" id="branchEmailText">
+                                <select name="branch_email_select" id="branchEmailSelect">
+                                    <option value="1">직접입력</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                    <option value="empas.com">empas.com</option>
+                                    <option value="dreamwiz.com">dreamwiz.com</option>
+                                    <option value="freechal.com">freechal.com</option>
+                                    <option value="lycos.co.kr">lycos.co.kr</option>
+                                    <option value="korea.com">korea.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="hanmir.com">hanmir.com</option>
+                                    <option value="paran.com">paran.com</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>우편번호</th>
+                            <td>
+                                <input type="number" name="branch_postcode_num" value="13607" class="branch_postcode_num" id="branchPostcodeNum" readonly>
+                                <button type="button" id="branchPostcodeBtn">우편번호 찾기</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td><input type="text" name="branch_address_text1" value="경기도 성남시 분당구 내정로54" class="branch_address_text1" id="branchAddressText1" readonly></td>
+                        </tr>
+                        <tr>
+                            <th>상세주소</th>
+                            <td><input type="text" name="branch_address_text2" value="234 6층" class="branch_address_text2"></td>
+                        </tr>
+                        <tr>
+                            <th>담당 지역</th>
+                            <td>
+                                <select name="city_big_select" id="cityBigSelectBranch"></select>
+                                <input type="text" name="branch_city_text" class="branch_city_text" id="branchCityText"> (시/군/구)
+                                <button type="button" class="city_btn" id="editCityBtn">추가<span>+</span></button>
+                                <div id="cityBox">
+                                    <div class="city_div" id="cityDiv1">
+                                        <span>서울특별시 강남구</span>
+                                        <input type="hidden" name="city_name1" value="서울특별시 강남구">
+                                        <a href="#" id="cityCloseBtn1">
+                                            <img src="/dadam_edu/images/del.png">
+                                        </a>
+                                    </div>
+                                    <div class="city_div" id="cityDiv2">
+                                        <span>경기도 성남시</span>
+                                        <input type="hidden" name="city_name2" value="경기도 성남시">
+                                        <a href="#" id="cityCloseBtn2">
+                                            <img src="/dadam_edu/images/del.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주문 가능 상품</th>
+                            <td>
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check1" id="goodsGroupCheck1" checked>
+                                        <label for="goodsGroupCheck1"> 상품군1</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check2" id="goodsGroupCheck2" checked>
+                                        <label for="goodsGroupCheck2"> 상품군2</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check3" id="goodsGroupCheck3" checked>
+                                        <label for="goodsGroupCheck3"> 상품군3</label>
+                                    </div>
+                                </div>
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check4" id="goodsGroupCheck4" checked>
+                                        <label for="goodsGroupCheck4"> 상품군4</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check5" id="goodsGroupCheck5" checked>
+                                        <label for="goodsGroupCheck5"> 상품군5</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check6" id="goodsGroupCheck6" checked>
+                                        <label for="goodsGroupCheck6"> 상품군6</label>
+                                    </div>
+                                </div>
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check7" id="goodsGroupCheck7" checked>
+                                        <label for="goodsGroupCheck7"> 상품군7</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check8" id="goodsGroupCheck8" checked>
+                                        <label for="goodsGroupCheck8"> 상품군8</label>
+                                    </div>
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check9" id="goodsGroupCheck9" checked>
+                                        <label for="goodsGroupCheck9"> 상품군9</label>
+                                    </div>
+                                </div>
+                                <div class="check_form_group">
+                                    <div class="check_group">
+                                        <input type="checkbox" name="goods_group_check" value="goods_group_check10" id="goodsGroupCheck10" checked>
+                                        <label for="goodsGroupCheck10"> 상품군10</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="edit_btn_box">
+                        <input type="submit" value="수정">
+                        <a href="branch_list.html">취소</a>
+                    </div>
+                </form>
+                
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 다음에서 제공하는 우편번호 찾기 JS -->
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/header.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/left_menu_branch.html");
+        });
+    </script>
+    <script src="/dadam_edu/js/admin.js"></script>
+
+</body>
+</html>

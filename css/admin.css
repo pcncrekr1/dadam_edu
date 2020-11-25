@@ -1312,7 +1312,7 @@ table td input:read-only {
     width: 100%;
 }
 /* 담당지역 추가 버튼 */
-.branch_regist_form table td .add_city_btn {
+table td .city_btn {
     display: inline-block;
     background-color: #ccc;
     border: 0;
@@ -1323,7 +1323,7 @@ table td input:read-only {
     margin-left: 20px;
     padding: 2px 5px;
 }
-.branch_regist_form table td .add_city_btn span {
+table td .city_btn span {
     font-size: 1.8rem;
     color: rgb(65, 214, 65);
     vertical-align: middle;
@@ -1383,6 +1383,161 @@ table td input:read-only {
     height: 100%;
 }
 
+
+
+
+/* ****************** branch_edit.html ******************** */
+.branch_edit h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.branch_edit_form table th,
+.branch_edit_form table td {
+    height: 40px;
+}
+.branch_edit_form table th {
+    width: 150px;
+}
+.branch_edit_form table td {
+    text-align: left;
+    padding: 5px;
+}
+.branch_edit_form table td #branchCorporateNum {
+    border: 0;
+}
+.branch_edit_form table td input,
+.branch_edit_form table td select {
+    height: 30px;
+    outline: none;
+}
+.branch_edit_form table td input {
+    width: 20%;
+}
+.branch_edit_form table td select {
+    width: 20%;
+}
+.branch_edit_form table td input[type="radio"],
+.branch_edit_form table td input[type="radio"] + label, 
+.branch_edit_form table td input[type="checkbox"], 
+.branch_edit_form table td input[type="checkbox"] + label {
+    width: auto;
+    height: auto;
+}
+.branch_edit_form table td input[type="radio"] + label {
+    margin-right: 20px;
+}
+.branch_edit_form table td .branch_phone_num,
+.branch_edit_form table td .branch_mobile_num {
+    width: 8%;
+}
+.branch_edit_form table td select {
+    vertical-align: middle;
+}
+.branch_edit_form table td #branchPostcodeBtn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.branch_edit_form table td .branch_address_text1,
+.branch_edit_form table td .branch_address_text2 {
+    width: 100%;
+}
+/* 주문 가능 상품 체크박스들 */
+.branch_edit_form table td .check_form_group {
+    width: 100%;
+    height: 30px;
+}
+.branch_edit_form table td .check_group {
+    display: inline-block;
+    width: 33%;
+    height: auto;
+}
+/* 하단 버튼 */
+.branch_edit_form .edit_btn_box {
+    text-align: center;
+}
+.branch_edit_form .edit_btn_box input,
+.branch_edit_form .edit_btn_box a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.branch_edit_form .edit_btn_box input:hover,
+.branch_edit_form .edit_btn_box a:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
+/* readonly 테두리 보이게 */
+.branch_edit_form table td input:read-only {
+    border: 1px solid #000;
+}
+
+
+
+
+/* ****************** branch_sales_list.html ******************** */
+.branch_sales_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 상단 검색창 */
+.search_form .search_left_box .form_group #branchSalesDate1,
+.search_form .search_left_box .form_group #branchSalesDate2 {
+    width: 20%;
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .branch_search_text {
+    width: calc(85% - 8px);
+    height: 30px;
+    vertical-align: top;
+    outline: none;
+}
+.search_form .search_left_box .form_group .month_btn_box {
+    display: inline-block;
+    width: 30%;
+}
+.search_form .search_left_box .form_group .month_btn_box button {
+    display: inline-block;
+    width: 32%;
+    height: 30px;
+    border: 1px solid #000;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.branch_sales_list table {
+    table-layout: auto;
+}
+
+/* 표 위 총 개수, 버튼들 */
+.table_title_box .btn_box #branchSalesExcel {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.table_title_box .btn_box #branchSalesExcel:hover {
+    background-color: #0052A4;
+    color: #fff;
+} 
+/* 구분선 없애기 */
+.branch_sales_list .table_title_box .table_title span:first-child::after {
+    display: none;
+}
 
 
 
