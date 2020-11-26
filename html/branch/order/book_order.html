@@ -21,10 +21,10 @@
         <main id="main" class="clearfix">
             <div id="sidebar"></div>
 
-            <div id="mainBox" class="goods_manage_list">
+            <div id="mainBox" class="book_order_list">
                 <h2>교재주문</h2>
 
-                <table>
+                <table class="big_table">
                     <tbody>
                         <tr>
                             <th>거래원 명</th>
@@ -72,6 +72,24 @@
                             <td>
                                 <select name="goods_step_select" id="goodsStepSelect">
                                     <option value="">단계를 선택해 주세요.</option>
+                                    <option value="1단계">1단계</option>
+                                    <option value="2단계">2단계</option>
+                                    <option value="3단계">3단계</option>
+                                    <option value="4단계">4단계</option>
+                                    <option value="5단계">5단계</option>
+                                    <option value="6단계">6단계</option>
+                                    <option value="7단계">7단계</option>
+                                    <option value="8단계">8단계</option>
+                                    <option value="9단계">9단계</option>
+                                    <option value="10단계">10단계</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>호수</th>
+                            <td>
+                                <select name="goods_num_select" id="goodsNumSelect">
+                                    <option value="">호수를 선택해 주세요.</option>
                                     <option value="1호 베이비드럼">1호 베이비드럼</option>
                                     <option value="2호 도형마차">2호 도형마차</option>
                                     <option value="3호 롤리팝드럼">3호 롤리팝드럼</option>
@@ -94,77 +112,35 @@
                     </div>
                 </div>
 
-                <table>
+                <table class="blue_table">
                     <thead>
                         <tr>
-                            <th><input type="checkbox" name="goods_manage_check" id="goodsManageCheckAll"></th>
-                            <th>NO.</th>
-                            <th>수정</th>
+                            <th><input type="checkbox" name="book_order_check" id="bookOrderCheckAll"></th>
+                            <th>거래원</th>
                             <th>상품군</th>
-                            <th>상품코드</th>
                             <th>상품명</th>
-                            <th>규격1</th>
-                            <th>규격2</th>
+                            <th>단계</th>
+                            <th>호수</th>
                             <th>단가</th>
-                            <th>재고수량</th>
-                            <th>상품상태</th>
+                            <th>수량</th>
+                            <th>소계</th>
+                            <th>취소</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="goods_manage_check" id="goodsManageCheck1"></td>
-                            <td>3</td>
-                            <td><a href="goods_info.html" class="goods_edit_link">수정</a></td>
-                            <td>상품군1</td>
-                            <td>342525</td>
-                            <td>다담A</td>
-                            <td>1단계</td>
-                            <td>2호</td>
-                            <td>9,000원</td>
-                            <td>500</td>
-                            <td>보유</td>
+                            <td colspan="10" class="empty_td">주문한 상품이 없습니다.</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="goods_manage_check" id="goodsManageCheck2"></td>
-                            <td>2</td>
-                            <td><a href="goods_info.html" class="goods_edit_link">수정</a></td>
-                            <td>상품군2</td>
-                            <td>342626</td>
-                            <td>다담B</td>
-                            <td></td>
-                            <td></td>
-                            <td>4,500원</td>
-                            <td>990</td>
-                            <td>보유</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="goods_manage_check" id="goodsManageCheck3"></td>
-                            <td>1</td>
-                            <td><a href="goods_info.html" class="goods_edit_link">수정</a></td>
-                            <td>상품군5</td>
-                            <td>342828</td>
-                            <td>다담C</td>
-                            <td></td>
-                            <td></td>
-                            <td>4,000원</td>
-                            <td>1000</td>
-                            <td>보유</td>
+                            <td colspan="6" class="total_text_td">합계</td>
+                            <td colspan="4" class="total_td">0원</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <!-- pagenation -->
-                <div class="pagination">
-                    <div class="clearfix">
-                        <a href="#">&laquo;</a>
-                        <a href="#" class="page_active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">6</a>
-                        <a href="#">&raquo;</a>
-                    </div>
+                <div class="under_btn_box">
+                    <a href="shopping_basket.html" class="basket_btn">장바구니 담기</a>
+                    <a href="shopping_basket.html">바로 주문하기</a>
                 </div>
             </div>
         </main>

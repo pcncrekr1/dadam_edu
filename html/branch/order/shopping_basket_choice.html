@@ -1,0 +1,132 @@
+<!-- 작성자: 윤혜진 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/branch.css">
+
+</head>
+<body>
+
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="shopping_basket_choice">
+                <h2>장바구니</h2>
+
+                <div class="table_title_box">
+                    <div class="table_title">
+                        <span>주문 정보</span>
+                    </div>
+                </div>
+                <table class="white_table">
+                    <tbody>
+                        <tr>
+                           <th>주문하시는 분</th>
+                           <td>EOV</td>
+                        </tr>
+                        <tr>
+                            <th>휴대전화</th>
+                            <td>010-1234-1234</td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td>경기도 성남시 분당구 내정로54 234 6층</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table_title_box">
+                    <div class="table_title">
+                        <span>배송 정보</span>
+                    </div>
+                </div>
+                <table class="white_table">
+                    <tbody>
+                        <tr>
+                           <th class="order_group_th">[주문1]</th>
+                           <td colspan="3">라온유치원</td>
+                        </tr>
+                        <tr>
+                            <th>배송지 선택</th>
+                            <td colspan="3" class="radio_td">
+                                <span>
+                                    <input type="radio" name="destination_radio" value="branch" id="destinationBranchRadio" checked>
+                                    <label for="destinationBranchRadio">지사</label>
+                                </span>
+                                <span>
+                                    <input type="radio" name="destination_radio" value="branch" id="destinationCustomerRadio">
+                                    <label for="destinationCustomerRadio">거래원</label>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="3" class="address_rowspan">주소</th>
+                            <td colspan="3">
+                                <input type="number" name="branch_postcode_num" value="13607" class="branch_postcode_num" id="branchPostcodeNum" readonly>
+                                <button type="button" class="branch_postcode_btn" id="branchPostcodeBtn">우편번호 찾기</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input type="text" name="branch_address_text1" value="경기도 성남시 분당구 내정로54" class="branch_address_text1" id="branchAddressText1" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input type="text" name="branch_address_text2" value="234 6층" class="branch_address_text2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수취인 전화번호</th>
+                            <td colspan="3">010-6565-6565</td>
+                        </tr>
+                        <tr>
+                            <th>결제예정금액</th>
+                            <td class="cost">42,000원</td>
+                            <th>배송비</th>
+                            <td class="charge">3,600원</td>
+                        </tr>
+                        <tr>
+                            <th class="total_cost_th">총 합계</th>
+                            <td colspan="3" class="total_cost">45,600원</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="under_btn_box">
+                    <a href="#" class="order_request_btn" id="orderRequestBtn">주문요청</a>
+                    <a href="#" id="orderCancelBtn">취소</a>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/branch/header_branch.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html");  
+            $("#sidebar").load("/dadam_edu/html/common/branch/left_menu_order.html");  
+        });
+    </script>
+    <script src="/dadam_edu/js/branch.js"></script>
+
+</body>
+</html>

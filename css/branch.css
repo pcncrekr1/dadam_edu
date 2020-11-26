@@ -1,6 +1,7 @@
-/* 작성자: 윤혜진, 작성일: 2020.11.25 */
+/* 작성자: 윤혜진, 작성일: 2020.11.26 */
 @charset "utf-8";
 
+/* ********************** 공통영역 ********************** */
 #wrap {
     width: 100%;
     position: relative;
@@ -68,6 +69,138 @@ table td input:read-only {
     padding: 5px;
 }
 
+/* thead가 파란색인 테이블(리스트) */
+.blue_table {
+    width: 100%;
+    text-align: center;
+    border: 0;
+    border-top: 1px solid #c6c6c6;
+    margin-bottom: 30px;
+}
+.blue_table tr {
+    border: 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+.blue_table th,
+.blue_table td {
+    height: 30px;
+    border: 0;
+}
+.blue_table th {
+    background-color: #005DBA;
+    color: #fff;
+}
+.blue_table td input:read-only {
+    border: 0;
+}
+/* 주문한 상품이 없을 때 */
+.blue_table .empty_td {
+    height: 100px;
+}
+.blue_table .total_text_td,
+.blue_table .total_td {
+    font-weight: bold;
+}
+.blue_table .total_td {
+    border-left: 1px solid #c6c6c6;
+    text-align: right;
+}
+/* 넘버박스, x버튼 */
+.blue_table input[type="number"] {
+    width: 50px;
+    outline: none;
+}
+.blue_table td a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.blue_table td a img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 배경색이 흰색인 테이블 */
+.white_table {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #000;
+    margin-bottom: 30px;
+}
+.white_table tr {
+    border: 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+.white_table tr:last-child {
+    border: 0;
+    border-bottom: 1px solid #000;
+}
+.white_table th,
+.white_table td {
+    height: 40px;
+    border: 0;
+    text-align: left;
+}
+.white_table th {
+    width: 150px;
+    border-right: 1px solid #c6c6c6;
+    background-color: #fff;
+    color: #000;
+    font-weight: normal;
+    padding-left: 10px;
+}
+.white_table .order_group_th {
+    border-right: 0;
+}
+.white_table .address_rowspan {
+    vertical-align: top;
+    padding-top: 10px;
+}
+.white_table td {
+    padding: 5px;
+}
+.white_table .radio_td span:first-child {
+    margin-right: 30px;
+}
+.white_table .cost,
+.white_table .charge,
+.white_table .total_cost {
+    text-align: right;
+}
+.white_table .cost {
+    border-right: 1px solid #c6c6c6;
+}
+.white_table .total_cost,
+.white_table .total_cost_th {
+    font-weight: bold;
+}
+.white_table td input {
+    height: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.white_table td input:read-only {
+    border: 1px solid #ccc;
+}
+.white_table .branch_postcode_num {
+    width: 20%;
+}
+.white_table .branch_postcode_btn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.white_table .branch_address_text1,
+.white_table .branch_address_text2 {
+    width: 60%;
+}
+
 /* 페이지네이션 */
 .pagination {
     text-align: center;
@@ -112,13 +245,77 @@ table td input:read-only {
     color: #fff;
     vertical-align: middle;
 }
+.under_btn_box .basket_btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
 .under_btn_box a:hover,
 .under_btn_box button:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
+
+/* 표 위 총 개수, 버튼들 */
+.table_title_box {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.table_title_box .table_title {
+    float: left;
+    height: 100%;
+    line-height: 30px;
+}
+.table_title_box .table_title span:first-child {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+.table_title_box .table_title span:first-child::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: #000;
+    position: absolute;
+    top: 5px;
+    right: -12px;
+}
+.table_title_box .table_title span:last-child {
+    font-weight: bold;
+}
+.table_title_box .btn_box {
+    float: right;
+    height: 100%;
+    line-height: 30px;
+}
+.table_title_box .btn_box button,
+.table_title_box .btn_box a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background-color: #0D0D0D;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    margin-left: 10px;
+}
+.table_title_box .btn_box button:hover,
+.table_title_box .btn_box a:hover {
     background-color: #0052A4;
 }
 
 
 
+
+
+
+
+
+/* ************************** 개별영역 ************************** */
 /* ****************** notice_list.html ******************** */
 .notice_list h2 {
     font-size: 2rem;
@@ -156,10 +353,33 @@ table td input:read-only {
 
 
 /* ****************** book_order.html ******************** */
+.book_order_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.book_order_list .big_table td {
+    padding: 0 5px;
+}
+.book_order_list .big_table select {
+    width: 30%;
+    height: 30px;
+    outline: 0;
+    vertical-align: middle;
+}
+.book_order_list .under_btn_box a:first-child {
+    margin-right: 10px;
+}
+/* 구분선 없애기 */
+.book_order_list .table_title_box .table_title span:first-child::after {
+    display: none;
+}
+
 
 
 
 /* ****************** a_s_request.html ******************** */
+
 
 
 
@@ -171,3 +391,41 @@ table td input:read-only {
 
 
 /* ****************** shopping_basket.html ******************** */
+.shopping_basket h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.shopping_basket .under_btn_box a:first-child {
+    margin-right: 10px;
+    background-color: #7F7F7F;
+    color: #fff;
+}
+
+
+
+
+/* ****************** shopping_basket_choice.html ******************** */
+.shopping_basket_choice h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 구분선 없애기 */
+.shopping_basket_choice .table_title_box .table_title span:first-child::after {
+    display: none;
+}
+/* 하단 버튼 */
+.shopping_basket_choice .under_btn_box a:first-child {
+    margin-right: 10px;
+}
+.shopping_basket_choice .under_btn_box a:last-child {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    margin-right: 10px;
+}
+.shopping_basket_choice .under_btn_box a:last-child:hover {
+    background-color: #0052A4;
+    color: #fff;
+    border: 0;
+    margin-right: 10px;
+}
