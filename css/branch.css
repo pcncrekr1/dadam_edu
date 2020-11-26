@@ -32,17 +32,40 @@ table tr {
 table th,
 table td {
     height: 30px;
+    border: 0;
 }
 table th {
-    border: 0;
     background-color: #2D3D4D;
     color: #fff;
 }
-table td {
-    border: 0;
-}
 table td input:read-only {
     border: 0;
+}
+
+/* 높이 긴 테이블(리스트) */
+.big_table {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #c6c6c6;
+    margin-bottom: 30px;
+}
+.big_table tr {
+    border: 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+.big_table th,
+.big_table td {
+    border: 0;
+    height: 40px;
+}
+.big_table th {
+    width: 100px;
+    background-color: #2D3D4D;
+    color: #fff;
+}
+.big_table td {
+    text-align: left;
+    padding: 5px;
 }
 
 /* 페이지네이션 */
@@ -71,6 +94,28 @@ table td input:read-only {
     background-color: #ddd;
 }
 
+/* 하단 버튼 */
+.under_btn_box {
+    text-align: center;
+}
+.under_btn_box a,
+.under_btn_box button {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border: 0;
+    outline: none;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.under_btn_box a:hover,
+.under_btn_box button:hover {
+    background-color: #0052A4;
+}
 
 
 
@@ -88,55 +133,23 @@ table td input:read-only {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-.notice_detail table {
-    width: 100%;
+
+.notice_detail .big_table {
     text-align: center;
-    margin-bottom: 30px;
 }
-.notice_detail table .notice_title_tr {
-    border-top: 1px solid #c6c6c6;
-}
-.notice_detail table th {
-    height: 40px;
-    background-color: #2D3D4D;
-    color: #fff;
-}
-.notice_detail table td {
-    height: 40px;
-    text-align: left;
-    border-color: #C6C6C6;
+.notice_detail .big_table td {
     padding: 10px;
 }
-.notice_detail table .notice_content {
+.notice_detail .big_table .notice_content {
     height: 200px;
     overflow: auto;
     vertical-align: top;
 }
-.notice_detail .btn_box {
+.notice_detail .under_btn_box {
     text-align: right;
 }
-.notice_detail .btn_box a,
-.notice_detail .btn_box button {
-    width: 100px;
-    height: 30px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    background-color: #0D0D0D;
-    color: #fff;
-    vertical-align: middle;
-}
-.notice_detail .btn_box a {
-    display: inline-block;
-    line-height: 30px;
-    text-align: center;
-}
-.notice_detail .btn_box button {
+.notice_detail .under_btn_box button {
     margin: 0 10px;
-}
-.notice_detail .btn_box a:hover,
-.notice_detail .btn_box button:hover {
-    background-color: #0052A4;
 }
 
 
