@@ -370,6 +370,9 @@ table td input:read-only {
 .book_order_list .under_btn_box a:first-child {
     margin-right: 10px;
 }
+.book_order_list .under_btn_box a:first-child:hover {
+    border: 0;
+}
 /* 구분선 없애기 */
 .book_order_list .table_title_box .table_title span:first-child::after {
     display: none;

@@ -90,16 +90,16 @@
                             <td>
                                 <select name="goods_num_select" id="goodsNumSelect">
                                     <option value="">호수를 선택해 주세요.</option>
-                                    <option value="1호 베이비드럼">1호 베이비드럼</option>
-                                    <option value="2호 도형마차">2호 도형마차</option>
-                                    <option value="3호 롤리팝드럼">3호 롤리팝드럼</option>
-                                    <option value="4호 나무마라카스">4호 나무마라카스</option>
-                                    <option value="5호 쉐이커귀로">5호 쉐이커귀로</option>
-                                    <option value="6호 우든아고고">6호 우든아고고</option>
-                                    <option value="7호 별똥별처럼">7호 별똥별처럼</option>
-                                    <option value="8호 브루노와 100명의 친구들">8호 브루노와 100명의 친구들</option>
-                                    <option value="9호 비트가 이상해">9호 비트가 이상해</option>
-                                    <option value="10호 닿지않게 조심조심">10호 닿지않게 조심조심</option>
+                                    <option value="1호">1호 베이비드럼</option>
+                                    <option value="2호">2호 도형마차</option>
+                                    <option value="3호">3호 롤리팝드럼</option>
+                                    <option value="4호">4호 나무마라카스</option>
+                                    <option value="5호">5호 쉐이커귀로</option>
+                                    <option value="6호">6호 우든아고고</option>
+                                    <option value="7호">7호 별똥별처럼</option>
+                                    <option value="8호">8호 브루노와 100명의 친구들</option>
+                                    <option value="9호">9호 비트가 이상해</option>
+                                    <option value="10호">10호 닿지않게 조심조심</option>
                                 </select>
                             </td>
                         </tr>
@@ -127,20 +127,22 @@
                             <th>취소</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody id="bookOrderEmptyTbody">
+                        <tr id="bookOrderEmptyTr">
                             <td colspan="10" class="empty_td">주문한 상품이 없습니다.</td>
                         </tr>
+                    </tbody>
+                    <tfoot>
                         <tr>
                             <td colspan="6" class="total_text_td">합계</td>
-                            <td colspan="4" class="total_td">0원</td>
+                            <td colspan="4" class="total_td" id="bookPriceAll">0원</td>
                         </tr>
-                    </tbody>
+                    </tfoot>
                 </table>
 
                 <div class="under_btn_box">
                     <a href="shopping_basket.html" class="basket_btn">장바구니 담기</a>
-                    <a href="shopping_basket.html">바로 주문하기</a>
+                    <a href="shopping_basket_all.html">바로 주문하기</a>
                 </div>
             </div>
         </main>
