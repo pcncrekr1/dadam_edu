@@ -21,7 +21,7 @@
         <main id="main" class="clearfix">
             <div id="sidebar"></div>
 
-            <div id="mainBox" class="book_order_list">
+            <div id="mainBox" class="as_request_list">
                 <h2>A/S접수</h2>
 
                 <table class="big_table">
@@ -79,7 +79,7 @@
                 <table class="blue_table">
                     <thead>
                         <tr>
-                            <th><input type="checkbox" name="book_order_check" id="bookOrderCheckAll"></th>
+                            <th><input type="checkbox" name="as_request_check" id="asRequestCheckAll"></th>
                             <th>상품군</th>
                             <th>상품명</th>
                             <th>단계</th>
@@ -93,7 +93,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="book_order_check"></td>
+                            <td><input type="checkbox" name="as_request_check"></td>
                             <td>상품군1</td>
                             <td>다담이A</td>
                             <td>1단계</td>
@@ -110,14 +110,14 @@
                                 </select>
                             </td>
                             <td>
-                                <input type="number" name="as_request_num" id="asRequestNum">
+                                <input type="number" name="as_request_num" min="1" value="1" id="asRequestNum1">
                             </td>
                             <td>
-                                <button type="button" id="asPictureBtn">등록</button>
+                                <button type="button" class="as_picture_btn" id="asPictureBtn1">등록</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="book_order_check"></td>
+                            <td><input type="checkbox" name="as_request_check"></td>
                             <td>상품군1</td>
                             <td>다담이B</td>
                             <td>1단계</td>
@@ -125,7 +125,7 @@
                             <td>2</td>
                             <td>9,000원</td>
                             <td>
-                                <select name="as_reason_select1" id="asReasonSelect1">
+                                <select name="as_reason_select1" id="asReasonSelect2">
                                     <option value="">선택해 주세요.</option>
                                     <option value="불량">불량</option>
                                     <option value="누락">누락</option>
@@ -134,14 +134,14 @@
                                 </select>
                             </td>
                             <td>
-                                <input type="number" name="as_request_num" id="asRequestNum">
+                                <input type="number" name="as_request_num" min="1" value="1" id="asRequestNum2">
                             </td>
                             <td>
-                                <button type="button" id="asPictureBtn">등록</button>
+                                <button type="button" class="as_picture_btn" id="asPictureBtn2">등록</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="book_order_check"></td>
+                            <td><input type="checkbox" name="as_request_check"></td>
                             <td>상품군1</td>
                             <td>다담이A</td>
                             <td>1단계</td>
@@ -149,7 +149,7 @@
                             <td>3</td>
                             <td>8,000원</td>
                             <td>
-                                <select name="as_reason_select1" id="asReasonSelect1">
+                                <select name="as_reason_select1" id="asReasonSelect3">
                                     <option value="">선택해 주세요.</option>
                                     <option value="불량">불량</option>
                                     <option value="누락">누락</option>
@@ -158,17 +158,17 @@
                                 </select>
                             </td>
                             <td>
-                                <input type="number" name="as_request_num" id="asRequestNum">
+                                <input type="number" name="as_request_num" min="1" value="1" id="asRequestNum3">
                             </td>
                             <td>
-                                <button type="button" id="asPictureBtn">등록</button>
+                                <button type="button" class="as_picture_btn" id="asPictureBtn3">등록</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="under_btn_box">
-                    <a href="shopping_basket.html" class="basket_btn">접수하기</a>
+                    <a href="#" id="asRequestBtn">접수하기</a>
                 </div>
             </div>
         </main>

@@ -19,6 +19,26 @@ $(function(){
         return value;
     }
 
+    // 리스트(테이블) 체크박스 컨트롤 함수
+    function checkboxControl(thisObject, checkAll, checkName) {
+        if(thisObject.id === checkAll) { // 리스트 맨 위 체크박스라면
+            if( thisObject.checked === true ) {
+                $("input[name=" + checkName + "]:checkbox").prop("checked", true); // 전체 체크
+            } else if( thisObject.checked === false ) {
+                $("input[name=" + checkName + "]:checkbox").prop("checked", false); // 전체 체크해제
+            }
+        } else { // 개별 체크박스라면
+            if( thisObject.checked === true ) { 
+                // 맨 위 체크박스를 제외한 모든 체크박스가 체크되었다면
+                if($("input:checkbox[name=" + checkName + "]:checked").length === $("input:checkbox[name=" + checkName + "]").length - 1) {
+                    $("#" + checkAll).prop("checked", true); // 맨 위 체크박스 체크
+                }
+            } else if( thisObject.checked === false ) { // 하나라도 체크 해제된 체크박스가 있다면
+                $("#" + checkAll).prop("checked", false); // 맨 위 체크박스 해제
+            }
+        }
+    }
+
     $("#customerSelect").change(function () { // 거래원 명 선택
         // 상품군, 상품명, 단계, 호수 초기화
         $("#goodsGroupSelect").val("").prop("selected", true);
@@ -58,6 +78,7 @@ $(function(){
         
         if($(this).val() !== "") { // 호수 값이 ""가 아니라면
             $("#bookOrderEmptyTr").remove(); // 상품 없을떄의 tr을 지움
+            $("#bookOrderCheckAll").prop("checked", false); // 맨 위 체크박스 해제
 
             var bookOrderRowNum = $("#bookOrderEmptyTbody").children("tr").length + 1;
             // 신규주문 리스트에 추가
@@ -94,22 +115,7 @@ $(function(){
 
     // 신규주문 리스트 체크박스 컨트롤
     $(document).on("change", "input:checkbox[name=book_order_check]", function(){
-        if(this.id === "bookOrderCheckAll") { // 상품군 리스트 맨 위 체크박스라면
-            if( this.checked === true ) {
-                $("input[name=book_order_check]:checkbox").prop("checked", true); // 전체 체크
-            } else if( this.checked === false ) {
-                $("input[name=book_order_check]:checkbox").prop("checked", false); // 전체 체크해제
-            }
-        } else { // 개별 체크박스라면
-            if( this.checked === true ) { 
-                // 맨 위 체크박스를 제외한 모든 체크박스가 체크되었다면
-                if($("input:checkbox[name=book_order_check]:checked").length === $("input:checkbox[name=book_order_check]").length - 1) {
-                    $("#bookOrderCheckAll").prop("checked", true); // 맨 위 체크박스 체크
-                }
-            } else if( this.checked === false ) { // 하나라도 체크 해제된 체크박스가 있다면
-                $("#bookOrderCheckAll").prop("checked", false); // 맨 위 체크박스 해제
-            }
-        }
+        checkboxControl(this, "bookOrderCheckAll", "book_order_check");
     });
 
     // 신규주문 리스트 넘버박스 컨트롤
@@ -154,6 +160,16 @@ $(function(){
             $("#bookOrderEmptyTbody").prepend(tr);
         }
     });
+
+
+
+
+    // ------------ shopping_basket.html --------------
+    // A/S접수 리스트 체크박스 컨트롤
+    $(':checkbox[name=as_request_check]').change(function() {
+        checkboxControl(this, "asRequestCheckAll", "as_request_check");
+    });
+
 
 
 

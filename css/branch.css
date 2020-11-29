@@ -68,6 +68,12 @@ table td input:read-only {
     text-align: left;
     padding: 5px;
 }
+.big_table td select {
+    width: 30%;
+    height: 30px;
+    outline: 0;
+    vertical-align: middle;
+}
 
 /* thead가 파란색인 테이블(리스트) */
 .blue_table {
@@ -105,6 +111,10 @@ table td input:read-only {
     border-left: 1px solid #c6c6c6;
     text-align: right;
 }
+/* 셀렉트박스 */
+.blue_table select {
+    outline: none;
+}
 /* 넘버박스, x버튼 */
 .blue_table input[type="number"] {
     width: 50px;
@@ -118,6 +128,20 @@ table td input:read-only {
 .blue_table td a img {
     width: 100%;
     height: 100%;
+}
+/* 텍스트박스 */
+.blue_table input[type="text"] {
+    outline: none;
+}
+/* 사진 등록 버튼 */
+.blue_table td .as_picture_btn {
+    width: 50px;
+    height: 20px;
+    border: 0;
+    outline: 0;
+    background-color: #005DBA;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* 배경색이 흰색인 테이블 */
@@ -360,12 +384,6 @@ table td input:read-only {
 
 .book_order_list .big_table td {
     padding: 0 5px;
-}
-.book_order_list .big_table select {
-    width: 30%;
-    height: 30px;
-    outline: 0;
-    vertical-align: middle;
 }
 .book_order_list .under_btn_box a:first-child {
     margin-right: 10px;

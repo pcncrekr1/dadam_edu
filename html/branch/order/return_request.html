@@ -1,0 +1,166 @@
+<!-- 작성자: 윤혜진, 작성일:2020.11.28 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/branch.css">
+
+</head>
+<body>
+
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="return_request_list">
+                <h2>반품신청</h2>
+
+                <table class="big_table">
+                    <tbody>
+                        <tr>
+                            <th>거래원 명</th>
+                            <td>
+                                <select name="customer_select" id="customerSelect">
+                                    <option value="">거래원을 선택해 주세요.</option>
+                                    <option value="라온유치원">라온유치원</option>
+                                    <option value="라트어린이집">라트어린이집</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>상품군</th>
+                            <td>
+                                <select name="goods_group_select" id="goodsGroupSelect">
+                                    <option value="">상품군을 선택해 주세요.</option>
+                                    <option value="상품군1">상품군1</option>
+                                    <option value="상품군2">상품군2</option>
+                                    <option value="상품군3">상품군3</option>
+                                    <option value="상품군4">상품군4</option>
+                                    <option value="상품군5">상품군5</option>
+                                    <option value="상품군6">상품군6</option>
+                                    <option value="상품군7">상품군7</option>
+                                    <option value="상품군8">상품군8</option>
+                                    <option value="상품군9">상품군9</option>
+                                    <option value="상품군10">상품군10</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>상품명</th>
+                            <td>
+                                <select name="goods_name_select" id="goodsNameSelect">
+                                    <option value="">상품명을 선택해 주세요.</option>
+                                    <option value="다담이A">다담이A</option>
+                                    <option value="다담이B">다담이B</option>
+                                    <option value="다담이C">다담이C</option>
+                                    <option value="다담이D">다담이D</option>
+                                    <option value="다담이E">다담이E</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table_title_box">
+                    <div class="table_title">
+                        <span>반품신청 리스트</span>
+                    </div>
+                </div>
+
+                <table class="blue_table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="return_request_check" id="returnRequestCheckAll"></th>
+                            <th>상품군</th>
+                            <th>상품명</th>
+                            <th>단계</th>
+                            <th>호수</th>
+                            <th>주문수</th>
+                            <th>단가</th>
+                            <th>반품사유</th>
+                            <th>신청수량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="return_request_check"></td>
+                            <td>상품군1</td>
+                            <td>다담이A</td>
+                            <td>1단계</td>
+                            <td>2호</td>
+                            <td>3</td>
+                            <td>8,000원</td>
+                            <td>
+                                <input type="text" name="return_reason_text" id="returnReasonText1">
+                            </td>
+                            <td>
+                                <input type="number" name="return_request_num" min="1" value="1" id="returnRequestNum1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="return_request_check"></td>
+                            <td>상품군1</td>
+                            <td>다담이B</td>
+                            <td>1단계</td>
+                            <td>3호</td>
+                            <td>2</td>
+                            <td>9,000원</td>
+                            <td>
+                                <input type="text" name="return_reason_text" id="returnReasonText2">
+                            </td>
+                            <td>
+                                <input type="number" name="return_request_num" min="1" value="1" id="returnRequestNum2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="return_request_check"></td>
+                            <td>상품군2</td>
+                            <td>누리야수학</td>
+                            <td>2단계</td>
+                            <td>2호</td>
+                            <td>10</td>
+                            <td>10,000원</td>
+                            <td>
+                                <input type="text" name="return_reason_text" id="returnReasonText3">
+                            </td>
+                            <td>
+                                <input type="number" name="return_request_num" min="1" value="1" id="returnRequestNum3">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="under_btn_box">
+                    <a href="#" id="returnRequestBtn">신청하기</a>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/branch/header_branch.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html");  
+            $("#sidebar").load("/dadam_edu/html/common/branch/left_menu_order.html");  
+        });
+    </script>
+    <script src="/dadam_edu/js/branch.js"></script>
+
+</body>
+</html>
