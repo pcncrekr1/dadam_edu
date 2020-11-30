@@ -65,7 +65,7 @@
                                     <label for="destinationBranchRadio">지사</label>
                                 </span>
                                 <span>
-                                    <input type="radio" name="destination_radio" value="branch" id="destinationCustomerRadio">
+                                    <input type="radio" name="destination_radio" value="customer" id="destinationCustomerRadio">
                                     <label for="destinationCustomerRadio">거래원</label>
                                 </span>
                             </td>
@@ -73,18 +73,18 @@
                         <tr>
                             <th rowspan="3" class="address_rowspan">주소</th>
                             <td colspan="3">
-                                <input type="number" name="branch_postcode_num" value="13607" class="branch_postcode_num" id="branchPostcodeNum" readonly>
-                                <button type="button" class="branch_postcode_btn" id="branchPostcodeBtn">우편번호 찾기</button>
+                                <input type="number" name="shop_postcode_num" value="13607" class="shop_postcode_num" id="shopPostcodeNum" readonly>
+                                <button type="button" class="shop_postcode_btn" id="shopPostcodeBtn">우편번호 찾기</button>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3">
-                                <input type="text" name="branch_address_text1" value="경기도 성남시 분당구 내정로54" class="branch_address_text1" id="branchAddressText1" readonly>
+                                <input type="text" name="shop_address_text1" value="경기도 성남시 분당구 내정로54" class="shop_address_text1" id="shopAddressText1" readonly>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3">
-                                <input type="text" name="branch_address_text2" value="234 6층" class="branch_address_text2">
+                                <input type="text" name="shop_address_text2" value="234 6층" class="shop_address_text2" id="shopAddressText2">
                             </td>
                         </tr>
                         <tr>
@@ -106,7 +106,7 @@
 
                 <div class="under_btn_box">
                     <a href="#" class="order_request_btn" id="orderRequestBtn">주문요청</a>
-                    <a href="#" id="orderCancelBtn">취소</a>
+                    <a href="book_order.html" id="orderCancelBtn">취소</a>
                 </div>
             </div>
         </main>
@@ -117,6 +117,9 @@
 
     <!-- jquery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 다음에서 제공하는 우편번호 찾기 JS -->
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
     <!-- My JS -->
     <script>

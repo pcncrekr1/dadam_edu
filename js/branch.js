@@ -1,8 +1,6 @@
 // 작성자: 윤혜진, 작성일: 2020.11.26
 $(function(){
 
-    // ------------ book_order.html --------------
-
     //천단위 콤마, 원 문자 추가 함수
    function addComma(value){
         value = String(value);  // 문자열로 변환
@@ -39,6 +37,54 @@ $(function(){
         }
     }
 
+    // 우편번호 찾기 함수
+    function postCode(postcodeNum, addressText) {
+        new daum.Postcode({
+			oncomplete: function(data) {
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+				// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				var fullAddr = ''; // 최종 주소 변수
+				var extraAddr = ''; // 조합형 주소 변수
+
+				// 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+				if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+					fullAddr = data.roadAddress;
+
+				} else { // 사용자가 지번 주소를 선택했을 경우(J)
+					fullAddr = data.jibunAddress;
+				}
+
+				// 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+				if(data.userSelectedType === 'R'){
+					//법정동명이 있을 경우 추가한다.
+					if(data.bname !== ''){
+						extraAddr += data.bname;
+					}
+					// 건물명이 있을 경우 추가한다.
+					if(data.buildingName !== ''){
+						extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+					}
+					// 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+					fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+				}
+
+				// 우편번호와 주소 정보를 해당 필드에 넣는다.
+				document.getElementById(postcodeNum).value = data.zonecode; //5자리 새우편번호 사용
+				document.getElementById(addressText).value = fullAddr;
+
+				// 커서를 상세주소 필드로 이동한다.
+				// document.getElementById('addr2').focus();
+			}
+		}).open({left: 800, top: 100});
+    }
+
+
+
+
+
+    // ------------ book_order.html --------------
     $("#customerSelect").change(function () { // 거래원 명 선택
         // 상품군, 상품명, 단계, 호수 초기화
         $("#goodsGroupSelect").val("").prop("selected", true);
@@ -191,6 +237,28 @@ $(function(){
         checkboxControl(this, "asRequestCheckAll", "as_request_check");
     });
 
+    // 접수하기 버튼 클릭시
+    $("#asRequestBtn").click(function () { 
+        alert("A/S 접수가 완료되었습니다.");
+        event.preventDefault();
+    });
+
+
+
+
+    // ------------ return_request.html --------------
+    // 반품신청 리스트 체크박스 컨트롤
+    $(':checkbox[name=return_request_check]').change(function() {
+        checkboxControl(this, "returnRequestCheckAll", "return_request_check");
+    });
+
+    // 신청하기 버튼 클릭시
+    $("#returnRequestBtn").click(function () { 
+        alert("반품신청이 완료되었습니다.");
+        event.preventDefault();
+    });
+
+
 
 
 
@@ -251,6 +319,86 @@ $(function(){
         //     tr += '</tr>';
         //     $("#shopBasketTbody").prepend(tr);
         // }
+    });
+
+
+
+
+    
+    // ------------ shopping_basket_choice.html --------------
+    // 라디오버튼 클릭시 주소 변경
+    $("#destinationBranchRadio").click(function(){
+        if ($(this).is(':checked')){
+            $("#shopPostcodeNum").val("13607");
+            $("#shopAddressText1").val("경기도 성남시 분당구 내정로54");
+            $("#shopAddressText2").val("234 6층");
+        }
+    });
+    $("#destinationCustomerRadio").click(function(){
+        if ($(this).is(':checked')){
+            $("#shopPostcodeNum").val("06654");
+            $("#shopAddressText1").val("서울시 서초구 효령로55길 22");
+            $("#shopAddressText2").val("1604호");
+        }
+    });
+
+    // 우편번호 찾기 버튼 클릭시
+    $("#shopPostcodeBtn").click(function() {
+        postCode("shopPostcodeNum", "shopAddressText1");
+    });
+
+    // 주문요청 버튼 클릭시
+    $("#orderRequestBtn").click(function () { 
+        alert("주문 요청이 완료되었습니다.");
+        event.preventDefault();
+    });
+
+
+
+    
+    // ------------ shopping_basket_choice.html --------------
+    $("#destinationBranchRadio1").click(function(){
+        if ($(this).is(':checked')){
+            $("#shopPostcodeNum1").val("13607");
+            $("#shopAddressText3").val("경기도 성남시 분당구 내정로54");
+            $("#shopAddressText4").val("234 6층");
+        }
+    });
+    $("#destinationCustomerRadio1").click(function(){
+        if ($(this).is(':checked')){
+            $("#shopPostcodeNum1").val("06654");
+            $("#shopAddressText3").val("서울시 서초구 효령로55길 22");
+            $("#shopAddressText4").val("1604호");
+        }
+    });
+
+    $("#destinationBranchRadio2").click(function(){
+        if ($(this).is(':checked')){
+            $("#shopPostcodeNum2").val("13607");
+            $("#shopAddressText5").val("경기도 성남시 분당구 내정로54");
+            $("#shopAddressText6").val("234 6층");
+        }
+    });
+    $("#destinationCustomerRadio2").click(function(){
+        if ($(this).is(':checked')){
+            $("#shopPostcodeNum2").val("06654");
+            $("#shopAddressText5").val("서울시 서초구 효령로55길 22");
+            $("#shopAddressText6").val("1604호");
+        }
+    });
+
+    // 우편번호 찾기 버튼 클릭시
+    $("#shopPostcodeBtn2").click(function() {
+        postCode("shopPostcodeNum1", "shopAddressText3");
+    });
+    $("#shopPostcodeBtn3").click(function() {
+        postCode("shopPostcodeNum2", "shopAddressText5");
+    });
+
+    // 주문요청 버튼 클릭시
+    $("#orderRequestBtn1").click(function () { 
+        alert("주문 요청이 완료되었습니다.");
+        event.preventDefault();
     });
 
 });

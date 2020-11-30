@@ -400,13 +400,61 @@ table td input:read-only {
 
 
 /* ****************** a_s_request.html ******************** */
+.as_request_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
+/* 구분선 없애기 */
+.as_request_list .table_title_box .table_title span:first-child::after {
+    display: none;
+}
 
 
 
 
 /* ****************** return_request.html ******************** */
+.return_request_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
+/* 구분선 없애기 */
+.return_request_list .table_title_box .table_title span:first-child::after {
+    display: none;
+}
+
+
+
+
+/* ****************** shopping_basket.html ******************** */
+.shopping_basket h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.shopping_basket_choice .shop_postcode_num {
+    width: 20%;
+}
+.shopping_basket_choice .shop_postcode_btn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.shopping_basket_choice .shop_address_text1,
+.shopping_basket_choice .shop_address_text2 {
+    width: 60%;
+}
+.shopping_basket .under_btn_box a:first-child {
+    margin-right: 10px;
+    background-color: #7F7F7F;
+    color: #fff;
+}
 
 
 
@@ -434,6 +482,25 @@ table td input:read-only {
 .shopping_basket_choice .table_title_box .table_title span:first-child::after {
     display: none;
 }
+/* 우편번호 */
+.shopping_basket_choice .shop_postcode_num {
+    width: 20%;
+}
+.shopping_basket_choice .shop_postcode_btn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.shopping_basket_choice .shop_address_text1,
+.shopping_basket_choice .shop_address_text2 {
+    width: 60%;
+}
 /* 하단 버튼 */
 .shopping_basket_choice .under_btn_box a:first-child {
     margin-right: 10px;
@@ -450,3 +517,52 @@ table td input:read-only {
     border: 0;
     margin-right: 10px;
 }
+
+
+
+
+/* ****************** shopping_basket_all.html ******************** */
+.shopping_basket_all h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 구분선 없애기 */
+.shopping_basket_all .table_title_box .table_title span:first-child::after {
+    display: none;
+}
+/* 우편번호 */
+.shopping_basket_all .shop_postcode_num {
+    width: 20%;
+}
+.shopping_basket_all .shop_postcode_btn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.shopping_basket_all .shop_address_text1,
+.shopping_basket_all .shop_address_text2 {
+    width: 60%;
+}
+/* 하단 버튼 */
+.shopping_basket_all .under_btn_box a:first-child {
+    margin-right: 10px;
+}
+.shopping_basket_all .under_btn_box a:last-child {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    margin-right: 10px;
+}
+.shopping_basket_all .under_btn_box a:last-child:hover {
+    background-color: #0052A4;
+    color: #fff;
+    border: 0;
+    margin-right: 10px;
+}
+
