@@ -27,7 +27,7 @@
                 <table class="blue_table">
                     <thead>
                         <tr>
-                            <th><input type="checkbox" name="book_order_check" id="bookOrderCheckAll"></th>
+                            <th><input type="checkbox" name="shop_basket_check" id="shopBasketCheckAll"></th>
                             <th>거래원</th>
                             <th>상품군</th>
                             <th>상품명</th>
@@ -39,34 +39,34 @@
                             <th>삭제</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="shopBasketTbody">
                         <tr>
-                            <td><input type="checkbox" name="book_order_check"></td>
+                            <td><input type="checkbox" name="shop_basket_check"></td>
                             <td>라온유치원</td>
                             <td>상품군1</td>
                             <td>다담이A</td>
                             <td>1단계</td>
                             <td>2호</td>
                             <td>8,000원</td>
-                            <td><input type="number" name="book_order_num" value="3"></td>
+                            <td><input type="number" name="shop_basket_num" min="1" value="3"></td>
                             <td>24,000원</td>
-                            <td>
+                            <td class="shop_basket_del">
                                 <a href="#">
                                     <img src="/dadam_edu/images/del.png" alt="삭제 버튼">
                                 </a>
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="book_order_check"></td>
+                            <td><input type="checkbox" name="shop_basket_check"></td>
                             <td>라온유치원</td>
                             <td>상품군1</td>
                             <td>다담이B</td>
                             <td>1단계</td>
                             <td>3호</td>
                             <td>9,000원</td>
-                            <td><input type="number" name="book_order_num" value="2"></td>
+                            <td><input type="number" name="shop_basket_num" min="1" value="2"></td>
                             <td>18,000원</td>
-                            <td>
+                            <td class="shop_basket_del">
                                 <a href="#">
                                     <img src="/dadam_edu/images/del.png" alt="삭제 버튼">
                                 </a>
@@ -74,19 +74,19 @@
                         </tr>
                         <tr>
                             <td colspan="6" class="total_text_td">[주문1] 합 계</td>
-                            <td colspan="4" class="total_td">42,000원</td>
+                            <td colspan="4" class="total_td" id="totalTd1">42,000원</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="book_order_check"></td>
+                            <td><input type="checkbox" name="shop_basket_check"></td>
                             <td>라트어린이집</td>
                             <td>상품군2</td>
                             <td>누리야수학</td>
                             <td>2단계</td>
                             <td>2호</td>
                             <td>10,000원</td>
-                            <td><input type="number" name="book_order_num" value="10"></td>
+                            <td><input type="number" name="shop_basket_num" min="1" value="10"></td>
                             <td>100,000원</td>
-                            <td>
+                            <td class="shop_basket_del">
                                 <a href="#">
                                     <img src="/dadam_edu/images/del.png" alt="삭제 버튼">
                                 </a>
@@ -94,14 +94,14 @@
                         </tr>
                         <tr>
                             <td colspan="6" class="total_text_td">[주문2] 합 계</td>
-                            <td colspan="4" class="total_td">100,000원</td>
+                            <td colspan="4" class="total_td" id="totalTd2">100,000원</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="under_btn_box">
-                    <a href="#" class="choice_order_btn" id="choiceOrderBtn">선택 주문하기</a>
-                    <a href="#" id="allOrderBtn">전체 주문하기</a>
+                    <a href="/dadam_edu/html/branch/order/shopping_basket_choice.html" class="choice_order_btn" id="choiceOrderBtn">선택 주문하기</a>
+                    <a href="/dadam_edu/html/branch/order/shopping_basket_all.html" id="allOrderBtn" id="allOrderBtn">전체 주문하기</a>
                 </div>
             </div>
         </main>
