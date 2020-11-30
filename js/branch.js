@@ -401,21 +401,81 @@ $(function(){
     });
 
     // 장바구니 리스트 삭제 버튼 클릭시 행 삭제
-    $(document).on("click", ".shop_basket_del a", function(){
+    $(document).on("click", ".shop_basket_del1 a", function(){
 
         // 합계에서 소계를 뺀 뒤 행을 삭제한다.
-        // var bookPriceAll = removeComma($("#bookPriceAll").text()) - removeComma($(this).parent().prev().text());
-        // $("#bookPriceAll").text(addComma(bookPriceAll));
-        // $(this).parent().parent("tr").remove();
+        var priceAll = removeComma($("#totalTd1").text()) - removeComma($(this).parent().prev().text());
+        $("#totalTd1").text(addComma(priceAll));
+        $(this).parent().parent("tr").remove();
+
+        // 일반행을 다 삭제했으면 합계 행도 삭제한다.
+        if($(".shop_basket_del1 a").length === 0) {
+            $("#shopBasketTr3").remove();
+        }
 
         // tbody에 행이 하나도 없으면 빈 행을 넣어준다.
-        // if($("#shopBasketTbody").children("tr").length === 0){
-        //     var tr = '';
-        //     tr += '<tr id="bookOrderEmptyTr">';
-        //     tr +=   '<td colspan="10" class="empty_td">주문한 상품이 없습니다.</td>';
-        //     tr += '</tr>';
-        //     $("#shopBasketTbody").prepend(tr);
+        if($("#shopBasketTbody").children("tr").length === 0){
+            var tr = '';
+            tr += '<tr id="shopBasketEmptyTr">';
+            tr +=   '<td colspan="10" class="empty_td">장바구니가 비어 있습니다.</td>';
+            tr += '</tr>';
+            $("#shopBasketTbody").prepend(tr);
+        }
+    });
+    // 장바구니 리스트 삭제 버튼 클릭시 행 삭제
+    $(document).on("click", ".shop_basket_del2 a", function(){
+
+        // 합계에서 소계를 뺀 뒤 행을 삭제한다.
+        // var priceAll = removeComma($("#totalTd2").text()) - removeComma($(this).parent().prev().text());
+        // $("#totalTd2").text(addComma(priceAll));
+        
+        // 일반 행과 합계 행을 동시에 삭제
+        $(this).parent().parent("tr").remove();
+        $("#shopBasketTr5").remove();
+
+        // tbody에 행이 하나도 없으면 빈 행을 넣어준다.
+        if($("#shopBasketTbody").children("tr").length === 0){
+            var tr = '';
+            tr += '<tr id="shopBasketEmptyTr">';
+            tr +=   '<td colspan="10" class="empty_td">장바구니가 비어 있습니다.</td>';
+            tr += '</tr>';
+            $("#shopBasketTbody").prepend(tr);
+        }
+    });
+
+    // 장바구니 리스트 넘버박스 컨트롤
+    $(document).on("keyup mouseup", "#shopBasketTbody input[type=number]", function(e){
+        
+        //기호 입력 차단
+        // if(e.type !== "mouseup") {
+        //     if(!((e.keyCode > 95 && e.keyCode < 106)
+        //         || (e.keyCode > 47 && e.keyCode < 58) 
+        //         || e.keyCode == 8)) {
+        //         // 왜 안되는지 분석 필요
+        //         e.preventDefault();
+        //         e.stopPropagation();
+        //         return false;
+        //     }
         // }
+
+        
+        var eachPrice = removeComma($(this).parent().prev().text());
+        var totalPrice = eachPrice * $(this).val();
+
+        // 합계에서 기존 소계를 뺀 뒤 새로운 소계를 더한다.
+        if($(this).parent().parent("tr")[0].id === "shopBasketTr4") {
+            var totalTd2 = removeComma($("#totalTd2").text()) - removeComma($(this).parent().next().text());
+            $("#totalTd2").text(addComma(totalTd2));
+            $(this).parent().next().text(addComma(totalPrice)); // 소계 텍스트 넣기
+            totalTd2 = removeComma($("#totalTd2").text()) + removeComma($(this).parent().next().text());
+            $("#totalTd2").text(addComma(totalTd2));
+        } else {
+            var totalTd1 = removeComma($("#totalTd1").text()) - removeComma($(this).parent().next().text());
+            $("#totalTd1").text(addComma(totalTd1));
+            $(this).parent().next().text(addComma(totalPrice)); // 소계 텍스트 넣기
+            totalTd1 = removeComma($("#totalTd1").text()) + removeComma($(this).parent().next().text());
+            $("#totalTd1").text(addComma(totalTd1));
+        }
     });
 
 
