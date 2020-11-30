@@ -255,7 +255,7 @@ $(function(){
             return false;
         } 
         // 체크박스 전체선택 시 사유가 하나라도 입력이 안 되어 있다면 알럿창 띄움
-        if($("#asRequestCheckAll").is(":checked") == true){
+        else if($("#asRequestCheckAll").is(":checked") == true){ // 체크박스 전체선택이면
             if($("#asReasonSelect1").val() === "" ||
                     $("#asReasonSelect2").val() === "" ||
                     $("#asReasonSelect3").val() === "" ){
@@ -268,6 +268,40 @@ $(function(){
                 ($("#asReasonSelect3").val() !== "" && $("#asPictureFile3").val() === "") ) {
                     alert("사진등록을 모두 완료해 주세요.");
                     return false;
+            }
+        } else { // 체크박스 개별선택이면
+            if($("#asRequestCheck1").is(":checked") == true){
+                if($("#asReasonSelect1").val() === "") {
+                    alert("다담이A의 A/S 사유를 선택해 주세요.");
+                    return false;
+                } else {
+                    if($("#asPictureFile1").val() === "") {
+                        alert("다담이A의 사진을 등록해주세요.");
+                        return false;
+                    }
+                }
+            } 
+            if($("#asRequestCheck2").is(":checked") == true) {
+                if($("#asReasonSelect2").val() === "") {
+                    alert("다담이B의 A/S 사유를 선택해 주세요.");
+                    return false;
+                } else {
+                    if($("#asPictureFile2").val() === "") {
+                        alert("다담이B의 사진을 등록해주세요.");
+                        return false;
+                    }
+                }
+            }
+            if($("#asRequestCheck3").is(":checked") == true) {
+                if($("#asReasonSelect3").val() === "") {
+                    alert("다담이C의 A/S 사유를 선택해 주세요.");
+                    return false;
+                } else {
+                    if($("#asPictureFile3").val() === "") {
+                        alert("다담이C의 사진을 등록해주세요.");
+                        return false;
+                    }
+                }
             }
         }
         alert("A/S 접수가 완료되었습니다.");
@@ -285,6 +319,38 @@ $(function(){
 
     // 신청하기 버튼 클릭시
     $("#returnRequestBtn").click(function () { 
+        if($("input:checkbox[name='return_request_check']:checked").length === 0){
+            alert("상품을 선택해 주세요.");
+            return false;
+        } 
+        // 체크박스 전체선택 시 사유가 하나라도 입력이 안 되어 있다면 알럿창 띄움
+        else if($("#returnRequestCheckAll").is(":checked") == true){ // 체크박스 전체선택이면
+            if($("#returnReasonText1").val() === "" ||
+                    $("#returnReasonText2").val() === "" ||
+                    $("#returnReasonText3").val() === "" ){
+                alert("반품사유를 모두 입력해 주세요.");
+                return false;
+            }
+        } else { // 체크박스 개별선택이면
+            if($("#returnRequestCheck1").is(":checked") == true){
+                if($("#returnReasonText1").val() === "") {
+                    alert("다담이A의 반품 사유를 입력해 주세요.");
+                    return false;
+                }
+            } 
+            if($("#returnRequestCheck2").is(":checked") == true) {
+                if($("#returnReasonText2").val() === "") {
+                    alert("다담이B의 반품 사유를 입력해 주세요.");
+                    return false;
+                }
+            }
+            if($("#returnRequestCheck3").is(":checked") == true) {
+                if($("#returnReasonText3").val() === "") {
+                    alert("누리야수학의 반품 사유를 입력해 주세요.");
+                    return false;
+                }
+            }
+        }
         alert("반품신청이 완료되었습니다.");
         event.preventDefault();
     });
