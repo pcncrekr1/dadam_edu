@@ -133,16 +133,6 @@ table td input:read-only {
 .blue_table input[type="text"] {
     outline: none;
 }
-/* 사진 등록 버튼 */
-.blue_table td .as_picture_btn {
-    width: 50px;
-    height: 20px;
-    border: 0;
-    outline: 0;
-    background-color: #005DBA;
-    color: #fff;
-    cursor: pointer;
-}
 
 /* 배경색이 흰색인 테이블 */
 .white_table {
@@ -403,6 +393,20 @@ table td input:read-only {
 .as_request_list h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+}
+
+/* 사진 등록 버튼 */
+.as_request_list .as_picture_btn {
+    width: 50px;
+    height: 20px;
+    border: 0;
+    outline: 0;
+    background-color: #005DBA;
+    color: #fff;
+    cursor: pointer;
+}
+.as_request_list .as_picture_file {
+    display: none;
 }
 
 /* 구분선 없애기 */

@@ -1,0 +1,192 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.17 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일괄등록</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+
+    <style>
+        html, body {
+            height: 99%;
+            background-color: #cff;
+        }
+        .goods_image_wrap {
+            width: 96%;
+            height: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 2%;
+            background-color: #fff;
+        }
+        #uploadForm {
+            width: 100%;
+            height: 100%;
+            /* height: 420px; */
+            text-align: center;
+        }
+        #uploadForm .table {
+            width: 100%;
+            height: 100%;
+        }
+        .filebox {
+            /* width: 100%; */
+            /* text-align: center; */
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            margin-left: -125px;
+        }
+        .filebox label { 
+            display: inline-block;
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #0af;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+        .filebox input[type="file"] { 
+            /* 파일 필드 숨기기 */ 
+            position: absolute; 
+            width: 1px; 
+            height: 1px; 
+            padding: 0; 
+            margin: -1px; 
+            overflow: hidden; 
+            clip:rect(0,0,0,0); 
+            border: 0; 
+        }
+        .table, 
+        .table tr,
+        #dropZone {
+            border: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="goods_image_wrap">
+        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
+            <table class="table">
+                <tbody id="fileTableTbody">
+                    <tr>
+                        <td id="dropZone">
+                            파일을 여기에 놓으세요.<br>
+                            (Xlsx. Xls.)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+            
+        <div class="filebox">
+            <label for="image_file">내 컴퓨터에서 파일선택</label>
+            <input type="file" accept=".gif,.png,.jpg,.jpeg" id="image_file"/>
+        </div>
+    </div>
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Sheet JS -->
+    <script lang="javascript" src="/dadam_edu/js/xlsx.full.min.js"></script>
+
+    <script>
+        $(function(){
+
+            // 파일 등록
+            function uploadFile(file){
+                if(confirm("등록 하시겠습니까?")){
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // $('#foo').attr('src', e.target.result);
+                        window.close();
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            var uploadSize = 50;            // 등록 가능한 파일 사이즈 MB
+
+            // 파일 선택시
+            function selectFile(files){
+                if(files != null){ // 파일이 있는지 체크
+                    var fileName = files[0].name;                   // 파일 이름
+                    var fileNameArr = fileName.split("\.");
+                    var ext = fileNameArr[fileNameArr.length - 1];  // 확장자
+                    var fileSize = files[0].size / 1024 / 1024;     // 파일 사이즈(단위 :MB)
+
+                    if($.inArray(ext, ['gif','png','jpg','jpeg']) < 0){        // 확장자가 배열에 없으면 -1을 반환
+                        // 확장자 체크
+                        alert("업로드가 불가능한 확장자입니다.\n(업로드 가능 확장자: gif, png, jpg, jpeg)");
+                        return false;
+                    } else if (fileSize > uploadSize){
+                        // 파일 사이즈 체크
+                        alert("업로드가 가능한 용량을 초과하였습니다.\n(업로드 가능 용량 : " + uploadSize + " MB)");
+                        return false;
+                    } else {
+                        uploadFile(files[0]);
+                    }
+                } else {
+                    alert("업로드가 불가능한 파일입니다.");
+                }
+            }
+
+            // 파일 드롭 다운
+            function fileDropDown(){
+                var dropZone = $("#dropZone");
+                
+                //Drag기능 
+                dropZone.on('dragenter',function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    // 드롭다운 영역 css
+                    dropZone.css('background-color','#ACFCFF');
+                });
+                dropZone.on('dragleave',function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    // 드롭다운 영역 css
+                    dropZone.css('background-color','#FFFFFF');
+                });
+                dropZone.on('dragover',function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    // 드롭다운 영역 css
+                    dropZone.css('background-color','#ACFCFF');
+                });
+                dropZone.on('drop',function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    // 드롭다운 영역 css
+                    dropZone.css('background-color','#FFFFFF');
+                    
+                    var files = e.originalEvent.dataTransfer.files;
+                    if(files != null){
+                        if(files.length < 1 || files[0].type === ""){
+                            alert("업로드가 불가능한 파일입니다.");
+                            return;
+                        }
+                        selectFile(files)
+                    } else {
+                        alert("업로드가 불가능합니다.");
+                    }
+                });
+            }
+
+            fileDropDown(); // 파일 드롭 다운
+
+            // 파일 업로드 버튼 클릭 시
+            $("#image_file").change(function() { 
+                selectFile($(this).prop('files'));
+            });
+        });
+    </script>
+</body>
+</html>

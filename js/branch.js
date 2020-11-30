@@ -237,8 +237,39 @@ $(function(){
         checkboxControl(this, "asRequestCheckAll", "as_request_check");
     });
 
+    // 파일등록
+    $("#asPictureBtn1").click(function() {
+        $("#asPictureFile1").click();
+    });
+    $("#asPictureBtn2").click(function() {
+        $("#asPictureFile2").click();
+    });
+    $("#asPictureBtn3").click(function() {
+        $("#asPictureFile3").click();
+    });
+
     // 접수하기 버튼 클릭시
     $("#asRequestBtn").click(function () { 
+        if($("input:checkbox[name='as_request_check']:checked").length === 0){
+            alert("상품을 선택해 주세요.");
+            return false;
+        } 
+        // 체크박스 전체선택 시 사유가 하나라도 입력이 안 되어 있다면 알럿창 띄움
+        if($("#asRequestCheckAll").is(":checked") == true){
+            if($("#asReasonSelect1").val() === "" ||
+                    $("#asReasonSelect2").val() === "" ||
+                    $("#asReasonSelect3").val() === "" ){
+                alert("A/S 사유를 모두 선택해 주세요.");
+                return false;
+            }
+            // AS사유를 입력했지만 사진등록이 안 되어 있는 경우
+            if( ($("#asReasonSelect1").val() !== "" && $("#asPictureFile1").val() === "") ||
+                ($("#asReasonSelect2").val() !== "" && $("#asPictureFile2").val() === "") ||
+                ($("#asReasonSelect3").val() !== "" && $("#asPictureFile3").val() === "") ) {
+                    alert("사진등록을 모두 완료해 주세요.");
+                    return false;
+            }
+        }
         alert("A/S 접수가 완료되었습니다.");
         event.preventDefault();
     });
