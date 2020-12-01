@@ -12,7 +12,21 @@ $(function(){
 
     // 저장 버튼 클릭시 이벤트 발생
     $("#noticeWriteSubmit").click(function(){
+        if($("#noticeTitle").val() === "") {
+            alert("제목을 입력하세요.");
+            return false;
+        }
+        // if($("#noticeContent").val() === "") {
+        //     alert("내용을 입력하세요.");
+        //     return false;
+        // }
+        if(oEditors.getById["noticeContent"].getIR() === "<p><br></p>") {
+            alert("내용을 입력하세요.");
+            return false;
+        }
+
         oEditors.getById["noticeContent"].exec("UPDATE_CONTENTS_FIELD", []);
+
         $("#noticeWriteForm").submit();
     });
 

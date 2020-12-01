@@ -77,6 +77,18 @@ table td input:read-only {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+.main_notice_list .notice_list_title {
+    text-align: left;
+}
+.main_notice_list .notice_list_attach {
+    width: 30px;
+}
+.main_notice_list .notice_list_attach a img {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
 /* 하단 버튼 */
 .main_notice_list .btn_box {
     text-align: right;
