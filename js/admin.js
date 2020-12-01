@@ -1,6 +1,34 @@
 // 작성자: 윤혜진, 작성일: 2020.11.03
 $(function(){
 
+    // ------------ 엑셀파일 다운로드 ------------
+    function s2ab(s) { 
+        var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
+        var view = new Uint8Array(buf);  //create uint8array as viewer
+        for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF; //convert to octet
+        return buf;    
+    }
+
+    function exportExcel(excelHandler){ 
+        // step 1. workbook 생성
+        var wb = XLSX.utils.book_new();
+    
+        // step 2. 시트 만들기 
+        var newWorksheet = excelHandler.getWorksheet();
+        
+        // step 3. workbook에 새로만든 워크시트에 이름을 주고 붙인다.  
+        XLSX.utils.book_append_sheet(wb, newWorksheet, excelHandler.getSheetName());
+    
+        // step 4. 엑셀 파일 만들기 
+        var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
+    
+        // step 5. 엑셀 파일 내보내기 
+        saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), excelHandler.getExcelFileName());
+    }
+
+
+
+
     // ------------ notice_list.html --------------
     // 공지사항 리스트 체크여부 확인 후 삭제
     // 체크된 체크박스가 없으면 알럿창 띄움
@@ -101,6 +129,25 @@ $(function(){
                 alert("삭제되었습니다.");
             }
         } 
+    });
+
+    // 엑셀 다운로드
+    var goodsManageExcelHandler = {
+        getExcelFileName : function(){
+            return 'goods_manage.xlsx';
+        },
+        getSheetName : function(){
+            return '상품 리스트';
+        },
+        getExcelData : function(){
+            return document.getElementById('goodsManageTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#goodsManageExcel").click(function(){
+        exportExcel(goodsManageExcelHandler);
     });
 
 
@@ -412,6 +459,26 @@ $(function(){
     });
 
 
+    // 엑셀 다운로드
+    var goodsRegistExcelHandler = {
+        getExcelFileName : function(){
+            return 'goods_regist.xlsx';
+        },
+        getSheetName : function(){
+            return '상품 리스트';
+        },
+        getExcelData : function(){
+            return document.getElementById('registTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#goodsRegistExcel").click(function(){
+        exportExcel(goodsRegistExcelHandler);
+    });
+
+
 
 
 
@@ -563,6 +630,25 @@ $(function(){
         event.preventDefault();
     });
 
+    // 엑셀 다운로드
+    var customerSalesExcelHandler = {
+        getExcelFileName : function(){
+            return 'customer_sales_list.xlsx';
+        },
+        getSheetName : function(){
+            return '매출 상세내역';
+        },
+        getExcelData : function(){
+            return document.getElementById('customerSalesListTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#customerSalesExcel").click(function(){
+        exportExcel(customerSalesExcelHandler);
+    });
+
 
 
 
@@ -693,6 +779,26 @@ $(function(){
     });
 
 
+    // 엑셀 다운로드
+    var billExcelHandler = {
+        getExcelFileName : function(){
+            return 'bill.xlsx';
+        },
+        getSheetName : function(){
+            return '지사별 매출 내역';
+        },
+        getExcelData : function(){
+            return document.getElementById('billTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#billExcel").click(function(){
+        exportExcel(billExcelHandler);
+    });
+
+
 
 
     // ------------ branch_list.html --------------    
@@ -704,6 +810,26 @@ $(function(){
             window.location.href = "/dadam_edu/html/admin/branch/branch_list.html";
         }
         event.preventDefault();
+    });
+
+
+    // 엑셀 다운로드
+    var branchListExcelHandler = {
+        getExcelFileName : function(){
+            return 'branch_list.xlsx';
+        },
+        getSheetName : function(){
+            return '지사 리스트';
+        },
+        getExcelData : function(){
+            return document.getElementById('branchListTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#branchListExcel").click(function(){
+        exportExcel(branchListExcelHandler);
     });
 
 
@@ -864,6 +990,26 @@ $(function(){
     });
     $("#branchSalesMonth6Btn").click(function(){  // 6개월 전
         dateInput(180, 0, "#branchSalesDate1", "#branchSalesDate2");      
+    });
+
+
+    // 엑셀 다운로드
+    var branchSalesExcelHandler = {
+        getExcelFileName : function(){
+            return 'branch_sales_list.xlsx';
+        },
+        getSheetName : function(){
+            return '매출 상세내역';
+        },
+        getExcelData : function(){
+            return document.getElementById('branchSalesListTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#branchSalesExcel").click(function(){
+        exportExcel(branchSalesExcelHandler);
     });
 
 
