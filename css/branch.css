@@ -335,7 +335,18 @@ table td input:read-only {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-
+.notice_list .notice_list_title {
+    text-align: left;
+}
+.notice_list .notice_list_attach {
+    width: 30px;
+}
+.notice_list .notice_list_attach a img {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
 
 
 
@@ -395,6 +406,11 @@ table td input:read-only {
     margin-bottom: 20px;
 }
 
+/* 거래원명을 선택 안했을때(초기값) */
+.as_request_list .blue_table tbody {
+    display: none;
+}
+
 /* 사진 등록 버튼 */
 .as_request_list .as_picture_btn {
     width: 50px;
@@ -421,6 +437,11 @@ table td input:read-only {
 .return_request_list h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+}
+
+/* 거래원명을 선택 안했을때(초기값) */
+.return_request_list .blue_table tbody {
+    display: none;
 }
 
 /* 구분선 없애기 */

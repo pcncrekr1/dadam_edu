@@ -238,6 +238,7 @@ table td input:read-only {
     border-top: 1px solid #c6c6c6;
 }
 .main_notice_detail table th {
+    width: 100px;
     height: 40px;
     background-color: #2D3D4D;
     color: #fff;

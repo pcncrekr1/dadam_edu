@@ -248,12 +248,26 @@ $(function(){
         $("#asPictureFile3").click();
     });
 
+    // 거래원명을 선택해야 리스트가 보이게
+    $("#customerSelect").change(function() {
+        if($("#customerSelect").val() !== "") {
+            $(".blue_table").children("tbody").css("display", "table-row-group");
+        } else if($("#customerSelect").val() === "") {
+            $(".blue_table").children("tbody").css("display", "none");
+        }
+    });
+        
+
     // 접수하기 버튼 클릭시
     $("#asRequestBtn").click(function () { 
         if($("input:checkbox[name='as_request_check']:checked").length === 0){
             alert("상품을 선택해 주세요.");
             return false;
-        } 
+        } else if ($(".blue_table").children("tbody").css("display") == "none" &&
+                    $("#asRequestCheckAll").is(":checked") == true) {  // 리스트가 보이지 않고 맨 위 체크박스만 선택되어 있으면
+                    alert("상품을 선택해 주세요.");
+                    return false;   
+        }
         // 체크박스 전체선택 시 사유가 하나라도 입력이 안 되어 있다면 알럿창 띄움
         else if($("#asRequestCheckAll").is(":checked") == true){ // 체크박스 전체선택이면
             if($("#asReasonSelect1").val() === "" ||
@@ -317,12 +331,25 @@ $(function(){
         checkboxControl(this, "returnRequestCheckAll", "return_request_check");
     });
 
+    // 거래원명을 선택해야 리스트가 보이게
+    $("#returnCustomerSelect").change(function() {
+        if($("#returnCustomerSelect").val() !== "") {
+            $(".blue_table").children("tbody").css("display", "table-row-group");
+        } else if($("#returnCustomerSelect").val() === "") {
+            $(".blue_table").children("tbody").css("display", "none");
+        }
+    });
+
     // 신청하기 버튼 클릭시
     $("#returnRequestBtn").click(function () { 
         if($("input:checkbox[name='return_request_check']:checked").length === 0){
             alert("상품을 선택해 주세요.");
             return false;
-        } 
+        } else if ($(".blue_table").children("tbody").css("display") == "none" &&
+                    $("#returnRequestCheckAll").is(":checked") == true) {  // 리스트가 보이지 않고 맨 위 체크박스만 선택되어 있으면
+                    alert("상품을 선택해 주세요.");
+                    return false;   
+        }
         // 체크박스 전체선택 시 사유가 하나라도 입력이 안 되어 있다면 알럿창 띄움
         else if($("#returnRequestCheckAll").is(":checked") == true){ // 체크박스 전체선택이면
             if($("#returnReasonText1").val() === "" ||
