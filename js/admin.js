@@ -459,16 +459,16 @@ $(function(){
     });
 
 
-    // 엑셀 다운로드
+    // 엑셀 양식 다운로드
     var goodsRegistExcelHandler = {
         getExcelFileName : function(){
-            return 'goods_regist.xlsx';
+            return '엑셀양식.xlsx';
         },
         getSheetName : function(){
             return '상품 리스트';
         },
         getExcelData : function(){
-            return document.getElementById('registTable'); 
+            return document.getElementById('registHiddenTable'); 
         },
         getWorksheet : function(){
             return XLSX.utils.table_to_sheet(this.getExcelData());

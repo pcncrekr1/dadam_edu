@@ -583,6 +583,7 @@ table td input:read-only {
 }
 
 .table_title_box .btn_box #goodsRegistExcel {
+    width: 150px;
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
@@ -661,6 +662,11 @@ table td input:read-only {
 }
 .tab_regist_bundle .regist_table td .regist_name_text {
     width: 100%;
+}
+
+/* 엑셀양식 다운로드용 히든 테이블 */
+.tab_regist_bundle .regist_hidden_table {
+    display: none;
 }
 
 
