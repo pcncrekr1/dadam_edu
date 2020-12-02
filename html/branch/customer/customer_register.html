@@ -1,0 +1,109 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.12.02 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>다담교육 주문관리 사이트</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/branch.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="main" class="clearfix">
+            <div id="sidebar"></div>
+
+            <div id="mainBox" class="customer_regist">
+                <h2>거래원 신규등록</h2>
+
+                <form action="customer_list.html" class="customer_regist_form">
+                    <table>
+                        <tr>
+                            <th>지사명</th>
+                            <td><input type="text" name="branch_name_text"></td>
+                        </tr>
+                        <tr>
+                            <th>원 구분</th>
+                            <td>
+                                <select name="customer_type_select">
+                                    <option value="유치원">유치원</option>
+                                    <option value="어린이집">어린이집</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>거래원 명</th>
+                            <td><input type="text" name="customer_name_text" class="customer_name_text"></td>
+                        </tr>
+                        <tr>
+                            <th>전화번호</th>
+                            <td>
+                                <input type="number" name="customer_phone_num1" min="0" class="customer_phone_num"> - 
+                                <input type="number" name="customer_phone_num2" min="0" class="customer_phone_num"> - 
+                                <input type="number" name="customer_phone_num3" min="0" class="customer_phone_num">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>핸드폰 번호</th>
+                            <td>
+                                <input type="number" name="customer_mobile_num1" min="0" class="customer_mobile_num"> - 
+                                <input type="number" name="customer_mobile_num2" min="0" class="customer_mobile_num"> - 
+                                <input type="number" name="customer_mobile_num3" min="0" class="customer_mobile_num">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>우편번호</th>
+                            <td>
+                                <input type="number" name="customer_postcode_num" class="customer_postcode_num" id="customerPostcodeNum" readonly>
+                                <button type="button" id="customerPostcodeBtn">우편번호 찾기</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td><input type="text" name="customer_address_text1" class="customer_address_text1" id="customerAddressText1" readonly></td>
+                        </tr>
+                        <tr>
+                            <th>상세주소</th>
+                            <td><input type="text" name="customer_address_text2" class="customer_address_text2"></td>
+                        </tr>
+                    </table>
+
+                    <div class="regist_btn_box">
+                        <input type="submit" value="등록">
+                        <a href="customer_list.html">취소</a>
+                    </div>
+                </form>
+                
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 다음에서 제공하는 우편번호 찾기 JS -->
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#header").load("/dadam_edu/html/common/branch/header_branch.html");
+            $("#footer").load("/dadam_edu/html/common/footer.html"); 
+            $("#sidebar").load("/dadam_edu/html/common/branch/left_menu_customer.html");
+        });
+    </script>
+    <script src="/dadam_edu/js/branch.js"></script>
+
+</body>
+</html>

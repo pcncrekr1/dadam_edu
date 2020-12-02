@@ -269,7 +269,73 @@ table td input:read-only {
     background-color: #0052A4;
     color: #fff;
 }
-
+/* 테이블 위 검색창 */
+.search_form {
+    width: 100%;
+    border: 1px solid #000;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.search_form .search_left_box {
+    float: left;
+    width: calc(100% - 100px);
+    padding-right: 20px;
+}
+.search_form .search_left_box .form_group {
+    width: 100%;
+    height: 30px;
+}
+.search_form .search_left_box .form_group:first-child {
+    margin-bottom: 10px;
+}
+.search_form .search_left_box .form_group select {
+    width: 15%;
+    height: 100%;
+    outline: none;
+}
+.search_form .search_left_box .form_group #searchText {
+    width: calc(100% - 16%);
+    height: 100%;
+    outline: none;
+    vertical-align: top;
+}
+.search_form .search_left_box .form_group span {
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    line-height: 30px;
+}
+.search_form .search_left_box .form_group label {
+    margin-right: 20px;
+}
+/* 검색 버튼 */
+.search_form .search_btn_box {
+    float: right;
+    position: relative;
+    padding-top: 20px;
+}
+.search_form .search_btn_box::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 70px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: -12px;
+}
+.search_form .search_btn_box input {
+    width: 100px;
+    height: 30px;
+    background-color: #0D0D0D;
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.search_form .search_btn_box input:hover {
+    background-color: #0052A4;
+}
 /* 표 위 총 개수, 버튼들 */
 .table_title_box {
     width: 100%;
@@ -591,3 +657,289 @@ table td input:read-only {
     margin-right: 10px;
 }
 
+
+
+
+/* ****************** customer_list.html ******************** */
+.customer_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 상단 검색창 */
+.search_form .search_left_box .form_group #cityBigSelect {
+    width: 20%;
+}
+.search_form .search_left_box .form_group #citySmallSelect {
+    width: 20%;
+}
+.search_form .search_left_box .form_group .select_name_box {
+    display: inline-block;
+    width: calc(85% - 8px);
+    vertical-align: top;
+}
+.search_form .search_left_box .form_group #customerSearchText {
+    width: calc(100% - 250px);
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .select_name_box .checkbox_box {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.customer_list table {
+    table-layout: fixed;
+}
+.customer_list table th:first-child {
+    width: calc(100% / 15);
+}
+.customer_list table th:nth-child(2) {
+    width: calc((100% / 15) * 2);
+}
+.customer_list table th:nth-child(3) {
+    width: calc((100% / 15) * 2);
+}
+.customer_list table th:nth-child(4) {
+    width: calc((100% / 15) * 3);
+}
+.customer_list table th:nth-child(5) {
+    width: calc((100% / 15) * 3);
+}
+.customer_list table th:nth-child(6) {
+    width: calc((100% / 15) * 2);
+}
+.customer_list table th:nth-child(7) {
+    width: calc((100% / 15) * 2);
+}
+
+/* 표 위 총 개수, 버튼들 */
+.table_title_box .btn_box #customerListExcel {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.table_title_box .btn_box #customerListExcel:hover {
+    background-color: #0052A4;
+    color: #fff;
+} 
+/* 테이블 내 상세주소 td */
+.detail_address {
+    width: 25%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* 테이블의 수정 텍스트(링크) */
+.customer_edit_link,
+.customer_del_link {
+    color: #0052A4;
+    text-decoration: underline;
+}
+
+
+
+
+/* ****************** customer_register.html ******************** */
+.customer_regist h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.customer_regist_form table th,
+.customer_regist_form table td {
+    height: 40px;
+}
+.customer_regist_form table th {
+    width: 100px;
+}
+.customer_regist_form table td {
+    text-align: left;
+    padding: 5px;
+}
+.customer_regist_form table td input,
+.customer_regist_form table td select {
+    width: 30%;
+    height: 30px;
+    outline: none;
+}
+.customer_regist_form table td .customer_name_text {
+    width: calc(45% + 25px);
+}
+.customer_regist_form table td .customer_phone_num,
+.customer_regist_form table td .customer_mobile_num {
+    width: 8%;
+}
+.customer_regist_form table td select {
+    vertical-align: middle;
+}
+.customer_regist_form table td #customerPostcodeBtn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.customer_regist_form table td .customer_address_text1,
+.customer_regist_form table td .customer_address_text2 {
+    width: 100%;
+}
+/* 하단 버튼 */
+.customer_regist_form .regist_btn_box {
+    text-align: center;
+}
+.customer_regist_form .regist_btn_box input,
+.customer_regist_form .regist_btn_box a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.customer_regist_form .regist_btn_box input:hover,
+.customer_regist_form .regist_btn_box a:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
+/* readonly 보이게 */
+.customer_regist_form table td input:read-only {
+    border: 1px solid #000;
+}
+
+
+
+
+/* ****************** customer_edit.html ******************** */
+.customer_edit h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.customer_edit_form table th,
+.customer_edit_form table td {
+    height: 40px;
+}
+.customer_edit_form table th {
+    width: 100px;
+}
+.customer_edit_form table td {
+    text-align: left;
+    padding: 5px;
+}
+.customer_edit_form table td input,
+.customer_edit_form table td select {
+    width: 30%;
+    height: 30px;
+    outline: none;
+}
+.customer_edit_form table td .customer_name_text {
+    width: calc(45% + 25px);
+}
+.customer_edit_form table td .customer_phone_num,
+.customer_edit_form table td .customer_mobile_num {
+    width: 8%;
+}
+.customer_edit_form table td select {
+    vertical-align: middle;
+}
+.customer_edit_form table td #customerPostcodeBtn {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(31, 59, 204);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.customer_edit_form table td .customer_address_text1,
+.customer_edit_form table td .customer_address_text2 {
+    width: 100%;
+}
+/* 하단 버튼 */
+.customer_edit_form .edit_btn_box {
+    text-align: center;
+}
+.customer_edit_form .edit_btn_box input,
+.customer_edit_form .edit_btn_box a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: #0D0D0D;
+    color: #fff;
+    vertical-align: middle;
+}
+.customer_edit_form .edit_btn_box input:hover,
+.customer_edit_form .edit_btn_box a:hover {
+    background-color: #0052A4;
+    color: #fff;
+}
+/* readonly 보이게 */
+.customer_edit_form table td input:read-only {
+    border: 1px solid #000;
+}
+
+
+
+
+/* ****************** customer_sales_list.html ******************** */
+.customer_sales_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 상단 검색창 */
+.search_form .search_left_box .form_group #customerSalesDate1,
+.search_form .search_left_box .form_group #customerSalesDate2 {
+    width: 20%;
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .customer_search_text {
+    width: calc(85% - 8px);
+    height: 30px;
+    vertical-align: top;
+    outline: none;
+}
+.search_form .search_left_box .form_group .month_btn_box {
+    display: inline-block;
+    width: 30%;
+}
+.search_form .search_left_box .form_group .month_btn_box button {
+    display: inline-block;
+    width: 32%;
+    height: 30px;
+    border: 1px solid #000;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.customer_sales_list table {
+    table-layout: auto;
+}
+
+/* 표 위 총 개수, 버튼들 */
+.table_title_box .btn_box #customerSalesExcel {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.table_title_box .btn_box #customerSalesExcel:hover {
+    background-color: #0052A4;
+    color: #fff;
+} 
+/* 구분선 없애기 */
+.customer_sales_list .table_title_box .table_title span:first-child::after {
+    display: none;
+}

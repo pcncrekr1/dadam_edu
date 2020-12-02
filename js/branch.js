@@ -585,4 +585,177 @@ $(function(){
         event.preventDefault();
     });
 
+
+
+
+    // ------------ customer_list.html --------------
+    var area0 = ["::시도::",
+                "서울특별시","인천광역시","대전광역시","광주광역시","대구광역시","울산광역시","부산광역시","세종특별자치시",
+                "경기도","강원도","충청북도","충청남도","전라북도","전라남도","경상북도","경상남도","제주특별자치도"];
+    var area1 = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구",
+                    "동대문구","동작구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구",
+                    "용산구","은평구","종로구","중구","중랑구"];
+    var area2 = ["강화군","계양구","남동구","동구","미추홀구","부평구","서구","연수구","옹진군","중구"];
+    var area3 = ["대덕구","동구","서구","유성구","중구"];
+    var area4 = ["광산구","남구","동구","북구","서구"];
+    var area5 = ["남구","달서구","달성군","동구","북구","서구","수성구","중구"];
+    var area6 = ["남구","동구","북구","울주군","중구"];
+    var area7 = ["강서구","금정구","기장군","남구","동구","동래구","부산진구","북구","사상구","사하구",
+                    "서구","수영구","연제구","영도구","중구","해운대구"];
+    var area8 = []; // 세종특별자치시는 하위 행정구역으로 시·군·구의 기초자치단체를 두지 않는 단층제 광역자치단체이다.
+    var area9 = ["가평군","고양시 덕양구","고양시 일산동구","고양시 일산서구","과천시","광명시","광주시","구리시","군포시","김포시",
+                "남양주시","동두천시","부천시","성남시 분당구","성남시 수정구","성남시 중원구","수원시 권선구","수원시 영통구","수원시 장안구","수원시 팔달구",
+                "시흥시","안산시 단원구","안산시 상록구","안성시","안양시 동안구","안양시 만안구","양주시","양평군","여주시","연천군",
+                "오산시","용인시 기흥구","용인시 수지구","용인시 처인구","의왕시","의정부시","이천시","파주시","평택시","포천시","하남시","화성시"];
+    var area10 = ["강릉시","고성군","동해시","삼척시","속초시","양구군","양양군","영월군","원주시","인제군","정선군","철원군","춘천시","태백시",
+                    "평창군","홍천군","화천군","횡성군"];
+    var area11 = ["괴산군","단양군","보은군","영동군","옥천군","음성군","제천시","증평군","진천군",
+                    "청주시 상당구","청주시 서원구","청주시 청원구","청주시 흥덕구","충주시"];
+    var area12 = ["계룡시","공주시","금산군","논산시","당진시","보령시","부여군","서산시","서천군","아산시","예산군",
+                    "천안시 동남구","천안시 서북구","청양군","태안군","홍성군"];
+    var area13 = ["고창군","군산시","김제시","남원시","무주군","부안군","순창군","완주군","익산시","임실군","장수군",
+                    "전주시 덕진구","전주시 완산구","정읍시","진안군"];
+    var area14 = ["강진군","고흥군","곡성군","광양시","구례군","나주시","담양군","목포시","무안군","보성군",
+                    "순천시","신안군","여수시","영광군","영암군","완도군","장성군","장흥군","진도군","함평군",
+                    "해남군","화순군"];
+    var area15 = ["경산시","경주시","고령군","구미시","군위군","김천시","문경시","봉화군","상주시","성주군",
+                    "안동시","영덕군","영양군","영주시","영천시","예천군","울릉군","울진군","의성군","청도군",
+                    "청송군","칠곡군","포항시 남구","포항시 북구"];
+    var area16 = ["거제시","거창군","고성군","김해시","남해군","밀양시","사천시","산청군","양산시","의령군",
+                    "진주시","창녕군","창원시 마산합포구","창원시 마산회원구","창원시 성산구","창원시 의창구","창원시 진해구","통영시","하동군","함안군",
+                    "함양군","합천군",];
+    var area17 = ["서귀포시","제주시"];
+
+    // 시/도 선택 박스 초기화
+    $("#cityBigSelect").each(function() {
+        var $selsido = $(this);
+        $.each(eval(area0), function() {
+            if(this == "::시도::"){
+                $selsido.append("<option value=''>" + this + "</option>");
+            } else {
+                $selsido.append("<option value='" + this + "'>" + this + "</option>");
+            }
+        });
+        $selsido.next().append("<option value=''>::시군구::</option>");
+    });
+
+    // 시/도 선택시 구/군 설정
+    $("#cityBigSelect").change(function() {
+        var area = "area" + $("option", $(this)).index( $("option:selected", $(this)) ); // 선택지역의 구군 Array
+        var $gugun = $(this).next(); // select 시군구
+        $("option", $gugun).remove(); // 시군구 초기화
+        $("#citySmallSelect").attr("disabled", false);
+
+        if(area == "area0") {
+            $gugun.append("<option value=''>::시군구::</option>");
+        } else if (area == "area8") { // 세종특별자치시
+            $("#citySmallSelect").attr("disabled", true);
+            $gugun.append("<option value=''></option>");
+        } else {
+            $gugun.append("<option value=''>::시군구::</option>");
+            $.each(eval(area), function() {
+                $gugun.append("<option value='" + this + "'>" + this + "</option>");
+            });
+        }
+    });
+
+
+    // 거래원 명 선택시 체크박스 보이고 지사명 선택시 체크박스 숨기기
+    $("#customerCategorySelect").change(function() {
+        if($("#customerCategorySelect").val() === "거래원 명") {
+            $(".checkbox_box").css("display", "inline-block");
+            $("#customerSearchText").css("width", "calc(100% - 250px)");
+        } else {
+            $(".checkbox_box").css("display", "none");
+            $("#customerSearchText").css("width", "100%");
+        }
+    });
+
+
+    // 삭제 텍스트 링크 클릭 시
+    $(".customer_del_link").click(function() { 
+        var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n해당 거래원을 삭제하시겠습니까?");
+        if(yes === true) {
+            alert("삭제되었습니다.");
+            window.location.href = "/dadam_edu/html/admin/customer/customer_list.html";
+        }
+        event.preventDefault();
+    });
+
+    // 엑셀 다운로드
+    var customerSalesExcelHandler = {
+        getExcelFileName : function(){
+            return 'customer_sales_list.xlsx';
+        },
+        getSheetName : function(){
+            return '매출 상세내역';
+        },
+        getExcelData : function(){
+            return document.getElementById('customerSalesListTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#customerSalesExcel").click(function(){
+        exportExcel(customerSalesExcelHandler);
+    });
+
+
+
+
+    // ------------ customer_register.html --------------
+    // 우편번호 찾기 버튼 클릭시
+    $("#customerPostcodeBtn").click(function() {
+        postCode("customerPostcodeNum", "customerAddressText1");
+    });
+
+
+
+
+    // ------------ customer_sales_list.html --------------
+    // 우선 오늘 날짜로 셋팅하기
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var full_today = now.getFullYear() + "-" + (month) + "-" + (day) ;
+    $("#customerSalesDate1").val(full_today);
+    $("#customerSalesDate2").val(full_today);
+
+    function addzero(num){                        // 한자리가 되는 숫자에 "0"을 넣어주는 함수
+        return num < 10 ? "0" + num : num;
+    }
+    
+    function dateInput(n, m, date1, date2){
+        $(date1).val("");        // 우선 이미 들어가있는 값 초기화
+        $(date2).val("");
+
+        var date = new Date();
+        var start = new Date(Date.parse(date) - n * 1000 * 60 * 60 * 24);
+        var today = new Date(Date.parse(date) - m * 1000 * 60 * 60 * 24);
+        
+        // if(n < 10){
+        //     start.setMonth(start.getMonth() - n);
+        // }
+        var yyyy = start.getFullYear();
+        var mm = start.getMonth() + 1;            // getMonth()의 반환 값이 0~11까지라서 +1을 해주어야 함
+        var dd = start.getDate() + 1;             // 30일 맞추기
+        
+        var t_yyyy = today.getFullYear();
+        var t_mm = today.getMonth() + 1;
+        var t_dd = today.getDate();
+        
+        $(date1).val(yyyy + '-' + addzero(mm) + '-' + addzero(dd));
+        $(date2).val(t_yyyy + '-' + addzero(t_mm) + '-' + addzero(t_dd));
+    }
+    
+    $("#month1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInput(30, 0, "#customerSalesDate1", "#customerSalesDate2");      
+    });
+    $("#month3Btn").click(function(){  // 3개월 전
+        dateInput(90, 0, "#customerSalesDate1", "#customerSalesDate2");      
+    });
+    $("#month6Btn").click(function(){  // 6개월 전
+        dateInput(180, 0, "#customerSalesDate1", "#customerSalesDate2");      
+    });
 });
