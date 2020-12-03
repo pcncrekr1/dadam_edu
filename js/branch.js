@@ -703,7 +703,7 @@ $(function(){
         var yes = confirm("한번 삭제한 자료는 복구되지 않습니다.\n해당 거래원을 삭제하시겠습니까?");
         if(yes === true) {
             alert("삭제되었습니다.");
-            window.location.href = "/dadam_edu/html/admin/customer/customer_list.html";
+            window.location.href = "/dadam_edu/html/branch/customer/customer_list.html";
         }
         event.preventDefault();
     });
