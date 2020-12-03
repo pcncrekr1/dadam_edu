@@ -42,6 +42,16 @@ table th {
 table td input:read-only {
     border: 0;
 }
+/* 테이블의 조회 텍스트(링크) */
+.view_link {
+    color: #0052A4;
+    text-decoration: underline;
+}
+/* 내역조회 팝업창 띄우는 td에 스타일 적용용 클래스 */
+.active_td {
+    background-color: #ccc;
+    cursor: pointer;
+}
 
 /* 높이 긴 테이블(리스트) */
 .big_table {
@@ -905,12 +915,6 @@ table td input:read-only {
     height: 30px;
     outline: none;
 }
-/* .search_form .search_left_box .form_group .customer_search_text {
-    width: calc(85% - 8px);
-    height: 30px;
-    vertical-align: top;
-    outline: none;
-} */
 .search_form .search_left_box .form_group .month_btn_box {
     display: inline-block;
     width: 30%;
@@ -957,3 +961,178 @@ table td input:read-only {
 .customer_sales_list .table_title_box .table_title span:first-child::after {
     display: none;
 }
+
+
+
+
+/* ****************** order_list.html ******************** */
+.order_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 상단 검색창 */
+.search_form {
+    margin-bottom: 30px;
+}
+.search_form .search_left_box .form_group #orderListDate1,
+.search_form .search_left_box .form_group #orderListDate2 {
+    width: 20%;
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .month_btn_box {
+    display: inline-block;
+    width: 30%;
+}
+.search_form .search_left_box .form_group .month_btn_box button {
+    display: inline-block;
+    width: 32%;
+    height: 30px;
+    border: 1px solid #000;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.search_form .search_left_box .form_group .customer_name_box {
+    display: inline-block;
+    width: calc(85% - 8px);
+    vertical-align: top;
+}
+.search_form .search_left_box .form_group #orderCustomerSearchText {
+    width: calc(100% - 250px);
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .customer_name_box .checkbox_box {
+    display: inline-block;
+    padding-left: 5px;
+}
+/* 주문취소 td */
+.order_cancel_td a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.order_cancel_td a img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* ****************** a_s_list.html ******************** */
+.as_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 상단 검색창 */
+.search_form {
+    margin-bottom: 30px;
+}
+.search_form .search_left_box .form_group #asListDate1,
+.search_form .search_left_box .form_group #asListDate2 {
+    width: 20%;
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .month_btn_box {
+    display: inline-block;
+    width: 30%;
+}
+.search_form .search_left_box .form_group .month_btn_box button {
+    display: inline-block;
+    width: 32%;
+    height: 30px;
+    border: 1px solid #000;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.search_form .search_left_box .form_group .customer_name_box {
+    display: inline-block;
+    width: calc(85% - 8px);
+    vertical-align: top;
+}
+.search_form .search_left_box .form_group #asCustomerSearchText {
+    width: calc(100% - 250px);
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .customer_name_box .checkbox_box {
+    display: inline-block;
+    padding-left: 5px;
+}
+/* 주문취소 td */
+.as_cancel_td a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.as_cancel_td a img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* ****************** return_list.html ******************** */
+.return_list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* 상단 검색창 */
+.search_form {
+    margin-bottom: 30px;
+}
+.search_form .search_left_box .form_group #returnListDate1,
+.search_form .search_left_box .form_group #returnListDate2 {
+    width: 20%;
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .month_btn_box {
+    display: inline-block;
+    width: 30%;
+}
+.search_form .search_left_box .form_group .month_btn_box button {
+    display: inline-block;
+    width: 32%;
+    height: 30px;
+    border: 1px solid #000;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.search_form .search_left_box .form_group .customer_name_box {
+    display: inline-block;
+    width: calc(85% - 8px);
+    vertical-align: top;
+}
+.search_form .search_left_box .form_group #returnCustomerSearchText {
+    width: calc(100% - 250px);
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .customer_name_box .checkbox_box {
+    display: inline-block;
+    padding-left: 5px;
+}
+/* 주문취소 td */
+.return_cancel_td a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.return_cancel_td a img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+

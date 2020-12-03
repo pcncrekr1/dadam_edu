@@ -804,4 +804,263 @@ $(function(){
     $("#customerSalesExcel1").click(function(){
         exportExcel(customerSalesExcel1Handler);
     });
+
+
+
+
+    // ------------ order_list.html --------------
+    // 우선 오늘 날짜로 셋팅하기
+    $("#orderListDate1").val(full_today);
+    $("#orderListDate2").val(full_today);
+    
+    // 1개월전, 3개월전, 6개월전 날짜 셋팅
+    $("#orderMonth1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInput(30, 0, "#orderListDate1", "#orderListDate2");      
+    });
+    $("#orderMonth3Btn").click(function(){  // 3개월 전
+        dateInput(90, 0, "#orderListDate1", "#orderListDate2");      
+    });
+    $("#orderMonth6Btn").click(function(){  // 6개월 전
+        dateInput(180, 0, "#orderListDate1", "#orderListDate2");      
+    });
+
+
+    // 주문취소
+    $(".order_cancel_td").click(function () { 
+        var yes = confirm("해당 건의 주문 내역을 취소하시겠습니까?");
+        if(yes === true) {
+            alert("취소되었습니다.");
+            window.location.href = "/dadam_edu/html/branch/view/order_list.html";
+        }
+        event.preventDefault();
+    });
+
+
+    // hover 시 여러 컬럼에 걸쳐 스타일 적용하기
+    $(".order_popup_td1").hover(
+        function () {
+            // over
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+            $(this).next().next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+            $(this).next().next().removeClass("active_td");
+        }
+    );
+    $(".order_popup_td2").hover(
+        function () {
+            // over
+            $(this).prev().addClass("active_td");
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).prev().removeClass("active_td");
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+        }
+    );
+    $(".order_popup_td3").hover(
+        function () {
+            // over
+            $(this).addClass("active_td");
+            $(this).prev().addClass("active_td");
+            $(this).prev().prev().addClass("active_td");
+        }, function () {
+            // out
+            $(this).removeClass("active_td");
+            $(this).prev().removeClass("active_td");
+            $(this).prev().prev().removeClass("active_td");
+        }
+    );
+
+
+
+
+    // ------------ a_s_list.html --------------
+    // 우선 오늘 날짜로 셋팅하기
+    $("#asListDate1").val(full_today);
+    $("#asListDate2").val(full_today);
+    
+    // 1개월전, 3개월전, 6개월전 날짜 셋팅
+    $("#asMonth1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInput(30, 0, "#asListDate1", "#asListDate2");      
+    });
+    $("#asMonth3Btn").click(function(){  // 3개월 전
+        dateInput(90, 0, "#asListDate1", "#asListDate2");      
+    });
+    $("#asMonth6Btn").click(function(){  // 6개월 전
+        dateInput(180, 0, "#asListDate1", "#asListDate2");      
+    });
+
+
+    // as 신청 취소
+    $(".as_cancel_td").click(function () { 
+        var yes = confirm("해당 A/S 신청을 취소하시겠습니까?");
+        if(yes === true) {
+            alert("취소되었습니다.");
+            window.location.href = "/dadam_edu/html/branch/view/a_s_list.html";
+        }
+        event.preventDefault();
+    });
+
+
+    // hover 시 여러 컬럼에 걸쳐 스타일 적용하기
+    $(".as_popup_td1").hover(
+        function () {
+            // over
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+            $(this).next().next().addClass("active_td");
+            $(this).next().next().next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+            $(this).next().next().removeClass("active_td");
+            $(this).next().next().next().removeClass("active_td");
+        }
+    );
+    $(".as_popup_td2").hover(
+        function () {
+            // over
+            $(this).prev().addClass("active_td");
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+            $(this).next().next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).prev().removeClass("active_td");
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+            $(this).next().next().removeClass("active_td");
+        }
+    );
+    $(".as_popup_td3").hover(
+        function () {
+            // over
+            $(this).prev().prev().addClass("active_td");
+            $(this).prev().addClass("active_td");
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).prev().prev().removeClass("active_td");
+            $(this).prev().removeClass("active_td");
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+        }
+    );
+    $(".as_popup_td4").hover(
+        function () {
+            // over
+            $(this).prev().prev().prev().addClass("active_td");
+            $(this).prev().prev().addClass("active_td");
+            $(this).prev().addClass("active_td");
+            $(this).addClass("active_td");
+        }, function () {
+            // out
+            $(this).prev().prev().prev().removeClass("active_td");
+            $(this).prev().prev().removeClass("active_td");
+            $(this).prev().removeClass("active_td");
+            $(this).removeClass("active_td");
+        }
+    );
+
+
+
+
+    // ------------ return_list.html --------------
+    // 우선 오늘 날짜로 셋팅하기
+    $("#returnListDate1").val(full_today);
+    $("#returnListDate2").val(full_today);
+    
+    // 1개월전, 3개월전, 6개월전 날짜 셋팅
+    $("#returnMonth1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInput(30, 0, "#returnListDate1", "#returnListDate2");      
+    });
+    $("#returnMonth3Btn").click(function(){  // 3개월 전
+        dateInput(90, 0, "#returnListDate1", "#returnListDate2");      
+    });
+    $("#returnMonth6Btn").click(function(){  // 6개월 전
+        dateInput(180, 0, "#returnListDate1", "#returnListDate2");      
+    });
+
+
+    // 반품 신청 취소
+    $(".return_cancel_td").click(function () { 
+        var yes = confirm("해당 반품 신청을 취소하시겠습니까?");
+        if(yes === true) {
+            alert("취소되었습니다.");
+            window.location.href = "/dadam_edu/html/branch/view/return_list.html";
+        }
+        event.preventDefault();
+    });
+
+
+    // hover 시 여러 컬럼에 걸쳐 스타일 적용하기
+    $(".return_popup_td1").hover(
+        function () {
+            // over
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+            $(this).next().next().addClass("active_td");
+            $(this).next().next().next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+            $(this).next().next().removeClass("active_td");
+            $(this).next().next().next().removeClass("active_td");
+        }
+    );
+    $(".return_popup_td2").hover(
+        function () {
+            // over
+            $(this).prev().addClass("active_td");
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+            $(this).next().next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).prev().removeClass("active_td");
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+            $(this).next().next().removeClass("active_td");
+        }
+    );
+    $(".return_popup_td3").hover(
+        function () {
+            // over
+            $(this).prev().prev().addClass("active_td");
+            $(this).prev().addClass("active_td");
+            $(this).addClass("active_td");
+            $(this).next().addClass("active_td");
+        }, function () {
+            // out
+            $(this).prev().prev().removeClass("active_td");
+            $(this).prev().removeClass("active_td");
+            $(this).removeClass("active_td");
+            $(this).next().removeClass("active_td");
+        }
+    );
+    $(".return_popup_td4").hover(
+        function () {
+            // over
+            $(this).prev().prev().prev().addClass("active_td");
+            $(this).prev().prev().addClass("active_td");
+            $(this).prev().addClass("active_td");
+            $(this).addClass("active_td");
+        }, function () {
+            // out
+            $(this).prev().prev().prev().removeClass("active_td");
+            $(this).prev().prev().removeClass("active_td");
+            $(this).prev().removeClass("active_td");
+            $(this).removeClass("active_td");
+        }
+    );
+
 });
