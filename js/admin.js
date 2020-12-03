@@ -630,23 +630,24 @@ $(function(){
         event.preventDefault();
     });
 
+
     // 엑셀 다운로드
-    var customerSalesExcelHandler = {
+    var customerListExcelHandler = {
         getExcelFileName : function(){
-            return 'customer_sales_list.xlsx';
+            return 'customer_list.xlsx';
         },
         getSheetName : function(){
-            return '매출 상세내역';
+            return '거래원 리스트';
         },
         getExcelData : function(){
-            return document.getElementById('customerSalesListTable'); 
+            return document.getElementById('customerListTable'); 
         },
         getWorksheet : function(){
             return XLSX.utils.table_to_sheet(this.getExcelData());
         }
     }
-    $("#customerSalesExcel").click(function(){
-        exportExcel(customerSalesExcelHandler);
+    $("#customerListExcel").click(function(){
+        exportExcel(customerListExcelHandler);
     });
 
 
@@ -747,6 +748,26 @@ $(function(){
     });
     $("#month6Btn").click(function(){  // 6개월 전
         dateInput(180, 0, "#customerSalesDate1", "#customerSalesDate2");      
+    });
+
+
+    // 엑셀 다운로드
+    var customerSalesExcelHandler = {
+        getExcelFileName : function(){
+            return 'customer_sales_list.xlsx';
+        },
+        getSheetName : function(){
+            return '매출 상세내역';
+        },
+        getExcelData : function(){
+            return document.getElementById('customerSalesListTable'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#customerSalesExcel").click(function(){
+        exportExcel(customerSalesExcelHandler);
     });
 
 

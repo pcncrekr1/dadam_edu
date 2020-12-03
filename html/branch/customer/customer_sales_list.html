@@ -27,16 +27,26 @@
                     <div class="search_left_box">
                         <div class="form_group">
                             <span>기간선택</span>
-                            <input type="date" name="customer_sales_date" id="customerSalesDate1"> - <input type="date" name="customer_sales_date" id="customerSalesDate2">
+                            <input type="date" name="customer_sales_date" id="customerSalesDate1_1"> - <input type="date" name="customer_sales_date" id="customerSalesDate2_1">
                             <span class="month_btn_box">
-                                <button type="button" id="month1Btn">1개월</button>
-                                <button type="button" id="month3Btn">3개월</button>
-                                <button type="button" id="month6Btn">6개월</button>
+                                <button type="button" id="month1Btn1">1개월</button>
+                                <button type="button" id="month3Btn1">3개월</button>
+                                <button type="button" id="month6Btn1">6개월</button>
                             </span>
                         </div>
                         <div class="form_group">
                             <span>거래원 명</span>
-                            <input type="text" name="customer_search_text" class="customer_search_text">
+                            <div class="customer_name_box">
+                                <div class="checkbox_box">
+                                    <input type="checkbox" name="customer_name_check" value="kindergarten_check" id="kindergartenCheck1">
+                                    <label for="kindergartenCheck1">유치원</label>
+                                    <input type="checkbox" name="customer_name_check" value="daycare_check" id="daycareCheck1">
+                                    <label for="daycareCheck1">어린이집</label>
+                                    <input type="checkbox" name="customer_name_check" value="others_check" id="othersCheck1">
+                                    <label for="othersCheck1">기타</label>
+                                </div>
+                                <input type="text" name="customer_search_text" id="customerSearchText1">
+                            </div>
                         </div>
                     </div>
                     <div class="search_btn_box">
@@ -49,15 +59,14 @@
                         <span>매출 상세내역</span>
                     </div>
                     <div class="btn_box">
-                        <button type="button" id="customerSalesExcel">엑셀 다운로드</button>
+                        <button type="button" id="customerSalesExcel1">엑셀 다운로드</button>
                     </div>
                 </div>
 
-                <table id="customerSalesListTable">
+                <table id="customerSalesListTable1">
                     <thead>
                         <tr>
                             <th>NO.</th>
-                            <th>지사명</th>
                             <th>원 구분</th>
                             <th>거래원 명</th>
                             <th>수량</th>
@@ -70,7 +79,6 @@
                     <tbody>
                         <tr>
                             <td>3</td>
-                            <td>EOV</td>
                             <td>어린이집</td>
                             <td>리안어린이집</td>
                             <td>1</td>
@@ -81,7 +89,6 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>EOV</td>
                             <td>어린이집</td>
                             <td>리안어린이집</td>
                             <td>1</td>
@@ -92,7 +99,6 @@
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>EOV</td>
                             <td>어린이집</td>
                             <td>리안어린이집</td>
                             <td>1</td>

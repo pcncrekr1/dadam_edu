@@ -666,10 +666,10 @@ table td input:read-only {
     margin-bottom: 20px;
 }
 /* 상단 검색창 */
-.search_form .search_left_box .form_group #cityBigSelect {
+.search_form .search_left_box .form_group #cityBigSelect1 {
     width: 20%;
 }
-.search_form .search_left_box .form_group #citySmallSelect {
+.search_form .search_left_box .form_group #citySmallSelect1 {
     width: 20%;
 }
 .search_form .search_left_box .form_group .select_name_box {
@@ -677,7 +677,7 @@ table td input:read-only {
     width: calc(85% - 8px);
     vertical-align: top;
 }
-.search_form .search_left_box .form_group #customerSearchText {
+.search_form .search_left_box .form_group #customerSearchText1 {
     width: calc(100% - 250px);
     height: 30px;
     outline: none;
@@ -713,12 +713,12 @@ table td input:read-only {
 }
 
 /* 표 위 총 개수, 버튼들 */
-.table_title_box .btn_box #customerListExcel {
+.table_title_box .btn_box #customerListExcel1 {
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
 }
-.table_title_box .btn_box #customerListExcel:hover {
+.table_title_box .btn_box #customerListExcel1:hover {
     background-color: #0052A4;
     color: #fff;
 } 
@@ -771,7 +771,7 @@ table td input:read-only {
 .customer_regist_form table td select {
     vertical-align: middle;
 }
-.customer_regist_form table td #customerPostcodeBtn {
+.customer_regist_form table td #customerPostcodeBtn1 {
     width: 120px;
     height: 30px;
     background-color: rgb(31, 59, 204);
@@ -848,7 +848,7 @@ table td input:read-only {
 .customer_edit_form table td select {
     vertical-align: middle;
 }
-.customer_edit_form table td #customerPostcodeBtn {
+.customer_edit_form table td #customerPostcodeBtn1 {
     width: 120px;
     height: 30px;
     background-color: rgb(31, 59, 204);
@@ -899,18 +899,18 @@ table td input:read-only {
     margin-bottom: 20px;
 }
 /* 상단 검색창 */
-.search_form .search_left_box .form_group #customerSalesDate1,
-.search_form .search_left_box .form_group #customerSalesDate2 {
+.search_form .search_left_box .form_group #customerSalesDate1_1,
+.search_form .search_left_box .form_group #customerSalesDate2_1 {
     width: 20%;
     height: 30px;
     outline: none;
 }
-.search_form .search_left_box .form_group .customer_search_text {
+/* .search_form .search_left_box .form_group .customer_search_text {
     width: calc(85% - 8px);
     height: 30px;
     vertical-align: top;
     outline: none;
-}
+} */
 .search_form .search_left_box .form_group .month_btn_box {
     display: inline-block;
     width: 30%;
@@ -924,18 +924,32 @@ table td input:read-only {
     cursor: pointer;
     vertical-align: middle;
 }
+.search_form .search_left_box .form_group .customer_name_box {
+    display: inline-block;
+    width: calc(85% - 8px);
+    vertical-align: top;
+}
+.search_form .search_left_box .form_group #customerSearchText1 {
+    width: calc(100% - 250px);
+    height: 30px;
+    outline: none;
+}
+.search_form .search_left_box .form_group .customer_name_box .checkbox_box {
+    display: inline-block;
+    padding-left: 5px;
+}
 
 .customer_sales_list table {
     table-layout: auto;
 }
 
 /* 표 위 총 개수, 버튼들 */
-.table_title_box .btn_box #customerSalesExcel {
+.table_title_box .btn_box #customerSalesExcel1 {
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
 }
-.table_title_box .btn_box #customerSalesExcel:hover {
+.table_title_box .btn_box #customerSalesExcel1:hover {
     background-color: #0052A4;
     color: #fff;
 } 

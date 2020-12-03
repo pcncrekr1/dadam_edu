@@ -81,6 +81,32 @@ $(function(){
     }
 
 
+    // ------------ 엑셀파일 다운로드용 함수 ------------
+    function s2ab(s) { 
+        var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
+        var view = new Uint8Array(buf);  //create uint8array as viewer
+        for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF; //convert to octet
+        return buf;    
+    }
+
+    function exportExcel(excelHandler){ 
+        // step 1. workbook 생성
+        var wb = XLSX.utils.book_new();
+    
+        // step 2. 시트 만들기 
+        var newWorksheet = excelHandler.getWorksheet();
+        
+        // step 3. workbook에 새로만든 워크시트에 이름을 주고 붙인다.  
+        XLSX.utils.book_append_sheet(wb, newWorksheet, excelHandler.getSheetName());
+    
+        // step 4. 엑셀 파일 만들기 
+        var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
+    
+        // step 5. 엑셀 파일 내보내기 
+        saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), excelHandler.getExcelFileName());
+    }
+
+
 
 
 
@@ -627,7 +653,7 @@ $(function(){
     var area17 = ["서귀포시","제주시"];
 
     // 시/도 선택 박스 초기화
-    $("#cityBigSelect").each(function() {
+    $("#cityBigSelect1").each(function() {
         var $selsido = $(this);
         $.each(eval(area0), function() {
             if(this == "::시도::"){
@@ -640,16 +666,16 @@ $(function(){
     });
 
     // 시/도 선택시 구/군 설정
-    $("#cityBigSelect").change(function() {
+    $("#cityBigSelect1").change(function() {
         var area = "area" + $("option", $(this)).index( $("option:selected", $(this)) ); // 선택지역의 구군 Array
         var $gugun = $(this).next(); // select 시군구
         $("option", $gugun).remove(); // 시군구 초기화
-        $("#citySmallSelect").attr("disabled", false);
+        $("#citySmallSelect1").attr("disabled", false);
 
         if(area == "area0") {
             $gugun.append("<option value=''>::시군구::</option>");
         } else if (area == "area8") { // 세종특별자치시
-            $("#citySmallSelect").attr("disabled", true);
+            $("#citySmallSelect1").attr("disabled", true);
             $gugun.append("<option value=''></option>");
         } else {
             $gugun.append("<option value=''>::시군구::</option>");
@@ -661,13 +687,13 @@ $(function(){
 
 
     // 거래원 명 선택시 체크박스 보이고 지사명 선택시 체크박스 숨기기
-    $("#customerCategorySelect").change(function() {
-        if($("#customerCategorySelect").val() === "거래원 명") {
+    $("#customerCategorySelect1").change(function() {
+        if($("#customerCategorySelect1").val() === "거래원 명") {
             $(".checkbox_box").css("display", "inline-block");
-            $("#customerSearchText").css("width", "calc(100% - 250px)");
+            $("#customerSearchText1").css("width", "calc(100% - 250px)");
         } else {
             $(".checkbox_box").css("display", "none");
-            $("#customerSearchText").css("width", "100%");
+            $("#customerSearchText1").css("width", "100%");
         }
     });
 
@@ -682,32 +708,32 @@ $(function(){
         event.preventDefault();
     });
 
+
     // 엑셀 다운로드
-    var customerSalesExcelHandler = {
+    var customerListExcel1Handler = {
         getExcelFileName : function(){
-            return 'customer_sales_list.xlsx';
+            return 'customer_list.xlsx';
         },
         getSheetName : function(){
-            return '매출 상세내역';
+            return '거래원 리스트';
         },
         getExcelData : function(){
-            return document.getElementById('customerSalesListTable'); 
+            return document.getElementById('customerListTable1'); 
         },
         getWorksheet : function(){
             return XLSX.utils.table_to_sheet(this.getExcelData());
         }
     }
-    $("#customerSalesExcel").click(function(){
-        exportExcel(customerSalesExcelHandler);
+    $("#customerListExcel1").click(function(){
+        exportExcel(customerListExcel1Handler);
     });
-
 
 
 
     // ------------ customer_register.html --------------
     // 우편번호 찾기 버튼 클릭시
-    $("#customerPostcodeBtn").click(function() {
-        postCode("customerPostcodeNum", "customerAddressText1");
+    $("#customerPostcodeBtn1").click(function() {
+        postCode("customerPostcodeNum1", "customerAddressText1_1");
     });
 
 
@@ -719,8 +745,8 @@ $(function(){
     var day = ("0" + now.getDate()).slice(-2);
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
     var full_today = now.getFullYear() + "-" + (month) + "-" + (day) ;
-    $("#customerSalesDate1").val(full_today);
-    $("#customerSalesDate2").val(full_today);
+    $("#customerSalesDate1_1").val(full_today);
+    $("#customerSalesDate2_1").val(full_today);
 
     function addzero(num){                        // 한자리가 되는 숫자에 "0"을 넣어주는 함수
         return num < 10 ? "0" + num : num;
@@ -749,13 +775,33 @@ $(function(){
         $(date2).val(t_yyyy + '-' + addzero(t_mm) + '-' + addzero(t_dd));
     }
     
-    $("#month1Btn").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
-        dateInput(30, 0, "#customerSalesDate1", "#customerSalesDate2");      
+    $("#month1Btn1").click(function(){  // 1개월 전 (두 번째 인수로 0을 전달하면 오늘 날짜)
+        dateInput(30, 0, "#customerSalesDate1_1", "#customerSalesDate2_1");      
     });
-    $("#month3Btn").click(function(){  // 3개월 전
-        dateInput(90, 0, "#customerSalesDate1", "#customerSalesDate2");      
+    $("#month3Btn1").click(function(){  // 3개월 전
+        dateInput(90, 0, "#customerSalesDate1_1", "#customerSalesDate2_1");      
     });
-    $("#month6Btn").click(function(){  // 6개월 전
-        dateInput(180, 0, "#customerSalesDate1", "#customerSalesDate2");      
+    $("#month6Btn1").click(function(){  // 6개월 전
+        dateInput(180, 0, "#customerSalesDate1_1", "#customerSalesDate2_1");      
+    });
+
+
+    // 엑셀 다운로드
+    var customerSalesExcel1Handler = {
+        getExcelFileName : function(){
+            return 'customer_sales_list.xlsx';
+        },
+        getSheetName : function(){
+            return '매출 상세내역';
+        },
+        getExcelData : function(){
+            return document.getElementById('customerSalesListTable1'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+    }
+    $("#customerSalesExcel1").click(function(){
+        exportExcel(customerSalesExcel1Handler);
     });
 });
