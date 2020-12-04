@@ -878,6 +878,26 @@ $(function(){
     );
 
 
+    $(".order_popup_td1").click(function() {
+        var url = "order_popup.html";
+        var name = "order detail popup";
+        var option = "width = 900, height = 390, top = 100, left = 800, location = no";
+        window.open(url, name, option);
+    });
+    $(".order_popup_td2").click(function() {
+        var url = "order_popup.html";
+        var name = "order detail popup";
+        var option = "width = 900, height = 390, top = 100, left = 800, location = no";
+        window.open(url, name, option);
+    });
+    $(".order_popup_td3").click(function() {
+        var url = "order_popup.html";
+        var name = "order detail popup";
+        var option = "width = 900, height = 390, top = 100, left = 800, location = no";
+        window.open(url, name, option);
+    });
+
+
 
 
     // ------------ a_s_list.html --------------

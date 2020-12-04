@@ -1,0 +1,94 @@
+<!-- 작성자: 윤혜진, 작성일: 2020.11.17 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라온유치원 구매내역</title>
+
+    <!-- My CSS -->
+	<link rel="stylesheet" href="/dadam_edu/css/reset.css">
+    <link rel="stylesheet" href="/dadam_edu/css/common.css">
+    <link rel="stylesheet" href="/dadam_edu/css/branch.css">
+
+</head>
+<body>
+
+    <div class="popup_wrap">
+        
+        <div class="popup_header clearfix">
+            <h1>라온유치원 구매내역</h1>
+            <div class="icon_box">
+                <a href="#" id="orderPrintBtn"><img src="/dadam_edu/images/printer.png" alt="프린트"></a>
+                <a href="#" id="orderCloseBtn"><img src="/dadam_edu/images/x_icon.png" alt="닫기"></a>
+            </div>
+        </div>
+
+        <div class="popup_box">    
+            <table class="order_info_table">
+                <tbody>
+                    <tr>
+                        <th>상품군</th>
+                        <th>상품명</th>
+                        <th>단계</th>
+                        <th>호수</th>
+                        <th>단가</th>
+                        <th>수량</th>
+                        <th>소계</th>
+                    </tr>
+                    <tr>
+                        <td>상품군1</td>
+                        <td>다담이A</td>
+                        <td>1단계</td>
+                        <td>2호</td>
+                        <td class="right_td">8,000원</td>
+                        <td>3</td>
+                        <td class="right_td">24,000원</td>
+                    </tr>
+                    <tr>
+                        <td>상품군1</td>
+                        <td>다담이B</td>
+                        <td>1단계</td>
+                        <td>3호</td>
+                        <td class="right_td">9,000원</td>
+                        <td>2</td>
+                        <td class="right_td">18,000원</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="order_sum_table">
+                <tbody>
+                    <tr>
+                        <th class="cost_th">금 액</th>
+                        <td class="right_td">42,000원</td>
+                        <th class="cost_th">배송비</th>
+                        <td class="right_td">3,600원</td>
+                    </tr>
+                    <tr>
+                        <th class="cost_th">총 합계</th>
+                        <td colspan="3" class="right_td">45,600원</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- jquery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- My JS -->
+    <script>
+        $(function(){
+            $("#orderPrintBtn").click(function() {
+                window.print();
+            });
+
+            $("#orderCloseBtn").click(function() {
+                window.close();
+            });
+        });
+    </script>
+
+</body>
+</html>
